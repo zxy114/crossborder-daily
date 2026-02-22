@@ -1,0 +1,9 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "hello",
+  "message_id": "msg_1737600000000_test",
+  "sender_id": "node_e4ecb970",
+  "timestamp": "2025-01-23T00:00:00.000Z",
+  "payload": {}
+}
