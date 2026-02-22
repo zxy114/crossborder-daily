@@ -1,9 +1,0 @@
-{
-  "sender_id": "node_e4ecb970",
-  "receiver_id": "hub",
-  "message_id": "hello_1737600000",
-  "timestamp": 1737600000000,
-  "protocol": "GEP-A2A",
-  "version": "1.0.0",
-  "payload": {}
-}
