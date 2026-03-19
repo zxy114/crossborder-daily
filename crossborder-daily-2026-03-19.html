@@ -3,271 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跨境新闻日报 - 2026-03-19（5 维度增强版）</title>
+    <title>📰 跨境新闻日报 - 2026-03-19</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #16a34a;
+            --warning: #d97706;
+            --bg: #f0f9ff;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
         }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 15px;
+            font-size: 14px;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
+        .container { max-width: 900px; margin: 0 auto; }
         
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 40px;
-            text-align: center;
+            padding: 20px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
         }
         
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        header .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+        header h1 { font-size: 1.6rem; margin-bottom: 8px; }
+        header .meta { opacity: 0.9; font-size: 0.85rem; }
         
         .stats-bar {
             display: flex;
-            justify-content: space-around;
-            background: #f8f9fa;
-            padding: 20px;
-            border-bottom: 3px solid #3498db;
+            gap: 10px;
+            background: var(--card);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
-            gap: 15px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         
         .stat-item {
-            text-align: center;
-            padding: 10px 20px;
-        }
-        
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .stat-label {
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .verified { color: #27ae60 !important; }
-        .unverified { color: #e67e22 !important; }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section-title {
-            font-size: 1.8em;
-            color: #2c3e50;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
+            padding: 4px 10px;
+            background: var(--bg);
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+        
+        .stat-number { font-weight: bold; color: var(--primary); }
+        .verified { color: var(--success); }
+        .unverified { color: var(--warning); }
+        
+        .section {
+            background: var(--card);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--bg);
         }
         
         .news-item {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 25px 0;
-            border-left: 5px solid #3498db;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 3px solid var(--primary);
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #f8fafc;
+            border-radius: 0 6px 6px 0;
         }
         
-        .news-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
+        .news-item:last-child { margin-bottom: 0; }
         
         .news-header {
             display: flex;
-            justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 8px;
             flex-wrap: wrap;
-            gap: 10px;
         }
         
         .news-title {
-            font-size: 1.4em;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        
-        .news-meta {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            font-weight: 600;
+            font-size: 0.95rem;
+            flex: 1;
+            line-height: 1.4;
         }
         
         .badge {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 99px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
         }
         
-        .badge-verified {
-            background: #d4edda;
-            color: #155724;
+        .badge-verified { background: #dcfce7; color: var(--success); }
+        .badge-unverified { background: #fef3c7; color: var(--warning); }
+        
+        .news-dimensions {
+            font-size: 0.85rem;
+            color: var(--text-light);
         }
         
-        .badge-unverified {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .dimension {
-            margin: 15px 0;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .dimension-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
+        .dimension-row {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 6px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
         }
         
-        .dimension-title::before {
-            content: '▸';
-            color: #3498db;
+        .dimension-row:last-child { margin-bottom: 0; }
+        
+        .dim-label {
+            font-weight: 600;
+            color: var(--primary-dark);
+            min-width: 65px;
+            flex-shrink: 0;
         }
         
-        .dimension-content {
-            color: #555;
-            line-height: 1.7;
+        .dim-content { flex: 1; }
+        
+        .news-links {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border);
         }
         
-        .source-links {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 2px dashed #ddd;
-        }
-        
-        .source-links a {
-            color: #3498db;
+        .news-links a {
+            display: inline-block;
+            color: var(--primary);
             text-decoration: none;
-            word-break: break-all;
-            display: block;
-            margin: 5px 0;
-            padding: 8px 12px;
-            background: #e8f4f8;
-            border-radius: 6px;
-            transition: background 0.3s;
+            padding: 3px 10px;
+            background: #eff6ff;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            margin-top: 4px;
         }
         
-        .source-links a:hover {
-            background: #d4edf7;
-        }
+        .news-links a:hover { background: #dbeafe; }
         
         .footer {
-            background: #2c3e50;
-            color: white;
             text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-        
-        .footer-note {
-            background: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            
-            .stats-bar {
-                flex-direction: column;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .news-header {
-                flex-direction: column;
-            }
-        }
-        
-        .toc {
-            background: #f8f9fa;
             padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+            margin-top: 15px;
         }
         
-        .toc h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .toc ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-        }
-        
-        .toc li {
-            padding: 8px 12px;
-            background: white;
-            border-radius: 6px;
-            border-left: 3px solid #3498db;
-        }
-        
-        .toc a {
-            color: #2c3e50;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-        
-        .toc a:hover {
-            color: #3498db;
+        @media (max-width: 600px) {
+            body { padding: 10px; font-size: 13px; }
+            header { padding: 15px; }
+            header h1 { font-size: 1.3rem; }
+            .stats-bar { gap: 6px; }
+            .section { padding: 12px; }
+            .news-item { padding: 10px; }
+            .dimension-row { flex-direction: column; gap: 2px; }
+            .dim-label { min-width: auto; }
         }
     </style>
 </head>
@@ -275,756 +187,715 @@
     <div class="container">
         <header>
             <h1>📰 跨境新闻日报</h1>
-            <div class="subtitle">2026 年 3 月 19 日 · 5 维度增强版</div>
+            <div class="meta">
+                <div>📅 2026 年 3 月 19 日 | 新闻覆盖：3 月 18 日</div>
+            </div>
         </header>
         
         <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">20</div>
-                <div class="stat-label">新闻总数</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number verified">8</div>
-                <div class="stat-label">已验证</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number unverified">12</div>
-                <div class="stat-label">单方报道</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">5</div>
-                <div class="stat-label">分析维度</div>
-            </div>
+            <div class="stat-item"><span class="stat-number">20</span> 新闻总数</div>
+            <div class="stat-item"><span class="stat-number verified">✅ 8</span> 已验证</div>
+            <div class="stat-item"><span class="stat-number unverified">⚠️ 12</span> 单方报道</div>
+            <div class="stat-item"><span class="stat-number">40%</span> 验证率</div>
         </div>
         
-        <div class="content">
-            <div class="toc">
-                <h3>📑 目录</h3>
-                <ul>
-                    <li><a href="#section1">🔥 头条新闻 (4 条)</a></li>
-                    <li><a href="#section2">📋 平台政策 (4 条)</a></li>
-                    <li><a href="#section3">🌍 区域市场 (4 条)</a></li>
-                    <li><a href="#section4">🏢 DTC 品牌 (3 条)</a></li>
-                    <li><a href="#section5">🚚 跨境物流 (2 条)</a></li>
-                    <li><a href="#section6">📈 市场数据 (2 条)</a></li>
-                    <li><a href="#section7">📌 其他动态 (1 条)</a></li>
-                </ul>
-            </div>
-
-            <h2 id="section1" class="section-title">🔥 头条新闻</h2>
+        <div class="section">
+            <h2>🔥 头条新闻</h2>
             
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">1. Amazon 推出 1 小时配送服务，挑战 Walmart</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-17/18</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17/18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">Amazon 在洛杉矶、芝加哥等 2000+ 城市推出 1 小时/3 小时配送，90000 种商品，需额外付费</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">覆盖 2000+ 城市，90000 种商品</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">应对 Walmart 竞争的最新举措</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">继续扩展快速配送网络</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">电商配送速度竞争升级，从当日达向小时达演进</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Amazon 在美国洛杉矶、芝加哥等主要城市正式推出 1 小时和 3 小时极速配送服务，作为其持续投资配送速度战略的最新举措。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">覆盖超过 <span class="highlight">2000 个城市</span>，<span class="highlight">90000 种商品</span>可选，需额外付费使用此服务。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">直接影响美国主要城市消费者配送体验，对 Walmart 等竞争对手构成直接威胁，可能引发零售行业配送速度竞赛升级。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家需评估是否参与快速配送计划；竞争对手可能跟进类似服务；消费者配送期望值将进一步提升。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是 Amazon 应对 Walmart 竞争的核心策略之一。通过极致配送速度建立护城河，但也意味着更高的物流成本。对跨境卖家而言，这意味着消费者对所有平台的配送速度期望都在提升，需要重新评估自己的物流策略。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
-                    <a href="https://www.reuters.com/business/retail-consumer/amazon-launches-1-hour-shipping-us-cities-challenge-walmart-2026-03-17/" target="_blank">Reuters - Amazon launches 1-hour shipping in US cities</a>
-                    <a href="https://www.newstribune.com/news/2026/mar/18/amazon-launches-one-hour-shipping-in-select/" target="_blank">Jefferson City News-Tribune</a>
+                <div class="news-links">
+                    <a href="https://www.reuters.com/business/retail-consumer/amazon-launches-1-hour-shipping-us-cities-challenge-walmart-2026-03-17/" target="_blank">Reuters</a>
+                    <a href="https://www.newstribune.com/news/2026/mar/18/amazon-launches-one-hour-shipping-in-select/" target="_blank">News-Tribune</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">2. Shein、Temu 绕过法国小包税，物流转向邻国</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">法国 3 月 1 日起对欧盟外小包征收 2 欧元税，Shein/Temu 转向比利时、荷兰、波兰</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">2 欧元/包，航线转向列日、阿姆斯特丹</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">被批评"摧毁法国物流"</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">更多企业可能效仿规避</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">单一国家政策难以生效，需欧盟层面协调</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">法国自 3 月 1 日起对欧盟外小包征收 2 欧元税，但 Shein 和 Temu 迅速调整物流策略，将货运航线转向比利时列日、荷兰阿姆斯特丹和波兰等未实施该税的国家。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">法国小包税 <span class="highlight">2 欧元/件</span>，3 月 1 日生效；Shein 在波兰建设大型仓库作为欧洲中转站。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">法国物流业受到冲击，批评声音称"摧毁法国物流"；欧盟内部税收政策不协调问题暴露；其他欧盟国家可能跟进类似政策。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">法国政府可能加强边境检查或推动欧盟统一政策；物流企业需重新评估欧洲仓储布局；卖家需关注欧盟税收政策变化趋势。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是典型的"政策套利"案例。大型跨境电商平台凭借灵活的全球物流网络，能够快速规避单一国家政策。这暴露了欧盟内部税收协调的不足，也说明单边政策难以有效约束全球化电商平台。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.radiofrance.fr/franceinfo/podcasts/le-choix-de-franceinfo/le-choix-franceinfo-du-mercredi-18-mars-2026-7756082" target="_blank">Franceinfo</a>
                     <a href="https://www.francebleu.fr/infos/economie-social/cela-detruit-la-logistique-francaise-comment-shein-et-temu-contournent-la-taxe-sur-les-petits-colis-en-france-5625907" target="_blank">France Bleu</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">3. TikTok Shop 印尼停摆：政策围猎</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">印尼政府设定白名单制度和 100 美元最低准入价格，简单工业制品不能进口</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">最低准入价格 100 美元</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">被形容为"一场圈定的围猎"</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">政策持续执行中</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">东南亚市场政策风险上升，本地化运营成关键</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">印尼政府对 TikTok Shop 设定新的严格限制，包括白名单制度和 100 美元最低准入价格，禁止简单工业制品进口。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">最低准入价格 <span class="highlight">100 美元</span>；简单工业制品禁止进口；实行白名单制度。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">TikTok Shop 印尼业务受到重大限制；中国跨境电商平台在东南亚面临更严格的监管环境；印尼本地商家可能受益。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">TikTok 可能与印尼政府协商调整政策；卖家需评估印尼市场准入条件；关注其他东南亚国家是否跟进类似政策。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这被形容为"一场圈定的围猎"，反映了东南亚国家对中国电商平台的复杂态度——既希望吸引投资，又担心冲击本地产业。100 美元最低价格门槛实际上将大部分中国商品排除在外，保护主义色彩明显。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://36kr.com/p/2472503288420481" target="_blank">36 氪</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">4. 亚马逊和 TikTok 达成合作</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">亚马逊与 TikTok 宣布合作，允许 TikTok 商家使用亚马逊物流（FBA）服务</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">FBA 服务开放</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">两大平台从竞争走向合作</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">合作细节待公布</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">电商平台竞争格局重构，竞合关系成常态</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">亚马逊与 TikTok 宣布达成合作协议，允许 TikTok 商家使用亚马逊物流（FBA）服务，标志着两大电商平台从竞争走向合作。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">合作内容涉及 <span class="highlight">FBA 物流服务</span>；具体合作条款未公开。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">TikTok 商家可获得 Amazon 成熟的物流网络支持；Amazon 可增加 FBA 收入来源；两大平台关系从纯竞争转向竞合。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">TikTok 商家可评估使用 FBA 的成本效益；Amazon 卖家需关注是否会有新的竞争；其他平台可能寻求类似合作。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是一个标志性的行业转折点。两大巨头从竞争走向合作，说明电商行业进入"竞合时代"。对 TikTok 商家而言，这是重大利好——可以获得 Amazon 成熟的物流基础设施。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://36kr.com/p/2902782918564993" target="_blank">36 氪</a>
                 </div>
             </div>
-
-            <h2 id="section2" class="section-title">📋 平台政策</h2>
-
+        </div>
+        
+        <div class="section">
+            <h2>📋 平台政策</h2>
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">5. Amazon FBA 费用 2026 年更新</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">美国 FBA 配送费于 1 月 15 日上调</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">平均每件上涨 0.08 美元，低价计划要求<10 美元</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">卖家成本增加</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">需调整定价策略</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">物流成本持续上涨，低价商品利润空间被压缩</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Amazon 美国 FBA 配送费于 2026 年 1 月 15 日上调，同时低价 FBA 费率计划（原 Small and Light）有特定价格要求。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">平均每件上涨 <span class="highlight">0.08 美元</span>；低价 FBA 计划要求商品价格低于 <span class="highlight">10 美元</span>。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">所有使用 FBA 的卖家成本增加；低价商品卖家需重新评估定价策略；可能影响卖家利润空间。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家需重新计算产品利润率；考虑是否调整定价或优化包装降低费用；评估是否转向其他物流方案。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是 Amazon 持续的成本转嫁策略。虽然 0.08 美元看似不多，但对于低毛利产品影响显著。低价 FBA 计划的价格门槛说明 Amazon 在引导卖家向更高价值产品转型。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://ecombrainly.com/amazon-marketplace-policy-updates/" target="_blank">ecombrainly</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">6. Amazon 欧洲数字服务费变更</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-20 生效</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-20 生效</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">DSF 于 3 月 20 日在法国、意大利、西班牙变更</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">3 国同步实施</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">卖家需调整定价保护利润</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">3 月 20 日生效</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">欧洲合规成本持续上升</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Amazon 数字服务费（DSF）将于 3 月 20 日在法国、意大利、西班牙三国发生变更，影响卖家定价策略。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content"><span class="highlight">3 月 20 日</span>生效；涉及<span class="highlight">法国、意大利、西班牙</span>三国。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">欧洲三国卖家利润空间受影响；需要调整定价策略；可能影响产品竞争力。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家需立即审查在欧洲三国的定价；计算新费用对利润的影响；考虑是否调整价格或优化成本结构。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是 Amazon 在欧洲持续优化收入结构的一部分。数字服务费的变化通常与欧盟数字服务法规相关。卖家需要建立快速响应机制，能够及时调整不同市场的定价策略。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.flexfulfillment.eu/amazon-digital-services-fee-update-fr-it-es-how-it-works-what-it-costs-and-what-to-do-now/" target="_blank">flexfulfillment</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">7. TikTok 电商美区 GMV 目标 120 亿美元</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">TikTok 电商下半年美区 GMV 目标设定</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">目标 120-130 亿美元，跨境贡献约 1/5</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">招商门槛多次变化</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">上半年完成不容乐观</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">美区增长压力大，跨境业务成关键</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">TikTok 电商设定下半年美区 GMV 目标为 120-130 亿美元，跨境业务贡献约五分之一，但上半年完成情况不容乐观。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">下半年 GMV 目标 <span class="highlight">120-130 亿美元</span>；跨境业务贡献约 <span class="highlight">20%</span>；上半年完成度不佳。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">TikTok 电商招商政策可能继续调整；跨境卖家面临更多不确定性；平台可能加大招商力度。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家需关注 TikTok 招商政策变化；评估在 TikTok 美区的投入策略；注意平台可能推出的激励措施。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">120 亿美元的年度目标说明 TikTok 对电商业务的雄心，但上半年完成不佳也反映了挑战。跨境业务占 20% 说明这是重要增长点。招商门槛多次变化反映了平台在快速试错。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
-                    <a href="https://36kr.com/p/2803913134060931" target="_blank">36 氪独家</a>
+                <div class="news-links">
+                    <a href="https://36kr.com/p/2803913134060931" target="_blank">36 氪</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">8. Shopify 面临可持续发展压力</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">eBay 通过 SBTi 验证 2045 年目标，Shopify 面临压力</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">Squarespace 对齐 1.5°C 路径</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">需建立外部验证问责框架</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">投资者持续施压</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">ESG 成电商平台新竞争维度</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">在 eBay 通过 SBTi 验证 2045 年目标、Squarespace 对齐 1.5°C 路径的背景下，Shopify 面临投资者压力需建立外部验证的问责框架。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">eBay 已通过 <span class="highlight">SBTi 验证 2045 年目标</span>；Squarespace 对齐 <span class="highlight">1.5°C 路径</span>。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">Shopify 品牌声誉可能受影响；投资者关系面临压力；可能推动平台推出更多可持续发展功能。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">Shopify 可能发布可持续发展承诺；卖家可关注平台绿色功能；消费者可能更关注商家可持续实践。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">可持续发展已成为电商平台的核心竞争力之一。eBay 和 Squarespace 的进展给 Shopify 带来压力。对卖家而言，这可能意味着平台会推出更多绿色物流、碳抵消等功能。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://thesustainableinnovation.com/shopify/" target="_blank">The Sustainable Innovation</a>
                 </div>
             </div>
-
-            <h2 id="section3" class="section-title">🌍 区域市场</h2>
-
+        </div>
+        
+        <div class="section">
+            <h2>🌍 区域市场</h2>
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">9. JD.com 旗下 Joybuy 进军欧洲六国</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-16/18</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-16/18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">京东旗下 Joybuy 进入法国、德国等六国</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">6 个欧洲国家</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">区别于 Shein/Temu，不主打低价</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">强调品质和服务</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">中国电商出海差异化竞争，避免低价内卷</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">京东旗下 Joybuy 正式进入法国、德国等六个欧洲国家，采取差异化策略，不主打低价，强调品质和服务。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">进入 <span class="highlight">6 个欧洲国家</span>；定位区别于 Shein、Temu；不采用低价策略。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">欧洲电商市场竞争加剧；中国电商平台欧洲布局多元化；消费者有更多选择。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">欧洲本地电商需应对新竞争；卖家可关注 Joybuy 招商政策；观察 Joybuy 与 Shein/Temu 的差异化效果。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">Joybuy 的差异化策略很聪明——在 Shein、Temu 已经占据低价心智的情况下，选择品质和服务路线可以避免直接竞争。这反映了中国电商出海的成熟：不再只有低价一条路。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.lemonde.fr/economie/article/2026/03/16/on-n-est-pas-la-pour-casser-les-prix-joybuy-jd-com-se-lance-en-france-en-cherchant-a-se-demarquer-de-shein-et-temu_6671470_3234.html" target="_blank">Le Monde</a>
                     <a href="https://cafetech.fr/2026/03/18/le-geant-chinois-du-e-commerce-jd-se-lance-en-europe-sans-casser-les-prix/" target="_blank">Cafétech</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">10. 德国 Rossmann 开设 TikTok Shop</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">德国药妆连锁店 Rossmann 在 TikTok Shop 开店</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">销售选定护肤产品线</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">竞争对手 dm 也在考虑</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">更多传统零售商可能跟进</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">社交电商成传统零售新渠道</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">德国知名药妆连锁店 Rossmann 本月在 TikTok Shop 开设店铺，销售选定护肤产品线，竞争对手 dm 也在考虑类似策略。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">Rossmann 已开设 TikTok Shop；销售<span class="highlight">选定护肤产品线</span>；竞争对手 dm 考虑跟进。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">德国药妆零售渠道多元化；TikTok Shop 欧洲本土品牌入驻增加；传统零售商加速社交电商布局。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">更多欧洲传统零售商可能入驻 TikTok Shop；卖家需关注本土品牌动向；评估与本土品牌的竞争合作关系。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是传统零售商拥抱社交电商的典型案例。Rossmann 作为德国知名连锁，入驻 TikTok Shop 说明该平台在欧洲的接受度提升。对跨境卖家而言，这意味着将与更多本土品牌直接竞争。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.lebensmittelzeitung.net/handel/online-handel/social-commerce-rossmann-eroeffnet-shop-auf-tiktok-189956" target="_blank">Lebensmittelzeitung</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">11. 法国小包税政策被指失败</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">法国 3 月 1 日实施的小包税政策被批评效果适得其反</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">仅摧毁法国物流业</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">未能阻止 Shein/Temu 增长</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">政策效果待评估</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">单一国家政策难以对抗全球电商巨头</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">法国 3 月 1 日实施的小包税政策被广泛批评效果适得其反，仅摧毁了法国物流业，未能阻止 Shein、Temu 等平台增长。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content"><span class="highlight">3 月 1 日</span>生效；<span class="highlight">2 欧元/件</span>小包税；政策被评价为"失败"。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">法国物流从业者利益受损；政策制定者面临舆论压力；欧盟可能重新评估此类政策有效性。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">法国政府可能调整政策或加强执行；物流企业寻求转型；卖家需关注政策可能的变化。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是一个典型的"政策意外后果"案例。单边政策在全球化电商面前显得无力，反而伤害了本地产业。这给其他国家的政策制定者提供了教训：需要更协调、更系统的方法。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.sudradio.fr/economie/loi-anti-shein-et-temu-le-fiasco-de-la-taxe-petit-colis" target="_blank">Sud Radio</a>
-                    <a href="https://www.francebleu.fr/infos/economie-social/cela-detruit-la-logistique-francaise-comment-shein-et-temu-contournent-la-taxe-sur-les-petits-colis-en-france-5625907" target="_blank">France Bleu</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">12. 越南零食品牌 TikTok Shop 年收 230 亿越南盾</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">"Ăn Cùng Bà Tuyết"2025 年在 TikTok Shop 和 Shopee 营收</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">2286 亿越南盾（约 930 万美元）</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">成为零食品类领先品牌</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">持续增长中</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">东南亚社交电商潜力巨大，本土品牌崛起</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">越南零食品牌"Ăn Cùng Bà Tuyết"2025 年在 TikTok Shop 和 Shopee 上营收约 2286 亿越南盾，成为零食品类领先品牌。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">2025 年营收 <span class="highlight">2286 亿越南盾</span>（约 930 万美元）；平台：TikTok Shop + Shopee；品类：零食。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">证明 TikTok Shop 在东南亚的变现能力；为其他品牌提供成功案例；越南电商市场持续增长。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">更多越南品牌可能加大 TikTok Shop 投入；跨境卖家可研究该案例；关注东南亚零食市场机会。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是一个很好的本土成功案例，证明 TikTok Shop 在东南亚的潜力。930 万美元的年收入说明平台可以支撑品牌成长。对跨境卖家而言，这既是机会也是挑战。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://tintuconline.com.vn/an-cung-ba-tuyet-thu-gan-230-ty-dong-nam-tren-tiktok-shop-shopee-5099674.html" target="_blank">Tin Tuc Online</a>
                 </div>
             </div>
-
-            <h2 id="section4" class="section-title">🏢 DTC 品牌</h2>
-
+        </div>
+        
+        <div class="section">
+            <h2>🏢 DTC 品牌</h2>
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">13. SHEIN 成为全球最大平价服装零售商</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">SHEIN 超越 Primark 和 Target，成全球最大平价服装零售商</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">GlobalData 数据认证</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">创始人许仰天罕见公开露面</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">感谢广东政府和供应商支持</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">中国快时尚品牌全球影响力持续提升</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">根据 GlobalData 数据，SHEIN 已成为全球最大的平价服装零售商，超越 Primark 和 Target。创始人许仰天罕见公开露面，感谢广东当地政府和供应商支持。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content"><span class="highlight">全球最大</span>平价服装零售商；超越 Primark 和 Target；数据来源：GlobalData。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">全球快时尚市场格局改变；中国跨境电商品牌国际地位提升；供应链合作伙伴受益。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">竞争对手可能调整策略；供应商产能可能进一步向 SHEIN 倾斜；监管关注可能增加。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是一个里程碑事件——中国跨境电商品牌首次在全球零售市场登顶。许仰天罕见露面并感谢政府和供应商，说明 SHEIN 在强化与各方关系。这对整个中国跨境电商行业是利好。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.bloomberg.com/opinion/articles/2026-03-17/why-tiktok-temu-shein-are-pivoting-from-china-shedding-to-china-maxxing" target="_blank">Bloomberg</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">14. 跨境电商迈入高质量出海新阶段</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">2026 年跨境电商进入"高质量出海"阶段</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">从拼规模转向拼价值</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">三大引擎：SHEIN 爆单计划、TikTok 直播孵化、Lazada LazMall</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">计划推进中</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">行业从野蛮生长转向精细化运营</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">2026 年跨境电商进入"高质量出海"阶段，从拼规模转向拼价值。SHEIN"爆单计划"、TikTok Shop 直播孵化、Lazada"LazMall"品牌计划成为三大引擎。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">三大引擎：<span class="highlight">SHEIN 爆单计划</span>、<span class="highlight">TikTok Shop 直播孵化</span>、<span class="highlight">Lazada LazMall 品牌计划</span>。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">跨境电商行业发展方向转变；卖家需要调整经营策略；平台政策可能向品牌倾斜。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家需评估自身品牌化能力；关注各平台品牌扶持计划；从价格竞争转向价值竞争。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是行业发展的必然趋势。经过多年野蛮生长，跨境电商进入精耕细作阶段。三大引擎分别代表了不同的品牌化路径：SHEIN 的供应链驱动、TikTok 的内容驱动、Lazada 的平台驱动。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.amz123.com/t/7bapqLvD" target="_blank">AMZ123</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">15. TikTok、Temu、Shein 战略转向"China Maxxing"</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">从"去中国化"转向"最大化中国优势"</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">Bloomberg 分析</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">深化与中国供应链和政府关系</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">战略调整持续</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">中国供应链优势不可替代，出海企业重新定位</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Bloomberg 分析指出，TikTok、Temu、Shein 正从"去中国化"策略转向"最大化中国优势"，深化与中国供应链和政府的关系。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">战略转变：从<span class="highlight">"China Shedding"</span>到<span class="highlight">"China Maxxing"</span>；涉及三大平台。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">中国供应链价值重新评估；平台与政府关系加强；可能影响国际政治经济关系。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家可借势中国供应链优势；关注平台与中国供应商的合作政策；注意国际关系变化风险。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是一个重大战略转向。之前这些平台都在尝试"去中国化"以规避地缘政治风险，但现在发现中国供应链的优势难以替代。"China Maxxing"意味着更深度绑定中国供应链。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.bloomberg.com/opinion/articles/2026-03-17/why-tiktok-temu-shein-are-pivoting-from-china-shedding-to-china-maxxing" target="_blank">Bloomberg</a>
                 </div>
             </div>
-
-            <h2 id="section5" class="section-title">🚚 跨境物流</h2>
-
+        </div>
+        
+        <div class="section">
+            <h2>🚚 跨境物流</h2>
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">16. Amazon 扩展美国快速配送网络</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">Amazon 继续投资配送速度，更多城市提供快速配送</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">COO 表示客户需求不断变化</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">需要节省时间</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">网络持续扩展</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">配送速度成电商核心竞争壁垒</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Amazon 继续投资配送速度，在更多美国城市提供快速配送选项，首席运营官表示客户需求不断变化，需要节省时间。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">覆盖<span class="highlight">更多美国城市</span>；快速配送选项持续扩展。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">美国消费者配送期望值提升；竞争对手需跟进；物流成本可能上升。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">卖家需评估快速配送参与策略；考虑物流成本与转化率平衡；关注消费者配送期望变化。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">Amazon 在配送速度上的持续投入反映了消费者需求的变化。"时间节省"成为核心价值主张。对卖家而言，这意味着需要重新评估物流策略。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.domain-b.com/industry/industry-general/amazon-faster-delivery-us-expansion" target="_blank">domain-b</a>
-                    <a href="https://retailtechinnovationhub.com/home/2026/3/17/the-need-for-speed-heres-why-amazon-has-no-desire-to-stop-at-one-hour-online-deliveries" target="_blank">Retail Technology Innovation Hub</a>
+                    <a href="https://retailtechinnovationhub.com/home/2026/3/17/the-need-for-speed-heres-why-amazon-has-no-desire-to-stop-at-one-hour-online-deliveries" target="_blank">Retail Tech Innovation Hub</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">17. Shein 在波兰建大型仓库规避欧盟税</div>
-                    <div class="news-meta">
-                        <span class="badge badge-verified">✅ 已验证</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-verified">✅ 已验证</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">Shein 在波兰建设大型仓库，作为欧洲市场中转站</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">规避法国等国进口小包税</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">预计更多中国电商企业效仿</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">仓库建设中</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">物流枢纽选择成税务优化关键</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Shein 在波兰建设大型仓库，作为进入欧洲市场的中转站，规避法国等国的进口小包税，预计未来更多中国电商企业效仿。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">仓库位置：<span class="highlight">波兰</span>；功能：欧洲市场中转站；目的：规避进口小包税。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">波兰物流地位提升；法国等国税收政策效果被削弱；其他中国电商可能跟进。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">更多电商企业可能评估波兰仓储；欧盟可能推动税收政策协调；卖家需关注仓储布局优化。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">这是典型的"监管套利"策略。通过在政策宽松的国家建立枢纽，规避严格国家的政策。波兰因其地理位置和相对宽松的政策成为理想选择。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.sudradio.fr/cest-quoi-le-probleme/shein-entrepot-geant-pologne-contournement-taxe-europeenne-reaction" target="_blank">Sud Radio</a>
                 </div>
             </div>
-
-            <h2 id="section6" class="section-title">📈 市场数据</h2>
-
+        </div>
+        
+        <div class="section">
+            <h2>📈 市场数据</h2>
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">18. 2026 社交媒体基准：TikTok 参与度增长 49%</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-17</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-17</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">2026 年社交媒体基准报告发布</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">TikTok 参与度同比 +49% 至 3.70%，Instagram 0.48%，Facebook 0.15%，X 0.12%</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">评论减少，分享增加</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">趋势持续</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">短视频平台持续抢占用户注意力，图文平台增长乏力</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">2026 年社交媒体基准报告显示，TikTok 参与度同比增长 49% 至 3.70%，远超其他平台，同时用户行为从评论转向分享。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">TikTok 参与度 <span class="highlight">3.70%（+49%）</span>；Instagram 0.48%；Facebook 0.15%；X 0.12%；趋势：评论减少，分享增加。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">TikTok 营销价值进一步提升；品牌需调整社交媒体策略；内容创作方向需优化。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">品牌可增加 TikTok 投入；优化内容以促进分享而非评论；关注各平台参与度变化趋势。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">TikTok 的参与度数据遥遥领先，说明其作为营销平台的核心价值。"分享增加、评论减少"的趋势说明用户更倾向于私密分享而非公开讨论。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.digitalinformationworld.com/2026/03/2026-social-media-benchmark-tiktok.html" target="_blank">Digital Information World</a>
                 </div>
             </div>
-
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">19. Shopify 为创作者电商亮相 Shoptalk 2026</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">Amaze 将在 Shoptalk Spring 2026 展示"创作者驱动电商"</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">3 月 24-26 日拉斯维加斯，展位 MM110</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">创作者经济新趋势</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">展会展示</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">创作者电商成新增长点</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">Amaze 将在 3 月 24-26 日拉斯维加斯 Shoptalk Spring 2026 展会上展示"创作者驱动电商"未来，展位 MM110。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">展会：<span class="highlight">Shoptalk Spring 2026</span>；时间：3 月 24-26 日；地点：拉斯维加斯；展位：MM110。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">创作者电商趋势受关注；Shopify 生态合作伙伴展示创新；行业风向标。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">关注 Shoptalk 展会动态；了解创作者电商最新趋势；评估与创作者合作机会。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">"创作者驱动电商"是重要趋势。创作者拥有忠实粉丝，可以直接变现。Shopify 生态的合作伙伴在探索这一方向，说明平台也在支持这一趋势。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://www.manilatimes.net/2026/03/18/tmt-newswire/globenewswire/amaze-to-showcase-future-of-creator-powered-commerce-at-shoptalk-spring-2026/2302762" target="_blank">Manila Times</a>
                 </div>
             </div>
-
-            <h2 id="section7" class="section-title">📌 其他动态</h2>
-
+        </div>
+        
+        <div class="section">
+            <h2>📌 其他动态</h2>
+            
             <div class="news-item">
                 <div class="news-header">
                     <div class="news-title">20. 苹果 COO 访华深圳，考察供应链</div>
-                    <div class="news-meta">
-                        <span class="badge badge-unverified">⚠️ 单方报道</span>
-                        <span>2026-03-18</span>
+                    <span class="badge badge-unverified">⚠️ 单方</span>
+                    <span style="color:var(--text-light);font-size:0.8rem">📅 03-18</span>
+                </div>
+                <div class="news-dimensions">
+                    <div class="dimension-row">
+                        <span class="dim-label">事件:</span>
+                        <span class="dim-content">苹果 COO Sabih Khan 等高管现身深圳</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">数据:</span>
+                        <span class="dim-content">走访福田保税区 Apple 应用研究实验室（2024 年投运）</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">影响:</span>
+                        <span class="dim-content">可与近 200 家供应商紧密协作</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">后续:</span>
+                        <span class="dim-content">供应链合作深化</span>
+                    </div>
+                    <div class="dimension-row">
+                        <span class="dim-label">分析:</span>
+                        <span class="dim-content">苹果持续深耕中国供应链，尽管有分散风险声音</span>
                     </div>
                 </div>
-                <div class="dimension">
-                    <div class="dimension-title">核心事件</div>
-                    <div class="dimension-content">苹果首席运营官 Sabih Khan 等高管现身深圳，走访福田保税区 Apple 应用研究实验室，该实验室 2024 年投运，可与近 200 家供应商紧密协作。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">关键数据</div>
-                    <div class="dimension-content">访客：苹果 COO <span class="highlight">Sabih Khan</span>；地点：深圳福田保税区 Apple 应用研究实验室；实验室 2024 年投运；服务近 200 家供应商。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">影响范围</div>
-                    <div class="dimension-content">苹果与中国供应链关系深化；深圳供应链地位巩固；供应商合作机会增加。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">后续动作</div>
-                    <div class="dimension-content">供应商可关注与苹果合作机会；跨境卖家可借势中国供应链优势；关注苹果供应链动向。</div>
-                </div>
-                <div class="dimension">
-                    <div class="dimension-title">解读分析</div>
-                    <div class="dimension-content">苹果高管访华说明其对中国供应链的依赖和重视。尽管有"去中国化"声音，但实际业务中中国供应链的优势难以替代。这对中国跨境电商是利好信号。</div>
-                </div>
-                <div class="source-links">
-                    <strong>📎 来源：</strong>
+                <div class="news-links">
                     <a href="https://36kr.com/p/3726912161184128" target="_blank">36 氪</a>
                 </div>
             </div>
-
-            <div class="footer-note">
-                <strong>📝 说明：</strong><br>
-                • <strong>已验证新闻：</strong>指有 2 家或以上独立媒体来源报道的新闻<br>
-                • <strong>单方报道：</strong>仅单一媒体来源，需进一步核实<br>
-                • <strong>5 维度分析：</strong>每条新闻包含核心事件、关键数据、影响范围、后续动作、解读分析<br>
-                • 本报告由 AI 自动收集整理，仅供参考，不构成投资建议
-            </div>
         </div>
-
+        
         <div class="footer">
-            <p><strong>跨境新闻日报 - 5 维度增强版</strong></p>
-            <p>报告生成时间：2026-03-19 02:58 UTC</p>
-            <p style="margin-top: 15px; opacity: 0.8; font-size: 0.9em;">
-                在线阅读：<a href="https://zxy114.github.io/crossborder-daily/crossborder-daily-2026-03-19.html" style="color: #3498db;">https://zxy114.github.io/crossborder-daily/crossborder-daily-2026-03-19.html</a>
-            </p>
+            <p>📝 <strong>说明</strong></p>
+            <p><strong>已验证新闻：</strong> 2 家或以上独立媒体来源 | <strong>单方报道：</strong> 仅单一媒体来源，需进一步核实</p>
+            <p style="margin-top: 10px;">本报告由 AI 自动收集整理，仅供参考，不构成投资建议</p>
+            <p style="margin-top: 8px; opacity: 0.7;">生成时间：2026-03-19 01:22 UTC</p>
         </div>
     </div>
 </body>
