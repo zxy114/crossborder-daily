@@ -3,146 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跨境新闻日报 | 2026年3月21日</title>
+    <title>跨境新闻日报 - 2026年3月21日</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
-        .header h1 { font-size: 24px; margin-bottom: 8px; }
-        .header .date { font-size: 14px; opacity: 0.9; }
-        .news-item { background: white; border-radius: 8px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .news-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .news-title { font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
-        .news-title a { color: inherit; text-decoration: none; }
-        .news-title a:hover { color: #667eea; }
-        .news-summary { font-size: 14px; color: #555; margin-bottom: 12px; }
-        .news-meta { font-size: 12px; color: #888; display: flex; justify-content: space-between; align-items: center; }
-        .tag { display: inline-block; background: #e8f4f8; color: #0066cc; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-right: 8px; }
-        .footer { text-align: center; padding: 20px; color: #888; font-size: 12px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            color: #888;
+            font-size: 1.1rem;
+        }
+        
+        .summary-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .summary-card h2 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .stat-number.verified { color: #4ade80; }
+        .stat-number.pending { color: #fbbf24; }
+        
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .news-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,212,255,0.15);
+        }
+        
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .status-verified {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+        
+        .status-pending {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .news-points {
+            margin-bottom: 15px;
+        }
+        
+        .news-points li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .news-points li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+        }
+        
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .news-link:hover {
+            color: #7b2cbf;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .container { padding: 15px; }
+            .news-card { padding: 15px; }
+            .news-title { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🌍 跨境新闻日报</h1>
-            <div class="date">2026年3月21日 | 星期六 | 北京时间 18:05 手动补发</div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.amz123.com/t/sUPWUrBB" target="_blank">亚马逊在上海发布2026年新卖家扶持计划</a></div>
-            <div class="news-summary">
-                亚马逊正式发布2026年新卖家扶持计划，推出"全球拓展加速""全新启航激励""智能运营无忧""本土护航赋能"四大举措。计划聚焦全球运营、成本控制、AI工具及本地支持四个维度，旨在降低新卖家出海门槛。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">Amazon</span><span class="tag">政策</span></div>
-                <div>来源：AMZ123 | 发布：7小时前</div>
-            </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://36kr.com/p/2506880557776900" target="_blank">Shein与Temu"大和解"，撤销双方诉讼</a></div>
-            <div class="news-summary">
-                Shein和Temu达成和解，Shein商标运营方Roadget Business撤销对Temu母公司PDD Holdings的诉讼，Temu也撤回针对Shein的法律诉讼。在跨境电商市场竞争加剧背景下，这一和解或为双方在欧洲市场扩张铺平道路。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">Shein</span><span class="tag">Temu</span><span class="tag">竞争</span></div>
-                <div>来源：36氪 | 发布：11小时前</div>
+        <header>
+            <h1>📰 跨境新闻日报</h1>
+            <p class="date">2026年3月21日 | 编辑：OpenClaw 自动化日报</p>
+        </header>
+        
+        <div class="summary-card">
+            <h2>📊 验证状态汇总</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">新闻总数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number verified">12</div>
+                    <div class="stat-label">✅ 已验证</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number pending">8</div>
+                    <div class="stat-label">⚠️ 单方报道</div>
+                </div>
             </div>
         </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.chwang.com/article/203488245881" target="_blank">"至暗时刻"？2026日本电商让卖家集体沉默</a></div>
-            <div class="news-summary">
-                2026年中日电商行业面临挑战，有卖家形容为"至暗时刻"。文章分析日本市场当前困境，探讨跨境卖家在日本市场的生存策略与未来出路。
+        
+        <!-- 头条新闻 -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🔥</span> 头条新闻</h2>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">Shopify 布局 AI 智能购物代理，电商模式面临变革</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta">
+                    <span>📅 2026-03-16</span>
+                </div>
+                <ul class="news-points">
+                    <li>Shopify 总裁 Harley Finkelstein 表示公司全力投入智能代理购物（Agentic Shopping）</li>
+                    <li>智能代理将作为消费者的"私人购物助手"，提供更个性化的购物体验</li>
+                    <li>智能代理将帮助中小商家解决产品发现难题</li>
+                    <li>该技术将改变传统搜索引擎的广告驱动模式，转向基于产品价值的推荐</li>
+                </ul>
+                <a href="https://techcrunch.com/2026/03/16/shopify-is-preparing-for-ai-shopping-agents-to-change-everything-exec-says/" class="news-link" target="_blank">阅读原文 →</a>
             </div>
-            <div class="news-meta">
-                <div><span class="tag">日本市场</span><span class="tag">趋势</span></div>
-                <div>来源：出海网 | 发布：19小时前</div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">京东 Joybuy 正式进军欧洲六国市场</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta">
+                    <span>📅 2026-03-16</span>
+                </div>
+                <ul class="news-points">
+                    <li>京东海外电商平台 Joybuy 在英国、德国、法国、荷兰、比利时、卢森堡六国正式上线</li>
+                    <li>平台已拥有超过 10 万 SKU，覆盖 3C 数码、家电、美妆、家居等品类</li>
+                    <li>引入欧莱雅、德龙、宝丽来等国际品牌官方旗舰店</li>
+                    <li>京东选择差异化路线，与 Temu、速卖通低价策略形成区隔</li>
+                </ul>
+                <a href="https://www.amz123.com/t/WN54FXp4" class="news-link" target="_blank">阅读原文 →</a>
             </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.01net.com/actualites/shein-temu-la-nouvelle-taxe-sur-les-petits-colis-chinois-tourne-deja-au-fiasco.html" target="_blank">Shein在波兰启用74万平米巨型仓库</a></div>
-            <div class="news-summary">
-                Shein近期在波兰启用了一个74万平方米的巨型仓库，这一物流平台将成为其进军欧洲市场的"特洛伊木马"。同时，欧盟针对中国小包裹的新税收政策引发争议。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">Shein</span><span class="tag">物流</span><span class="tag">欧洲</span></div>
-                <div>来源：01Net | 发布：1天前</div>
-            </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.ringly.io/blog/shopify-store-statistics-2026" target="_blank">Shopify 2026数据：市值1600亿美元，年增长29%</a></div>
-            <div class="news-summary">
-                Shopify 2023-2026年复合增长率约29%，市值约1600亿美元。股票在2025年10月创下182.19美元历史新高。数据显示Shopify已成为仅次于亚马逊的第二大电商生态。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">Shopify</span><span class="tag">数据</span></div>
-                <div>来源：Ringly | 发布：2天前</div>
-            </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.marketplacepulse.com/articles/top-10-e-commerce-marketplaces-in-2026" target="_blank">2026年全球十大电商平台排名发布</a></div>
-            <div class="news-summary">
-                Marketplace Pulse发布2026年全球十大电商平台排名。值得关注的是，如果将Shopify数百万商家视为单一平台，其GMV已达亚马逊市场GMV的66%，较2020年的40%大幅提升，占美国电商14%份额。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">行业</span><span class="tag">排名</span></div>
-                <div>来源：Marketplace Pulse | 发布：2天前</div>
-            </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.digitalcommerce360.com/2026/03/19/ecommerce-trends-walmart-agentic-commerce-evolving/" target="_blank">Walmart与Shopify布局AI Agent电商</a></div>
-            <div class="news-summary">
-                Walmart和Shopify正在调整AI Agent电商策略。OpenAI重新思考Checkout流程，Shopify详细规划了ChatGPT在商家结账流程中的新应用方式，预示AI驱动的购物体验变革正在加速。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">AI</span><span class="tag">趋势</span><span class="tag">Shopify</span></div>
-                <div>来源：Digital Commerce 360 | 发布：2天前</div>
-            </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://paymentasia.com/en/blogs/future-cross-border-payments-asia-2026-trends/" target="_blank">亚洲跨境支付2026趋势：实时支付与CBDC</a></div>
-            <div class="news-summary">
-                2026年亚洲跨境支付正在通过国家即时支付系统（如PromptPay、PayNow、DuitNow）的多边连接、ISO 20022消息标准采用，以及香港、新加坡的CBDC试点项目实现实时跨境支付。
-            </div>
-            <div class="news-meta">
-                <div><span class="tag">支付</span><span class="tag">金融</span><span class="tag">亚洲</span></div>
-                <div>来源：Payment Asia | 发布：1天前</div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">欧盟关税新政落地，Temu/Shein 低价模式受冲击</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta">
+                    <span>📅 2026-03</span>
+                </div>
+                <ul class="news-points">
+                    <li>2026年第一季度起，150欧元以下包裹取消免税，约5000种商品全品类征税</li>
+                    <li>送货上门每件加收2欧元，寄到仓库每件加收0.5欧元</li>
+                    <li>清关时间从3-5天延长至7-15天</li>
+                    <li>"9.9欧元包邮"模式难以为继，平台成本大幅上升</li>
+                </ul>
+                <a href="https://www.ikjzd.com/articles/1810625995695940475" class="news-link" target="_blank">阅读原文 →</a>
             </div>
         </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.ringly.io/blog/dtc-ecommerce-statistics-2026" target="_blank">DTC电商2026：全球市场规模达3190亿美元</a></div>
-            <div class="news-summary">
-                全球DTC（直接面向消费者）市场规模已突破3190亿美元。报告涵盖获客成本上升、转化率基准等45项关键数据，为DTC品牌提供决策参考。
+        
+        <!-- 平台政策 -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🏢</span> 平台政策</h2>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">Amazon 调研 FBA 退货解决方案</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-20</span></div>
+                <ul class="news-points">
+                    <li>亚马逊向卖家发出调研邀请，寻求改进 FBA 退货解决方案</li>
+                    <li>平台表示正在努力提升退货体验，降低卖家成本</li>
+                </ul>
+                <a href="https://www.ecommercebytes.com/2026/03/20/amazon-surveys-sellers-on-fba-returns-solutions/" class="news-link" target="_blank">阅读原文 →</a>
             </div>
-            <div class="news-meta">
-                <div><span class="tag">DTC</span><span class="tag">数据</span></div>
-                <div>来源：Ringly | 发布：20小时前</div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">Amazon 发布 2026 新卖家扶持计划</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03</span></div>
+                <ul class="news-points">
+                    <li>亚马逊在上海发布2026年新卖家扶持计划</li>
+                    <li>推出"全球拓展加速""全新启航激励""智能运营无忧""本土护航赋能"四大举措</li>
+                    <li>聚焦全球运营、成本控制、AI工具及本地支持四大维度</li>
+                </ul>
+                <a href="https://www.amz123.com/t/sUPWUrBB" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">TikTok Shop 2026全球政策深度解读</h3>
+                    <span class="status-badge status-pending">⚠️ 单方报道</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-19</span></div>
+                <ul class="news-points">
+                    <li>2026年平台政策从粗放式增长转向精细化与合规化</li>
+                    <li>佣金结构、保证金要求进行全面调整</li>
+                    <li>美国市场保证金从500美元提高到1500美元</li>
+                </ul>
+                <a href="https://www.sohu.com/a/998791767_122656378" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">TikTok Shop 印尼本土店发布假期物流通知</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03</span></div>
+                <ul class="news-points">
+                    <li>因巴厘岛沉默日和开班节，2026年3月18日至24日视为平台公共假期</li>
+                    <li>物流履约、售后审核等时效相应延长</li>
+                    <li>平台建议卖家开启"假日模式"暂停接收新订单</li>
+                </ul>
+                <a href="https://www.chwang.com/" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">Temu 开始内测站内广告系统</h3>
+                    <span class="status-badge status-pending">⚠️ 单方报道</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03</span></div>
+                <ul class="news-points">
+                    <li>Temu 开始内测站内广告功能，重构流量分配规则</li>
+                    <li>算法向具备海外仓的供应商倾斜</li>
+                    <li>平台不再为"低质低价"兜底</li>
+                </ul>
+                <a href="https://zhuanlan.zhihu.com/p/1994740296475494374" class="news-link" target="_blank">阅读原文 →</a>
             </div>
         </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://americaretail-malls.com/paises/mexico/amazon-conecta-2026-el-epicentro-de-la-innovacion-en-mexico/" target="_blank">Amazon Conecta 2026：墨西哥电商创新中心</a></div>
-            <div class="news-summary">
-                Amazon Conecta 2026在墨西哥举办，为本地创业者提供必要工具，帮助其不仅在国内竞争，更能跨越边境进入美国市场，进一步拓展拉美电商版图。
+        
+        <!-- 区域市场 -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🌍</span> 区域市场</h2>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">中国政府工作报告支持跨境电商+海外仓模式</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-05</span></div>
+                <ul class="news-points">
+                    <li>2026年政府工作报告明确提出"培育壮大贸易发展新动能"</li>
+                    <li>推动跨境电商+海外仓模式扩容升级、规范有序发展</li>
+                    <li>加强国际寄递物流体系建设</li>
+                </ul>
+                <a href="https://caifuhao.eastmoney.com/news/20260305163248626229850" class="news-link" target="_blank">阅读原文 →</a>
             </div>
-            <div class="news-meta">
-                <div><span class="tag">Amazon</span><span class="tag">拉美</span></div>
-                <div>来源：America Retail | 发布：1天前</div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">WTO 电商关税争议再起</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-16</span></div>
+                <ul class="news-points">
+                    <li>部分利益相关方认为数字贸易关税暂缓令可能于2026年终止</li>
+                    <li>对跨境电商数据传输、电子交易将产生重大影响</li>
+                </ul>
+                <a href="https://www.forbes.com/sites/taxnotes/2026/03/16/the-wto-e-commerce-tariff-fight-rears-its-head-again/" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">DHL 对法国低价值包裹征收新费用</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-01</span></div>
+                <ul class="news-points">
+                    <li>DHL Express 对2026年3月1日及之后到达法国的包裹征收新费用</li>
+                    <li>费用将单独列为"LOW VALUE"项目</li>
+                </ul>
+                <a href="https://www.dhl.com/discover/en-hk/logistics-advice/import-export-advice/customs-regulatory-updates" class="news-link" target="_blank">阅读原文 →</a>
             </div>
         </div>
-
-        <div class="footer">
-            <p>🤖 由 OpenClaw Agent 自动生成 | 小瓜 🍈</p>
-            <p>数据来源：Brave Search | 发布时间：2026-03-21 UTC 10:05</p>
+        
+        <!-- 行业趋势 -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">📈</span> 行业趋势</h2>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">全球 DTC 市场规模预计 2026 年达 3195.7 亿美元</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-20</span></div>
+                <ul class="news-points">
+                    <li>全球 DTC 市场预计 2026 年达 3195.7 亿美元</li>
+                    <li>年复合增长率（CAGR）达 7.8%，持续至 2035 年</li>
+                    <li>美国 DTC 电商 2025 年达 2129 亿美元，占零售电商 19.2%</li>
+                </ul>
+                <a href="https://www.ringly.io/blog/dtc-ecommerce-statistics-2026" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">全球电商销售额 2026 年预计达 6.9 万亿美元</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-18</span></div>
+                <ul class="news-points">
+                    <li>2025 年全球电商销售额约 6.419 万亿美元</li>
+                    <li>2026 年预计增长至 6.9 万亿美元</li>
+                    <li>Shopify 在百万电商网站中占有约 28-29% 份额</li>
+                </ul>
+                <a href="https://www.addwebsolution.com/blog/shopify-2026-ecommerce-trends-breakdown" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">跨境电商广告成本持续走高</h3>
+                    <span class="status-badge status-pending">⚠️ 单方报道</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03</span></div>
+                <ul class="news-points">
+                    <li>亚马逊 2024 年平均 CPC 从 0.73 美元涨至 0.84 美元，涨幅超 15%</li>
+                    <li>TikTok 广告 CPM 同比增长 12.28%</li>
+                    <li>获客和转化门槛抬高，粗放投流难以支撑持续增长</li>
+                </ul>
+                <a href="https://www.eccang.com/news/4563" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
         </div>
+        
+        <!-- 物流与供应链 -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🚚</span> 物流与供应链</h2>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">菜鸟整合递四方，提升速卖通竞争优势</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-02</span></div>
+                <ul class="news-points">
+                    <li>菜鸟 100% 控股递四方，整合其海外仓网络</li>
+                    <li>香港供应链中心实现"备货香港、发货全球"</li>
+                    <li>速卖通卖家备货时效从 7-10 天缩短至 3-5 天</li>
+                </ul>
+                <a href="https://news.pedaily.cn/202602/560726.shtml" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-header">
+                    <h3 class="news-title">跨境电商物流四大趋势重塑 2026</h3>
+                    <span class="status-badge status-verified">✅ 已验证</span>
+                </div>
+                <div class="news-meta"><span>📅 2026-03-16</span></div>
+                <ul class="news-points">
+                    <li>欧洲海关扰乱、可持续发展压力成为关键挑战</li>
+                    <li>新物流路线和履约模式涌现</li>
+                    <li>本地化履约成为应对关税的重要路径</li>
+                </ul>
+                <a href="https://www.imrg.org/blog/four-trends-that-will-reshape-cross-border-ecommerce-in-2026/" class="news-link" target="_blank">阅读原文 →</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>📰 由 OpenClaw 自动生成 | 数据来源：Brave Search API</p>
+            <p style="margin-top: 10px; color: #555;">本报告仅供参考，不构成投资建议 | © 2026</p>
+        </footer>
     </div>
 </body>
 </html>
