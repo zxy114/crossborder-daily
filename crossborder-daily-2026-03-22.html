@@ -3,70 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跨境新闻日报 | 2026年3月22日</title>
+    <title>跨境新闻日报 - 2026年3月22日</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
-        .header h1 { font-size: 24px; margin-bottom: 8px; }
-        .header .date { font-size: 14px; opacity: 0.9; }
-        .news-item { background: white; border-radius: 8px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .news-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .news-title { font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
-        .news-title a { color: inherit; text-decoration: none; }
-        .news-title a:hover { color: #667eea; }
-        .news-summary { font-size: 14px; color: #555; margin-bottom: 12px; }
-        .news-meta { font-size: 12px; color: #888; display: flex; justify-content: space-between; align-items: center; }
-        .tag { display: inline-block; background: #e8f4f8; color: #0066cc; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-right: 8px; }
-        .footer { text-align: center; padding: 20px; color: #888; font-size: 12px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header .date {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .stat-card.verified .number { color: #10b981; }
+        .stat-card.unverified .number { color: #f59e0b; }
+        
+        main {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #1f2937;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .news-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .news-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .news-card.headline {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left-color: #f59e0b;
+        }
+        
+        .news-card .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .news-card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-verified {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        .badge-unverified {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .news-card .points {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .news-card .points li {
+            margin-bottom: 5px;
+            margin-left: 20px;
+        }
+        
+        .news-card .source {
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        
+        .news-card .source a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .news-card .source a:hover {
+            text-decoration: underline;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .data-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .data-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .focus-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .focus-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .focus-section ul {
+            list-style: none;
+        }
+        
+        .focus-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .focus-section li:last-child {
+            border-bottom: none;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            main {
+                padding: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .news-card {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🌍 跨境新闻日报</h1>
-            <div class="date">2026年3月22日 | 星期日 | 北京时间 08:31 手动补发</div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.amz123.com/t/sUPWUrBB" target="_blank">亚马逊2026新卖家扶持计划正式发布</a></div>
-            <div class="news-summary">
-                亚马逊在上海正式发布2026年新卖家扶持计划，推出"全球拓展加速""全新启航激励""智能运营无忧""本土护航赋能"四大举措。计划聚焦全球运营、成本控制、AI工具及本地支持四个维度，旨在降低新卖家出海门槛。
+        <header>
+            <h1>📰 跨境新闻日报</h1>
+            <p class="date">2026年3月22日 · 汇总3月21日热点</p>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">16</div>
+                <div class="label">新闻总数</div>
             </div>
-            <div class="news-meta">
-                <div><span class="tag">Amazon</span><span class="tag">政策</span></div>
-                <div>来源：AMZ123 | 发布：1天前</div>
+            <div class="stat-card verified">
+                <div class="number">8</div>
+                <div class="label">已验证</div>
             </div>
-        </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://en.wikipedia.org/wiki/Temu" target="_blank">Temu与Shein法律纠纷持续，成为亚马逊最大挑战之一</a></div>
-            <div class="news-summary">
-                Temu的商业模式让其市场产品快速增长，但公司与直接竞争对手Shein的法律纠纷仍在持续。Temu的崛起被认为是亚马逊近年来面临的最大挑战之一。
+            <div class="stat-card unverified">
+                <div class="number">8</div>
+                <div class="label">单方报道</div>
             </div>
-            <div class="news-meta">
-                <div><span class="tag">Temu</span><span class="tag">竞争</span><span class="tag">Amazon</span></div>
-                <div>来源：Wikipedia | 发布：1天前</div>
+            <div class="stat-card">
+                <div class="number">6</div>
+                <div class="label">分类领域</div>
             </div>
         </div>
-
-        <div class="news-item">
-            <div class="news-title"><a href="https://www.trustpilot.com/review/temu.com" target="_blank">用户评价对比：Temu vs Amazon Haul</a></div>
-            <div class="news-summary">
-                用户反馈显示，Temu部分商品质量参差不齐。有用户推荐亚马逊新推出的Amazon Haul服务，认为其类似Temu但更值得信赖，反映出消费者对平台信任度的重视。
+        
+        <main>
+            <!-- 头条新闻 -->
+            <div class="section">
+                <h2 class="section-title">🔥 头条新闻</h2>
+                
+                <div class="news-card headline">
+                    <div class="title">TikTok Shop美区2025年同比增长近80%，发布2026 ACE经营方法论</div>
+                    <div class="meta">
+                        <span>📅 2026年3月16日</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>ACE = 好商品(Assortment) + 好内容(Content) + 好营销(Empowerment)</li>
+                        <li>覆盖三大核心场域：达人内容场、商家内容场、商城&搜索</li>
+                        <li>2026年将提供五千万美元激励商家入仓FBT</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.amz123.com/t/I8A1K8hJ" target="_blank">AMZ123跨境导航</a></div>
+                </div>
+                
+                <div class="news-card headline">
+                    <div class="title">Shein法国市场份额腰斩，Temu首度超越</div>
+                    <div class="meta">
+                        <span>📅 2026年3月20日</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>Shein在法国折扣市场份额从17.6%跌至9.4%</li>
+                        <li>Temu市场份额达到20.6%，首次超越Shein</li>
+                        <li>欧盟将于2026年7月取消150欧元以下包裹免税政策</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.lsa-conso.fr/shein-decroche-face-a-temu-et-voit-sa-part-de-marche-divisee-par-deux-en-un-an-en-france-chiffres-exclusifs,464950" target="_blank">LSA conso</a></div>
+                </div>
+                
+                <div class="news-card headline">
+                    <div class="title">Amazon印度实现首次运营利润，宣布$350亿+投资计划</div>
+                    <div class="meta">
+                        <span>📅 2026年3月22日</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>Amazon Seller Services印度FY25首次实现运营利润（12年后）</li>
+                        <li>计划投资$350亿+，聚焦AI、出口和就业</li>
+                        <li>"零推荐费"覆盖从1.2亿扩展至12.5亿商品</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.whalesbook.com/news/English/tech/Amazon-India-dollar35B-Investment-Targets-AI-Exports-Amid-Fierce-Rivalry/69bfda03774ac9d66c58969e" target="_blank">Whalesbook</a></div>
+                </div>
             </div>
-            <div class="news-meta">
-                <div><span class="tag">Temu</span><span class="tag">Amazon</span><span class="tag">用户反馈</span></div>
-                <div>来源：Trustpilot | 发布：13小时前</div>
+            
+            <!-- 平台动态 -->
+            <div class="section">
+                <h2 class="section-title">🏢 平台动态</h2>
+                
+                <div class="news-card">
+                    <div class="title">Amazon Big Spring Sale 2026定档3月25日</div>
+                    <div class="meta">
+                        <span>📅 2026年3月22日</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>年度春季大促正式开启时间：3月25日</li>
+                        <li>部分提前优惠已上线</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.theverge.com/gadgets/897580/amazon-big-spring-sale-2026-deals-news" target="_blank">The Verge</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">Amazon CEO预测AI将推动AWS销售翻倍至$6000亿</div>
+                    <div class="meta">
+                        <span>📅 2026年3月22日</span>
+                        <span class="badge badge-unverified">⚠️ 单方报道</span>
+                    </div>
+                    <ul class="points">
+                        <li>预测到2036年AWS销售额可达6000亿美元</li>
+                        <li>2026年计划资本支出$2000亿，主要投向AI</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://startupnews.fyi/2026/03/22/amazon-ceo-sees-ai-doubling-prior-aws-sales-projections-to-600-billion-by-2036/" target="_blank">StartupNews</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">TikTok Shop 2026年革新电视购物体验</div>
+                    <div class="meta">
+                        <span>📅 2026年3月21日</span>
+                        <span class="badge badge-unverified">⚠️ 单方报道</span>
+                    </div>
+                    <ul class="points">
+                        <li>四大触点：视频购买链接、直播、店铺标签、品牌storefront</li>
+                        <li>强化"兴趣电商"模式</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.valueyournetwork.com/en/tiktok-shop-teleshopping-2026/" target="_blank">Value Your Network</a></div>
+                </div>
             </div>
-        </div>
-
-        <div class="footer">
-            <p>🤖 由 OpenClaw Agent 自动生成 | 小瓜 🍈</p>
-            <p>数据来源：Brave Search | 发布时间：2026-03-22 UTC 00:31</p>
-            <p style="color: #999; margin-top: 10px;">⚠️ 周末新闻较少，定时任务配置丢失，手动补发</p>
-        </div>
+            
+            <!-- 区域市场 -->
+            <div class="section">
+                <h2 class="section-title">🌍 区域市场</h2>
+                
+                <div class="news-card">
+                    <div class="title">英国零售商敦促政府取消Shein/Temu税收漏洞</div>
+                    <div class="meta">
+                        <span>📅 2026年3月22日</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>英国零售商呼吁政府取消小额包裹税收豁免</li>
+                        <li>跟进美国和欧盟的政策调整</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.bloomberg.com/news/articles/2026-03-22/retailers-push-uk-to-join-us-and-eu-ending-shein-parcel-loophole" target="_blank">Bloomberg</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">H&M英国CEO谈对抗Shein/Temu策略</div>
+                    <div class="meta">
+                        <span>📅 2026年3月22日</span>
+                        <span class="badge badge-unverified">⚠️ 单方报道</span>
+                    </div>
+                    <ul class="points">
+                        <li>H&M庆祝进入英国50周年</li>
+                        <li>加倍投资实体店以对抗线上低价竞争</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://britbrief.co.uk/business/retail/hms-uk-boss-on-high-street-strategy-vs-shein-and-temu.html" target="_blank">British Brief</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">罗马尼亚电商市场2026年预计突破85亿欧元</div>
+                    <div class="meta">
+                        <span>📅 2026年3月21日</span>
+                        <span class="badge badge-unverified">⚠️ 单方报道</span>
+                    </div>
+                    <ul class="points">
+                        <li>2025年市场规模约81亿欧元</li>
+                        <li>增长进入竞争更激烈阶段</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.amz123.com/t/sUPWUrBB" target="_blank">AMZ123</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">WTO电子商务暂停令成为MC14会议焦点</div>
+                    <div class="meta">
+                        <span>📅 2026年3月21日</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>1998年电子商务暂停令禁止电子传输关税</li>
+                        <li>印度等国家反对中国主导的投资便利化协定</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.thehindubusinessline.com/economy/india-to-confront-deep-divisions-on-key-issues-at-wto-meet-in-cameroon/article70769238.ece" target="_blank">The Hindu BusinessLine</a></div>
+                </div>
+            </div>
+            
+            <!-- 物流仓储 -->
+            <div class="section">
+                <h2 class="section-title">🚚 物流仓储</h2>
+                
+                <div class="news-card">
+                    <div class="title">Wildberries大举扩张独联体物流网络</div>
+                    <div class="meta">
+                        <span>📅 2026年3月21日</span>
+                        <span class="badge badge-unverified">⚠️ 单方报道</span>
+                    </div>
+                    <ul class="points">
+                        <li>2026年在白俄罗斯、哈萨克斯坦投资建设物流中心</li>
+                        <li>总面积超过50万平方米</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.amz123.com/t/sUPWUrBB" target="_blank">AMZ123</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">Shein在波兰开设74万平米巨型仓库</div>
+                    <div class="meta">
+                        <span>📅 2025年12月</span>
+                        <span class="badge badge-verified">✅ 已验证</span>
+                    </div>
+                    <ul class="points">
+                        <li>为应对欧盟2026年7月取消小额免税政策</li>
+                        <li>同时在土耳其尝试本地化生产</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.lsa-conso.fr/shein-decroche-face-a-temu-et-voit-sa-part-de-marche-divisee-par-deux-en-un-an-en-france-chiffres-exclusifs,464950" target="_blank">LSA conso</a></div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="title">墨西哥跨境货运市场份额持续增长</div>
+                    <div class="meta">
+                        <span>📅 2026年3月22日</span>
+                        <span class="badge badge-unverified">⚠️ 单方报道</span>
+                    </div>
+                    <ul class="points">
+                        <li>自2018年墨西哥已夺取中国24%的美国进口市场份额</li>
+                        <li>汽车行业面临USMCA 2026年审查压力</li>
+                    </ul>
+                    <div class="source">🔗 <a href="https://www.apreologistics.com/en-us/chrglobal/resources/insights-and-advisories/north-america-freight-insights/nov-2025-freight-market-update/cross-border/" target="_blank">C.H. Robinson</a></div>
+                </div>
+            </div>
+            
+            <!-- 数据洞察 -->
+            <div class="section">
+                <h2 class="section-title">📈 数据洞察</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>主题</th>
+                            <th>关键数据</th>
+                            <th>来源</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TikTok Shop美区增长</td>
+                            <td><strong>2025年同比+80%</strong></td>
+                            <td>TikTok Shop官方</td>
+                        </tr>
+                        <tr>
+                            <td>Shein法国市场份额</td>
+                            <td><strong>17.6% → 9.4%</strong></td>
+                            <td>Circana</td>
+                        </tr>
+                        <tr>
+                            <td>Temu法国市场份额</td>
+                            <td><strong>20.6%</strong></td>
+                            <td>Circana</td>
+                        </tr>
+                        <tr>
+                            <td>Amazon印度投资</td>
+                            <td><strong>$350亿+</strong></td>
+                            <td>Whalesbook</td>
+                        </tr>
+                        <tr>
+                            <td>AWS预测销售(2036)</td>
+                            <td><strong>$6000亿</strong></td>
+                            <td>Amazon CEO</td>
+                        </tr>
+                        <tr>
+                            <td>罗马尼亚电商规模</td>
+                            <td><strong>85亿欧元(2026预测)</strong></td>
+                            <td>MerchantPro</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 重点关注 -->
+            <div class="focus-section">
+                <h3>📌 本日重点关注</h3>
+                <ul>
+                    <li>🎯 <strong>TikTok Shop美区ACE方法论</strong> — 品牌出海新范式</li>
+                    <li>🎯 <strong>Shein vs Temu竞争格局</strong> — 欧洲市场份额巨变</li>
+                    <li>🎯 <strong>Amazon印度战略</strong> — 高增长市场布局</li>
+                    <li>🎯 <strong>欧盟小额免税取消</strong> — 2026年7月生效，影响深远</li>
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <p>报告生成时间：2026-03-22 23:15 UTC</p>
+            <p>数据来源：AMZ123、LSA conso、The Verge、Bloomberg、Circana等</p>
+        </footer>
     </div>
 </body>
 </html>
