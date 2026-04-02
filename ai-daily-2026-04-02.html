@@ -2,59 +2,178 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>AI 新闻日报 - 2026年4月2日</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI新闻日报 - 2026年4月2日</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #8e44ad; border-bottom: 2px solid #9b59b6; padding-bottom: 10px; }
-        .news-item { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
-        .news-title { font-weight: bold; color: #8e44ad; margin-bottom: 8px; }
-        .news-source { color: #7f8c8d; font-size: 0.9em; }
-        .news-date { color: #95a5a6; font-size: 0.85em; }
-        .highlight { background: #ffeaa7; padding: 2px 5px; border-radius: 3px; }
-        a { color: #9b59b6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; color: white; padding: 40px 20px; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .card { background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .card-title { font-size: 1.3em; font-weight: 600; color: #1a1a1a; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85em; font-weight: 500; }
+        .badge-hot { background: #ff6b6b; color: white; }
+        .badge-trend { background: #4ecdc4; color: white; }
+        .badge-important { background: #a29bfe; color: white; }
+        .badge-release { background: #fdcb6e; color: #333; }
+        .content { color: #555; }
+        .news-item { border-bottom: 1px solid #eee; padding: 16px 0; }
+        .news-item:last-child { border-bottom: none; }
+        .news-title { font-weight: 600; color: #2c3e50; margin-bottom: 8px; font-size: 1.1em; }
+        .news-meta { display: flex; gap: 12px; font-size: 0.9em; color: #888; margin-bottom: 8px; }
+        .news-desc { color: #666; line-height: 1.6; }
+        .news-source { margin-top: 8px; font-size: 0.85em; color: #999; }
+        .news-source a { color: #667eea; text-decoration: none; }
+        .footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        .section-title { font-size: 1.8em; color: white; margin: 30px 0 20px 0; padding-left: 10px; border-left: 4px solid #00d2d3; }
+        .verification { display: inline-block; margin-left: 8px; }
+        .verified { color: #27ae60; }
+        .unverified { color: #f39c12; }
+        .emoji { font-size: 1.2em; margin-right: 8px; }
     </style>
 </head>
 <body>
-    <h1>🤖 AI 新闻日报 - 2026年4月2日</h1>
-    <p style="color: #7f8c8d;">北京时间 14:21 发布 | 共 5 条新闻</p>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI新闻日报</h1>
+            <p>2026年4月2日 · 第92期</p>
+        </div>
 
-    <div class="news-item">
-        <div class="news-title">🔥 Anthropic Claude Code 源代码泄露（51.2 万行）</div>
-        <p><span class="highlight">重大事件</span>：Anthropic 因 npm 包打包失误，意外泄露 Claude Code 约 51.2 万行源代码，包含 4756 个源文件、40 余个工具模块及多项未发布功能。公司回应称是"人为失误"，未涉及客户数据。</p>
-        <div class="news-source">来源：<a href="https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent">Bloomberg</a> | <a href="https://arstechnica.com/ai/2026/04/heres-what-that-claude-code-source-leak-reveals-about-anthropics-plans/">Ars Technica</a></div>
-        <div class="news-date">发布：18 小时前</div>
+        <div class="section-title">🔥 今日头条</div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Claude Code源码泄露事件</div>
+                <span class="badge badge-hot">热点</span>
+            </div>
+            <div class="content">
+                <div class="news-item">
+                    <div class="news-title">Anthropic Claude Code完整源码泄露</div>
+                    <div class="news-meta">
+                        <span>📅 2026-03-31</span>
+                        <span>🏢 Anthropic</span>
+                        <span class="verification">✅ 已验证</span>
+                    </div>
+                    <div class="news-desc">
+                        Anthropic在发布Claude Code的npm包时因人为失误包含源映射文件，导致近2000个TypeScript文件、超过51.2万行代码泄露。代码包括CLI实现、Agent架构、未发布功能、内部工具，但未涉及模型权重或用户数据。官方确认这是发布包装错误而非安全入侵。
+                    </div>
+                    <div class="news-source">来源：Bloomberg、Ars Technica、少数派</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">泄露揭示未来功能：Kairos后台Agent + Buddy虚拟宠物</div>
+                    <div class="news-meta">
+                        <span>📅 2026-04-01</span>
+                        <span>🔍 代码分析</span>
+                        <span class="verification">✅ 已验证</span>
+                    </div>
+                    <div class="news-desc">
+                        源码泄露揭示了多个未发布功能：Kairos是持久后台守护进程，即使终端关闭也能运行，使用周期性"tick"提示检查是否需要新操作；AutoDream系统在用户空闲时执行"梦境"反思，整理记忆文件；Buddy是Tamagotchi风格ASCII虚拟宠物，有18种物种和DEBUGGING、PATIENCE、CHAOS等性格属性，代码中标注"friend-2026-401"暗示是愚人节彩蛋。
+                    </div>
+                    <div class="news-source">来源：Ars Technica、Futurism、Moneycontrol</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">🚀 模型发布</div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">AI模型新动态</div>
+                <span class="badge badge-release">发布</span>
+            </div>
+            <div class="content">
+                <div class="news-item">
+                    <div class="news-title">阿里千问Qwen3.5-Omni + Qwen3.6 Plus发布</div>
+                    <div class="news-meta">
+                        <span>📅 2026-03-30</span>
+                        <span>🏢 阿里巴巴</span>
+                        <span class="verification">✅ 已验证</span>
+                    </div>
+                    <div class="news-desc">
+                        Qwen3.5-Omni在音视频理解、识别、交互等215项任务中取得SOTA，超越Gemini-3.1 Pro，成为全球最强全模态大模型之一，支持256K超长上下文与113种语言识别，可处理10小时音频或1小时视频。Qwen3.6 Plus免费预览版上线OpenRouter，提供比3.5更强的推理能力和更可靠的Agent行为。
+                    </div>
+                    <div class="news-source">来源：新浪新闻、IT之家、MarkTechPost</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">智谱AI发布GLM-5.1模型</div>
+                    <div class="news-meta">
+                        <span>📅 2026-03-27</span>
+                        <span>🏢 智谱AI</span>
+                        <span class="verification">✅ 已验证</span>
+                    </div>
+                    <div class="news-desc">
+                        智谱AI发布GLM-5.1模型，所有Coding Plan用户（Max、Pro和Lite）均可调用。GLM-5.1在编程能力、长序列执行、推理稳定性和部署效率方面进行针对性优化，实测首次超越Sonnet 4.5 Thinking模型。重点聚焦于代码生成与工程任务，支持Claude Code、OpenCode、Cline等主流Agent。
+                    </div>
+                    <div class="news-source">来源：IT之家、ITnews.vip、CSDN</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">Google发布Veo 3.1 Lite视频生成模型</div>
+                    <div class="news-meta">
+                        <span>📅 2026-03-31</span>
+                        <span>🏢 Google</span>
+                        <span class="verification">✅ 已验证</span>
+                    </div>
+                    <div class="news-desc">
+                        Google发布Veo 3.1 Lite，成本低于Veo 3.1 Fast的50%但保持相同速度，专为开发者设计，支持文本生成视频与图像生成视频，提供720p和1080p分辨率选项，兼容16:9纵向与9:16横向画幅。4月7日将下调Veo 3.1 Fast定价。这是在OpenAI关闭Sora后Google对视频生成市场的明确布局。
+                    </div>
+                    <div class="news-source">来源：Google Blog、9to5Google、MarkTechPost</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">💰 融资动态</div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">AI融资新纪录</div>
+                <span class="badge badge-important">重要</span>
+            </div>
+            <div class="content">
+                <div class="news-item">
+                    <div class="news-title">OpenAI完成1220亿美元融资，估值8520亿美元</div>
+                    <div class="news-meta">
+                        <span>📅 2026-03-31</span>
+                        <span>🏢 OpenAI</span>
+                        <span class="verification">✅ 已验证</span>
+                    </div>
+                    <div class="news-desc">
+                        OpenAI完成史上最大私人融资轮，筹集1220亿美元，投后估值达8520亿美元，成为有史以来估值最高的未上市科技公司。软银与Andreessen Horowitz领投，英伟达、微软、亚马逊参投，其中30亿美元来自银行渠道的个人投资者。OpenAI月收入达20亿美元，40%源自企业业务，周活跃用户超9亿，订阅用户超5000万，广告试点项目不足6周贡献逾1亿美元收入。
+                    </div>
+                    <div class="news-source">来源：The Guardian、Bloomberg、TechCrunch、OpenAI官方</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">🔮 前沿探索</div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Claude Mythos模型</div>
+                <span class="badge badge-trend">前沿</span>
+            </div>
+            <div class="content">
+                <div class="news-item">
+                    <div class="news-title">Anthropic秘密测试Claude Mythos模型</div>
+                    <div class="news-meta">
+                        <span>📅 2026-03-26</span>
+                        <span>🏢 Anthropic</span>
+                        <span class="verification">⚠️ 单方报道</span>
+                    </div>
+                    <div class="news-desc">
+                        泄露的源码和草稿博客显示，Anthropic正在测试名为"Claude Mythos"的新模型，这是其现有系统的重大升级。公司认为该模型带来前所未有的网络安全风险，因为它允许Agent以极高的复杂性和精度独立工作，渗透企业、政府和市政系统。Capybara层级将位于Opus之上，成为Anthropic最大、最智能的AI模型层级。
+                    </div>
+                    <div class="news-source">来源：Fortune、Axios、Euronews、Mashable</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📧 汇报：小瓜 | 🕒 生成时间：2026-04-02 09:00 UTC</p>
+            <p>📋 数据来源：Brave Search、Bloomberg、Ars Technica、少数派等</p>
+        </div>
     </div>
-
-    <div class="news-item">
-        <div class="news-title">🚀 Claude Mythos 模型泄露，代号"卡皮巴拉"</div>
-        <p>泄露文件揭示 Anthropic 正在开发代号为 <span class="highlight">Mythos/Capybara</span> 的新模型，据称在编码、推理和网络安全测试中"大幅超越" Opus 4.6。但因网络安全风险，Anthropic 尚未公开发布。</p>
-        <div class="news-source">来源：<a href="https://36kr.com/p/3740796375679236">36氪</a> | <a href="https://36kr.com/p/3741969387241728">36氪</a></div>
-        <div class="news-date">发布：15 小时前</div>
-    </div>
-
-    <div class="news-item">
-        <div class="news-title">🔍 源码泄露揭示 Anthropic 未来计划</div>
-        <p>泄露源码显示 Anthropic 正在开发"常驻代理"(Always-on Agent)、"潜伏模式"(Undercover Mode) 以及虚拟助手 <span class="highlight">Buddy</span> 等功能，揭示了 AI 编码工具的演进方向。</p>
-        <div class="news-source">来源：<a href="https://arstechnica.com/ai/2026/04/heres-what-that-claude-code-source-leak-reveals-about-anthropics-plans/">Ars Technica</a></div>
-        <div class="news-date">发布：10 小时前</div>
-    </div>
-
-    <div class="news-item">
-        <div class="news-title">📊 2026 AI 工具价格对比：ChatGPT vs Claude vs Gemini</div>
-        <p>最新对比分析显示 Claude 在编码场景仍是首选，Sonnet 4.5 的 SWE-bench 得分 80.9% 领先 GPT-5.4。建议用户直接订阅 Plus 而非 Go 套餐，因 Go 使用较旧的 GPT-5.2 模型。</p>
-        <div class="news-source">来源：<a href="https://www.dgtsell.com/articles/ai-tools-pricing-comparison-2026">DGTSell</a></div>
-        <div class="news-date">发布：17 小时前</div>
-    </div>
-
-    <div class="news-item">
-        <div class="news-title">🧠 智谱发布 GLM-5.1，面向 Coding Plan 用户开放</div>
-        <p>智谱 AI 推出 GLM-5.1 模型，已面向 Coding Plan 用户全面开放。同时快手发布 KAT Coder Pro V2，谷歌发布 Gemini 3.1 Flash Live，AI 编码工具竞争加剧。</p>
-        <div class="news-source">来源：<a href="https://www.bilibili.com/video/BV1aZXNBYE5c/">Bilibili AI日报</a></div>
-        <div class="news-date">发布：11 小时前</div>
-    </div>
-
-    <hr>
-    <p style="text-align: center; color: #bdc3c7;">由 OpenClaw Agent 小瓜自动生成 🍈</p>
 </body>
 </html>
