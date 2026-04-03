@@ -5,200 +5,325 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>跨境新闻日报 — 2026-04-02</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6}
-.header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:2rem 1rem;text-align:center}
-.header h1{font-size:1.8rem;margin-bottom:.3rem}
-.header p{opacity:.7;font-size:.9rem}
-.container{max-width:900px;margin:0 auto;padding:1rem}
-.summary-bar{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}
-.summary-card{flex:1;min-width:140px;background:#fff;border-radius:12px;padding:1rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.summary-card .num{font-size:2rem;font-weight:700}
-.summary-card .label{font-size:.8rem;color:#666;margin-top:.2rem}
-.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75rem;font-weight:600;margin-right:6px}
-.badge-verified{background:#d4edda;color:#155724}
-.badge-single{background:#fff3cd;color:#856404}
-.section-title{font-size:1.2rem;font-weight:700;margin:1.5rem 0 .8rem;padding-left:.8rem;border-left:4px solid #1a1a2e}
-.card{background:#fff;border-radius:12px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s}
-.card:hover{transform:translateY(-2px)}
-.card h3{font-size:1rem;margin-bottom:.4rem}
-.card .meta{font-size:.8rem;color:#888;margin-bottom:.5rem}
-.card .desc{font-size:.9rem;color:#333}
-.card .links{margin-top:.5rem}
-.card .links a{color:#0d6efd;text-decoration:none;font-size:.8rem;margin-right:1rem}
-.card .links a:hover{text-decoration:underline}
-.footer{text-align:center;padding:2rem 1rem;color:#999;font-size:.8rem}
-@media(max-width:600px){.header h1{font-size:1.4rem}.summary-bar{flex-direction:column}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; }
+header h1 { font-size: 1.8em; margin-bottom: 8px; }
+header .meta { opacity: 0.8; font-size: 0.9em; }
+.summary-bar { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.summary-card { flex: 1; min-width: 120px; background: white; border-radius: 12px; padding: 16px 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.summary-card .num { font-size: 2em; font-weight: 700; }
+.summary-card .label { font-size: 0.85em; color: #666; margin-top: 4px; }
+.summary-card.verified .num { color: #27ae60; }
+.summary-card.unverified .num { color: #f39c12; }
+.summary-card.total .num { color: #2c3e50; }
+.section-title { font-size: 1.3em; font-weight: 700; margin: 28px 0 14px; padding-left: 12px; border-left: 4px solid #0f3460; }
+.card { background: white; border-radius: 12px; padding: 20px 24px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.15s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.card .card-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.card .card-num { background: #0f3460; color: white; border-radius: 8px; min-width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; flex-shrink: 0; }
+.card .card-title { font-weight: 700; font-size: 1.05em; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 600; }
+.badge.verified { background: #d4edda; color: #155724; }
+.badge.unverified { background: #fff3cd; color: #856404; }
+.card .card-meta { font-size: 0.85em; color: #888; margin-bottom: 10px; }
+.card ul { padding-left: 20px; margin: 8px 0; }
+.card li { margin-bottom: 4px; font-size: 0.93em; }
+.card .links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+.card .links a { color: #0f3460; text-decoration: none; font-size: 0.85em; padding: 3px 10px; background: #eef2ff; border-radius: 6px; }
+.card .links a:hover { background: #dbe4ff; }
+footer { text-align: center; color: #999; font-size: 0.8em; margin-top: 40px; padding: 20px; }
+@media (max-width: 600px) {
+  .container { padding: 12px; }
+  header { padding: 24px 18px; }
+  header h1 { font-size: 1.4em; }
+  .card { padding: 14px 16px; }
+}
 </style>
 </head>
 <body>
-<div class="header">
-<h1>📰 跨境新闻日报</h1>
-<p>2026-04-02 · 全球跨境电商热点速览</p>
-</div>
 <div class="container">
+<header>
+  <h1>📰 跨境新闻日报</h1>
+  <div class="meta">2026-04-02（星期三）｜数据来源：CNBC · AP · Bloomberg · Reuters · Guardian · NPR · AMZ123 等</div>
+</header>
+
 <div class="summary-bar">
-<div class="summary-card"><div class="num" style="color:#1a1a2e">20</div><div class="label">新闻总数</div></div>
-<div class="summary-card"><div class="num" style="color:#28a745">8</div><div class="label">多源验证</div></div>
-<div class="summary-card"><div class="num" style="color:#e6a817">12</div><div class="label">单方报道</div></div>
+  <div class="summary-card total"><div class="num">20</div><div class="label">新闻总数</div></div>
+  <div class="summary-card verified"><div class="num">6</div><div class="label">✅ 已验证</div></div>
+  <div class="summary-card unverified"><div class="num">14</div><div class="label">⚠️ 单方报道</div></div>
 </div>
 
-<h2 class="section-title">🔥 头条新闻</h2>
+<div class="section-title">🔥 头条新闻</div>
 
 <div class="card">
-<h3><span class="badge badge-verified">✅ 多源验证</span>1. Amazon 4 月 17 日起加收 3.5% FBA 燃油附加费</h3>
-<div class="meta">2026-04-02</div>
-<div class="desc">受美伊冲突燃油成本上涨影响，美国 FBA 卖家将面临 3.5% 附加费（约 $0.17/件），5 月 2 日还有额外调整。</div>
-<div class="links"><a href="https://www.bnnbloomberg.ca/business/company-news/2026/04/02/amazon-sellers-to-face-35-surcharge-due-to-higher-fuel-logistics-costs/" target="_blank">BNN Bloomberg</a><a href="https://techstartups.com/2026/04/02/amazon-to-add-3-5-fba-surcharge-starting-april-17-2026-as-fuel-costs-rise-amid-us-iran-war/" target="_blank">TechStartups</a></div>
-</div>
-
-<div class="card">
-<h3><span class="badge badge-verified">✅ 多源验证</span>2. 法国坚持对中国小包裹征税，Shein/Temu 或转道比荷卢</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">欧盟 7 月起征 3 欧元/类关税 + 11 月 2 欧元处理费。Shein 称将利用欧盟货物自由流通规则规避。</div>
-<div class="links"><a href="https://www.bfmtv.com/economie/consommation/le-gouvernement-persiste-la-taxe-sur-les-petits-colis-sera-maintenue-meme-si-shein-temu-ou-aliexpress-la-contournent-en-passant-par-le-benelux_AV-202604010191.html" target="_blank">BFMTV</a></div>
-</div>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>3. TikTok Shop 德国上线一年：15% 网购用户已使用</h3>
-<div class="meta">2026-04-02</div>
-<div class="desc">TikTok Shop 在德国渗透率快速提升，约 15% 在线购物者已通过平台购物。</div>
-<div class="links"><a href="https://lesnews.ca/rs/tiktok/tiktok-shop-prend-de-lampleur-en-allemagne/" target="_blank">LesNews</a></div>
-</div>
-
-<h2 class="section-title">🛒 平台动态</h2>
-
-<div class="card">
-<h3><span class="badge badge-verified">✅ 多源验证</span>4. TikTok 申请巴西金融牌照：推电子钱包和信贷</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">向巴西央行申请电子货币发行商和支付机构牌照，将成为首个在巴西以 fintech 运营的社交娱乐平台。</div>
-<div class="links"><a href="https://www.brandiconimage.com/2026/04/tiktok-seeks-approval-to-launch-banking.html" target="_blank">BrandIconImage</a><a href="https://tecnoblog.net/noticias/tiktok-busca-licenca-para-atuar-como-fintech-no-brasil/" target="_blank">Tecnoblog</a></div>
+  <div class="card-header">
+    <div class="card-num">1</div>
+    <div class="card-title">亚马逊宣布对 FBA 卖家加收 3.5% 燃油附加费</div>
+  </div>
+  <span class="badge verified">✅ 多方验证</span>
+  <div class="card-meta">2026-04-02 ｜ CNBC · AP · Bloomberg · Business Insider · EcommerceBytes</div>
+  <ul>
+    <li>4 月 17 日起，美国和加拿大 FBA 履约费用加收 3.5% "燃油与物流附加费"</li>
+    <li>Remote Fulfillment with FBA 跨境至加拿大、墨西哥、巴西同样受影响</li>
+    <li>伊朗战争进入第 5 周推高油价，Buy With Prime 亦纳入收费</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.cnbc.com/2026/04/02/amazon-add-3point5percent-fuel-and-logistics-surcharge-for-sellers-amid-iran-war.html">CNBC</a>
+    <a href="https://apnews.com/article/amazon-surcharge-iran-war-oil-6b15b3bf56521e290063147697358f29">AP</a>
+    <a href="https://www.bloomberg.com/news/articles/2026-04-02/amazon-imposes-3-5-fuel-surcharge-for-many-online-merchants">Bloomberg</a>
+  </div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>5. 中东斋月电商激战：TikTok 强势进击</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">中东市场购买力强、利润率高、资质门槛低，成为跨境卖家新热点。女性消费力量崛起。</div>
-<div class="links"><a href="https://36kr.com/p/2684954997537801" target="_blank">36氪</a></div>
+  <div class="card-header">
+    <div class="card-num">2</div>
+    <div class="card-title">特朗普"解放日"关税一周年：全球贸易格局被永久重塑</div>
+  </div>
+  <span class="badge verified">✅ 多方验证</span>
+  <div class="card-meta">2026-04-02 ｜ Reuters · NPR · Guardian · CFR · Axios · Quartz</div>
+  <ul>
+    <li>一年前宣布对所有贸易伙伴 10%-50% "对等关税"，对华一度飙至 145%</li>
+    <li>最高法院部分推翻，2026 年新增药品关税、调整钢铁/铝关税</li>
+    <li>消费者信心下降，美股一度逼近熊市；中国进口几乎停滞</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.reuters.com/world/us/year-after-liberation-day-trump-sets-new-drug-tariffs-adjusts-metals-duties-2026-04-02/">Reuters</a>
+    <a href="https://www.npr.org/2026/04/02/nx-s1-5766424/trump-tariffs-inflation-economy">NPR</a>
+    <a href="https://www.cfr.org/articles/a-year-after-liberation-day-experts-review-the-costs-of-trumps-tariffs">CFR</a>
+  </div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>6. Shopee vs Lazada 2026 卖家运营对比</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">Branch8 发布年度对比：API 成熟度、履约 SLA、广告工具和费率结构全面分析。</div>
-<div class="links"><a href="https://branch8.com/posts/shopee-vs-lazada-seller-operations-comparison-2026" target="_blank">Branch8</a></div>
+  <div class="card-header">
+    <div class="card-num">3</div>
+    <div class="card-title">美国 CPSC 宣布调查 Shein 和 Temu 产品安全</div>
+  </div>
+  <span class="badge verified">✅ 多方验证</span>
+  <div class="card-meta">2026-04-02 ｜ WWD · CPSC</div>
+  <ul>
+    <li>CPSC 委员联合声明要求对两平台进行全面安全评估</li>
+    <li>关注廉价中国制造商品的安全风险，可能升级合规要求</li>
+  </ul>
+  <div class="links">
+    <a href="https://wwd.com/sourcing-journal/industry-news/federal-consumer-watchdog-cpsc-investigate-shein-temu-safety-concerns-1238839706/">WWD</a>
+  </div>
+</div>
+
+<div class="section-title">🇪🇺 欧盟 & 欧洲市场</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">4</div>
+    <div class="card-title">欧盟海关改革：Temu、Shein 等被认定为"进口商"</div>
+  </div>
+  <span class="badge verified">✅ 多方验证</span>
+  <div class="card-meta">2026-04-02 ｜ MLex · TheLocal · AMZ123</div>
+  <ul>
+    <li>平台需承担关税缴纳及产品安全责任，不合规最高罚销售额 6%</li>
+    <li>2026 年 11 月 1 日前全面生效</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.thelocal.fr/20260402/shein-temu-why-european-consumers-will-pay-more-for-cheap-online-orders/">TheLocal</a>
+    <a href="https://www.amz123.com/t/sUtXcTKk">AMZ123</a>
+  </div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>7. Shopify 4 月 1 日大范围宕机</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">大量商户报告登录和结账问题，但官方状态页显示"无事故"。</div>
-<div class="links"><a href="https://www.ibtimes.com.au/shopify-down-now-hundreds-users-april-1-2026-login-checkout-issues-spark-merchant-frustration-1865170" target="_blank">IB Times</a></div>
+  <div class="card-header">
+    <div class="card-num">5</div>
+    <div class="card-title">欧盟代表团赴中国警告危险产品激增</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-03 ｜ El Periódico Mediterráneo</div>
+  <ul><li>就 AliExpress、Temu、Shein 危险产品数量增加发出警告</li></ul>
+  <div class="links"><a href="https://www.elperiodicomediterraneo.com/economia/2026/04/03/mision-ue-viaja-china-alertar-128711493.html">原文</a></div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-verified">✅ 多源验证</span>8. AMZ Shipper 扩展跨境物流网络</h3>
-<div class="meta">2026-04-01</div>
-<div class="div class="desc">新增仓库、FBA Prep 服务、透明定价和专属客户经理。</div>
-<div class="links"><a href="https://finance.yahoo.com/markets/commodities/articles/amz-shipper-expands-cross-border-124100020.html" target="_blank">Yahoo Finance</a><a href="https://www.usatoday.com/press-release/story/29880/amz-shipper-expands-cross-border-logistics-network-to-support-growing-amazon-seller-demand/" target="_blank">USA Today</a></div>
+  <div class="card-header">
+    <div class="card-num">6</div>
+    <div class="card-title">TikTok Shop 在德国市场持续增长</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-02 ｜ EcommerceNews.eu</div>
+  <ul><li>佣金从 5% 升至 9% 仍热度不减，时尚占收入 17%</li></ul>
+  <div class="links"><a href="https://ecommercenews.eu/tiktok-shop-gains-traction-in-germany/">原文</a></div>
 </div>
 
-<h2 class="section-title">🌏 区域市场</h2>
+<div class="section-title">🏪 平台动态</div>
 
 <div class="card">
-<h3><span class="badge badge-verified">✅ 多源验证</span>9. 印度取消 10 万卢比快递出口上限</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">CBIC 改革 4 月 1 日生效，取消快递出口限额、简化退货，降低 MSME 物流成本。</div>
-<div class="links"><a href="https://www.forbesindia.com/article/news/rs10-lakh-courier-export-cap-removed-ecommerce-trade-rules-overhauled/2992790/1" target="_blank">Forbes India</a><a href="https://www.logisticsinsider.in/india-scraps-courier-export-cap-speeds-up-returns-for-global-e-commerce/" target="_blank">Logistics Insider</a></div>
-</div>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>10. 越南电商市场 2026 入场指南</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">Shopee、TikTok Shop、Lazada 构成主要渠道，平台费用层叠需关注。</div>
-<div class="links"><a href="https://blog.investvietnam.co/complete-guide-to-entering-the-vietnam-e-commerce-market-in-2026/" target="_blank">Invest Vietnam</a></div>
-</div>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>11. boAt 进军马来西亚</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">印度音频品牌通过 Shopee/Lazada/TikTok Shop 三渠道同步进入马来西亚。</div>
-<div class="links"><a href="https://www.gadgetbridge.com/news/boat-enters-the-malaysian-market-speeding-up-its-growth-in-southeast-asia/" target="_blank">GadgetBridge</a></div>
+  <div class="card-header">
+    <div class="card-num">7</div>
+    <div class="card-title">Amazon、Shopify、Mercado Libre 战略反击中国电商</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-02 ｜ Chosun</div>
+  <ul><li>通过物流升级、B2B 扩张、金融科技应对全球关税和中国平台竞争</li></ul>
+  <div class="links"><a href="https://www.chosun.com/english/market-money-en/2026/04/02/DVEXCXJIRBCO5NVT2JYKNMU2PM/">原文</a></div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>12. 东南亚 4.4 大促启动</h3>
-<div class="meta">2026-04-02</div>
-<div class="desc">Lazada、Shopee、Amazon 新加坡/菲律宾 4.4 大促开启。</div>
-<div class="links"><a href="https://www.hardwarezone.com.sg/deals/feature-best-44-sale-lazada-shopee-amazon-singapore" target="_blank">HardwareZone</a></div>
-</div>
-
-<h2 class="section-title">💡 行业趋势</h2>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>13. AI 代理商务兴起：重塑支付与购物</h3>
-<div class="meta">2026-04-02</div>
-<div class="desc">近 10% 用户已在 AI 界面直接完成购买。新协议和代理逻辑将决定支付格局。</div>
-<div class="links"><a href="https://www.emarketer.com/content/agentic-commerce-payments-2026" target="_blank">eMarketer</a></div>
-</div>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>14. AI 正在重写购物旅程的起点</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">AI 界面内完成购物的用户比例虽小但快速增长，指向更集成的商务体验。</div>
-<div class="links"><a href="https://www.emarketer.com/content/ai-rewriting-start-of-shopping-journey" target="_blank">eMarketer</a></div>
+  <div class="card-header">
+    <div class="card-num">8</div>
+    <div class="card-title">TikTok Shop 2025 年美国销售 158 亿美元，同比翻倍</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-02 ｜ Windsor.ai · Vogue</div>
+  <ul><li>英国每秒售出一支美妆产品，MAC 等大牌入驻</li></ul>
+  <div class="links">
+    <a href="https://windsor.ai/how-to-connect-tiktok-shop-to-claude/">Windsor.ai</a>
+    <a href="https://www.vogue.com/article/can-tiktok-shop-help-mac-cosmetics-gain-momentum">Vogue</a>
+  </div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>15. Shoptalk 2026：全渠道 ROAS 提升 37%</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">涵盖 DTC 到 Amazon 到 TikTok Shop 的全渠道衡量，品牌平均 ROAS 提升 37%。</div>
-<div class="links"><a href="https://clickz.com/nobody-at-shoptalk-2026-could-tell-you-whats-coming-next-and-that-was-the-best-part/272734/" target="_blank">ClickZ</a></div>
+  <div class="card-header">
+    <div class="card-num">9</div>
+    <div class="card-title">TikTok 向越南胡志明市投资 1.25 亿美元</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-03 ｜ Vietnam Investment Review</div>
+  <ul><li>建设物流（年处理 10-20 亿订单）、支付（4500 万用户）和电商基础设施</li></ul>
+  <div class="links"><a href="https://vir.com.vn/tiktok-pours-125-million-into-ho-chi-minh-city-in-q1-149939.html">原文</a></div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>16. AI 驱动的 Shopify 应用悄然提升店铺收入</h3>
-<div class="meta">2026-04-02</div>
-<div class="desc">搜索栏和导航层的智能化是当前对 Shopify 收入影响最大的 AI 应用。</div>
-<div class="links"><a href="https://aijourn.com/the-ai-powered-apps-quietly-driving-more-revenue-for-shopify-stores-in-2026/" target="_blank">AI Journal</a></div>
+  <div class="card-header">
+    <div class="card-num">10</div>
+    <div class="card-title">Shopee 菲律宾 4 月活动日历，跨境禁售清单更新</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-03-30 ｜ ShopDora</div>
+  <ul><li>4 月 1 日起须启用"隔日到货"，优选卖家开通率门槛 50%</li></ul>
+  <div class="links"><a href="https://blog.shopdora.com/en/page/march-30-2026-shopee-philippines-market-weekly-report-key-prohibitions-and-april-campaign-calendar/">原文</a></div>
 </div>
 
-<h2 class="section-title">📦 物流与供应链</h2>
+<div class="section-title">📦 物流 & 供应链</div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>17. UPS Ground Saver 2026：FBA 卖家利润持续被侵蚀</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">2024 年 $5 利润的产品现在只剩 $3.50——FBA 费用和物流费率双重上涨。</div>
-<div class="links"><a href="https://www.sellerlabs.com/blog/ups-ground-saver-2026-shipping-costs/" target="_blank">Seller Labs</a></div>
-</div>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>18. 数字贸易走廊：修复过时供应链的新方案</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">连接现有系统实现信息共享，不强制统一平台。</div>
-<div class="links"><a href="https://www.theblaze.com/columns/opinion/digital-trade-corridors-can-fix-our-outdated-supply-chain" target="_blank">The Blaze</a></div>
-</div>
-
-<h2 class="section-title">🔐 安全与合规</h2>
-
-<div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>19. FBI 警告中国移动应用安全风险</h3>
-<div class="meta">2026-04-01</div>
-<div class="desc">FBI 发布中国手机应用数据安全警告，呼吁用户报告可疑活动。</div>
-<div class="links"><a href="https://cyberwebspider.com/security-week-news/fbi-security-risks-chinese-apps/" target="_blank">CyberWebSpider</a></div>
+  <div class="card-header">
+    <div class="card-num">11</div>
+    <div class="card-title">AMZ Shipper 扩展跨境物流网络</div>
+  </div>
+  <span class="badge verified">✅ 多方验证</span>
+  <div class="card-meta">2026-04-02 ｜ Yahoo Finance · USA Today</div>
+  <ul><li>新增仓库、透明定价、专属客户经理，FBA 准备服务全面扩展</li></ul>
+  <div class="links">
+    <a href="https://finance.yahoo.com/markets/commodities/articles/amz-shipper-expands-cross-border-124100020.html">Yahoo</a>
+    <a href="https://www.usatoday.com/press-release/story/29880/amz-shipper-expands-cross-border-logistics-network-to-support-growing-amazon-seller-demand/">USA Today</a>
+  </div>
 </div>
 
 <div class="card">
-<h3><span class="badge badge-single">🔶 单方报道</span>20. 跨境电商税务合规 2026：多地专项核查</h3>
-<div class="meta">2026-04-02</div>
-<div class="desc">OECD 数字税规则落地、CRS 信息交换深化，亚马逊、沃尔玛同步升级合规要求。</div>
-<div class="links"><a href="https://www.amz123.com/t/B9ncxXcz" target="_blank">AMZ123</a></div>
+  <div class="card-header">
+    <div class="card-num">12</div>
+    <div class="card-title">J&T Express 利润翻倍，全球化加速</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-02 ｜ Benzinga</div>
+  <ul><li>与 Shein/Temu/TikTok/AliExpress 深度合作，加强 Mercado Libre 合作</li></ul>
+  <div class="links"><a href="https://www.benzinga.com/Opinion/26/04/51618648/jt-express-profit-doubles-on-accelerating-globalization">原文</a></div>
 </div>
 
+<div class="section-title">📊 行业报告 & 趋势</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">13</div>
+    <div class="card-title">2026 美国电商前十：Temu、TikTok Shop、SHEIN 杀入榜单</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">~2026-03-28 ｜ eCCang</div>
+  <ul><li>TikTok Shop 同比增 68%，Temu 半托管模式转向卖家，SHEIN 柔性供应链持续发力</li></ul>
+  <div class="links"><a href="https://www.eccang.com/news/4718">原文</a></div>
 </div>
-<div class="footer">
-<p>📰 跨境新闻日报 · 2026-04-02 · 自动生成</p>
-<p>数据来源：全球公开新闻报道 | 验证状态基于来源交叉比对</p>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">14</div>
+    <div class="card-title">3 月爆品复盘：磁吸假睫毛 3 天暴涨 350%</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-02 ｜ 全球定制网</div>
+  <ul><li>亚马逊/Temu/TikTok 三平台同步爆款；男士护肤跻身 BSR；AI 定制 T 恤高增长</li></ul>
+  <div class="links"><a href="https://www.globalpod.cn/article/2983">原文</a></div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">15</div>
+    <div class="card-title">Temu 在乌兹别克斯坦面临 460 亿苏姆税单</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">~2026-03-30 ｜ ChineseSellers Substack</div>
+  <ul><li>需缴纳税款才能恢复运营，TikTok Shop 定位欧洲/日本为下一增长引擎</li></ul>
+  <div class="links"><a href="https://chinesellers.substack.com/p/tiktok-shop-pitches-europe-and-japan">原文</a></div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">16</div>
+    <div class="card-title">Shopify Editions Winter 2026：150+ 更新含 AI 代理电商</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-03 ｜ AppScout</div>
+  <ul><li>Agentic Commerce 功能上线，17 个开发者新机会</li></ul>
+  <div class="links"><a href="https://appscout.io/blog/shopify-editions-winter-2026-17-game-changing-app-opportunities-for-developers-150-updates-analyzed">原文</a></div>
+</div>
+
+<div class="section-title">🌏 区域市场</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">17</div>
+    <div class="card-title">越南成为跨境电商品牌下一个大市场</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-01 ｜ Invest Vietnam Blog</div>
+  <ul><li>中产阶级预计 2026 年达人口 26%，Lazada/Shopee Global 为跨境试水首选</li></ul>
+  <div class="links"><a href="https://blog.investvietnam.co/why-vietnam-is-the-next-big-market-for-foreign-e-commerce-brands/">原文</a></div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">18</div>
+    <div class="card-title">墨西哥 2026 年线上购物新税政策生效</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">~2026-04-02 ｜ Servicios Jurídicos</div>
+  <ul><li>影响 Amazon/AliExpress/Temu/Shein 跨境购物税费计算</li></ul>
+  <div class="links"><a href="https://www.serviciosjuridicosintegralesrfj.com/post/impuesto-a-compras-en-l%C3%ADnea-en-m%C3%A9xico-2026-qu%C3%A9-es-cu%C3%A1nto-pagar%C3%A1s-y-c%C3%B3mo-te-afecta">原文</a></div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">19</div>
+    <div class="card-title">墨西哥 Tehuacán 鞋履品牌入驻 Shein</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-01 ｜ e-Consulta</div>
+  <ul><li>200+ 产品起价 150 比索，本地品牌借力 Shein 出海</li></ul>
+  <div class="links"><a href="https://www.e-consulta.com/nota/2026-04-01/municipios/zapatos-de-tehuacan-se-venderan-en-shein-oiste-temu">原文</a></div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">20</div>
+    <div class="card-title">亚马逊 2026 年战略转型深度分析</div>
+  </div>
+  <span class="badge unverified">⚠️ 单方报道</span>
+  <div class="card-meta">2026-04-01 ｜ FinancialContent</div>
+  <ul><li>Walmart 利用 4000+ 门店缩小电商差距，Temu/Shein 施压低价市场</li></ul>
+  <div class="links"><a href="https://markets.financialcontent.com/stocks/article/finterra-2026-4-1-the-titan-of-two-worlds-a-deep-dive-into-amazons-2026-strategic-pivot">原文</a></div>
+</div>
+
+<footer>
+  <p>本报告由 AI 自动生成 · 数据来源见各条目链接 · 信息仅供参考</p>
+  <p>生成时间：2026-04-03 23:15 UTC</p>
+</footer>
 </div>
 </body>
 </html>
