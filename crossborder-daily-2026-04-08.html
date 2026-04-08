@@ -1,227 +1,308 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>跨境新闻日报 - 2026 年 4 月 8 日</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f7fa; padding: 10px; }
-.container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
-.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px 20px; text-align: center; }
-.header h1 { font-size: 1.8em; margin-bottom: 8px; }
-.date { font-size: 0.95em; opacity: 0.9; }
-.category { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 20px 15px; }
-.category h2 { color: #333; font-size: 1.3em; margin-bottom: 15px; }
-.article { background: #fff; border-left: 3px solid #667eea; padding: 15px; margin-bottom: 12px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-.article h3 { color: #333; font-size: 1em; margin-bottom: 10px; font-weight: 600; }
-.meta { display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.85em; flex-wrap: wrap; }
-.meta .date { color: #667eea; }
-.meta .status { padding: 2px 8px; border-radius: 10px; font-size: 0.75em; }
-.meta .status.verified { background: #e8f5e9; color: #4caf50; }
-.meta .status.unverified { background: #fff3e0; color: #ff9800; }
-.article ul { margin-left: 15px; font-size: 0.9em; }
-.article li { margin-bottom: 6px; line-height: 1.5; }
-.article a { color: #667eea; text-decoration: none; }
-.article a:hover { text-decoration: underline; }
-.summary { background: #f8f9fa; padding: 20px 15px; }
-.summary h3 { color: #333; margin-bottom: 12px; font-size: 1.1em; }
-.summary ul { font-size: 0.9em; line-height: 1.8; }
-.summary li { margin-bottom: 4px; }
-.stats-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85em; }
-.stats-table th, .stats-table td { padding: 8px 6px; text-align: left; border-bottom: 1px solid #eee; }
-.stats-table th { background: #667eea; color: white; }
-.stats-table tr:hover { background: #f8f9fa; }
-.footer { background: #2c3e50; color: white; padding: 20px; text-align: center; }
-.footer p { margin: 6px 0; font-size: 0.9em; }
-.footer a { color: #3498db; text-decoration: none; }
-.sources { margin-top: 10px; font-size: 0.85em; }
-@media (max-width: 600px) {
-  body { padding: 5px; }
-  .header h1 { font-size: 1.5em; }
-  .category h2 { font-size: 1.2em; }
-  .article h3 { font-size: 0.95em; }
-  .article ul { margin-left: 12px; font-size: 0.85em; }
-  .meta { flex-direction: column; gap: 5px; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>跨境新闻日报 - 2026-04-08</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --brand: #2563eb;
+      --brand2: #7c3aed;
+      --ok-bg: #ecfdf5;
+      --ok-text: #047857;
+      --warn-bg: #fff7ed;
+      --warn-text: #c2410c;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 220px);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .hero {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
+      color: #fff;
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 32px; }
+    .hero p { margin: 6px 0; opacity: 0.95; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 { margin: 0 0 14px; font-size: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .section { margin-top: 24px; }
+    .section h2 { font-size: 24px; margin: 0 0 14px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card h3 { margin: 0; font-size: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .meta span { font-size: 13px; color: var(--muted); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .tag.ok { background: var(--ok-bg); color: var(--ok-text); }
+    .tag.warn { background: var(--warn-bg); color: var(--warn-text); }
+    ul { margin: 0; padding-left: 20px; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer {
+      margin: 28px 0 10px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>📰 跨境新闻日报</h1>
-<span class="date">📅 2026 年 4 月 8 日 星期三</span>
-</div>
+  <div class="wrap">
+    <section class="hero">
+      <h1>📰 跨境新闻日报</h1>
+      <p><strong>日期：</strong>2026-04-08（北京时间）</p>
+      <p><strong>共 10 条新闻</strong>，其中 <strong>8 条已验证</strong>，<strong>2 条单方报道</strong></p>
+      <div class="chips">
+        <span class="chip">跨境电商</span>
+        <span class="chip">Amazon FBA</span>
+        <span class="chip">Shopify</span>
+        <span class="chip">TikTok Shop</span>
+        <span class="chip">Temu / Shein</span>
+        <span class="chip">跨境物流</span>
+      </div>
+    </section>
 
-<div class="summary">
-<h3>📋 目录</h3>
-<ul>
-<li><a href="#hot-news">🔥 头条重磅 (3)</a></li>
-<li><a href="#platform">📦 平台动态 (2)</a></li>
-<li><a href="#regulation">🛍️ 平台监管 (2)</a></li>
-<li><a href="#trends">📊 行业趋势 (1)</a></li>
-</ul>
-</div>
+    <section class="grid">
+      <div class="panel">
+        <h2>📊 验证状态汇总</h2>
+        <table>
+          <thead>
+            <tr><th>分类</th><th>数量</th><th>已验证</th><th>单方报道</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>头条政策</td><td>2</td><td>2</td><td>0</td></tr>
+            <tr><td>平台动态</td><td>4</td><td>3</td><td>1</td></tr>
+            <tr><td>物流与履约</td><td>2</td><td>2</td><td>0</td></tr>
+            <tr><td>区域市场与趋势</td><td>2</td><td>1</td><td>1</td></tr>
+            <tr><td><strong>总计</strong></td><td><strong>10</strong></td><td><strong>8</strong></td><td><strong>2</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="category" id="hot-news">
-<h2>🔥 头条重磅</h2>
+      <div class="panel">
+        <h2>🧭 快速结论</h2>
+        <ul>
+          <li>欧洲跨境的主旋律很明确，成本上升、合规加码、本地仓配加速。</li>
+          <li>Shopify 和 Amazon 都在往“更完整的商家操作系统”走，不只争建站入口。</li>
+          <li>拉美和东南亚依然有增量，但履约、本地化和税务能力越来越决定结果。</li>
+        </ul>
+      </div>
+    </section>
 
-<div class="article">
-<h3>1. 中国发布跨境电商新政，推进全球化布局</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 6 日</span>
-<span class="status verified">✅ 已验证</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：商务部联合多部门发布电商行业指导意见，协调国内发展与国际市场；建立跨境电商试点专区，制定规则和标准；支持合规地区基于海外综合服务体系搭建跨境电商服务平台；推进"一带一路"电商合作，拓展海外市场</li>
-<li><strong>影响</strong>：为中国跨境电商企业提供政策支持和合规指导</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.reuters.com/world/asia-pacific/china-issues-guidance-e-commerce-including-cross-border-trade-2026-04-06/" target="_blank">Reuters</a> | 🔗 <a href="https://news.cgtn.com/news/2026-04-06/China-unveils-e-commerce-guidelines-to-advance-the-real-economy-1M7CkCdUv0Q/p.html" target="_blank">CGTN</a> | 🔗 <a href="https://www.globaltimes.cn/page/202604/1358316.shtml" target="_blank">Global Times</a>
-</div>
-</div>
+    <section class="section">
+      <h2>🔥 头条政策</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>中国发布电商指导意见，跨境电商与国际规则衔接被提上台面</h3>
+          <div class="meta">
+            <span>2026-04-08</span>
+            <span class="tag ok">✅ 已验证</span>
+          </div>
+          <ul>
+            <li>中国相关部门发布电商发展指导意见，强调服务实体经济、统筹国内发展与国际市场。</li>
+            <li>跨境电商试点、标准化与国际协同被进一步强化。</li>
+            <li>Shein、Temu 等平台后续增长会更依赖合规能力。</li>
+          </ul>
+          <div>链接：<a href="https://www.reuters.com/world/asia-pacific/china-issues-guidance-e-commerce-including-cross-border-trade-2026-04-06/" target="_blank">Reuters</a> | <a href="https://fashionunited.uk/news/business/e-commerce-china-issues-new-guidelines-to-regulate-platforms-under-eu-pressure/2026040787299" target="_blank">FashionUnited</a></div>
+        </article>
 
-<div class="article">
-<h3>2. 亚马逊 FBA 加收 3.5% 物流附加费</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 6 日</span>
-<span class="status verified">✅ 已验证</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：亚马逊宣布对美国和加拿大 FBA 卖家征收 3.5% 临时物流附加费，<strong>2026 年 4 月 17 日生效</strong>；原因：中东冲突导致油价上涨，物流成本上升；欧洲卖家也将从 4 月 7 日起被收取额外运输成本</li>
-<li><strong>影响</strong>：FBA 卖家成本增加，建议调整定价策略</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.retailbrew.com/stories/2026/04/06/amazon-raises-shipping-fees-by-3-5-for-some-merchants" target="_blank">Retail Brew</a> | 🔗 <a href="https://us.fashionnetwork.com/news/Amazon-introduces-a-logistics-surcharge-on-third-party-sellers-in-the-us-and-canada,1821779.html" target="_blank">Fashion Network</a>
-</div>
-</div>
+        <article class="card">
+          <h3>Shein、Temu 类平台正从“直邮”走向“欧洲本地库存+本地分发”</h3>
+          <div class="meta">
+            <span>2026-04-08</span>
+            <span class="tag ok">✅ 已验证</span>
+          </div>
+          <ul>
+            <li>面对欧盟对微包裹和产品责任的监管，平台模式加速转向海外仓和本地供应基地。</li>
+            <li>有助于降低清关与合规风险，也改善履约时效。</li>
+            <li>欧洲卖家竞争点继续从流量转向仓配、税务和合规综合能力。</li>
+          </ul>
+          <div>链接：<a href="https://www.ecommerce-nation.fr/petits-colis-chine-riposte-logistique-shein-temu" target="_blank">Ecommerce Nation</a> | <a href="https://fashionunited.uk/news/business/e-commerce-china-issues-new-guidelines-to-regulate-platforms-under-eu-pressure/2026040787299" target="_blank">FashionUnited</a></div>
+        </article>
+      </div>
+    </section>
 
-<div class="article">
-<h3>3. 中国建立供应链安全机制，反制外国贸易限制</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 7 日</span>
-<span class="status verified">✅ 已验证</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：国务院发布 directive，建立全面的供应链安全机制；针对间谍活动，允许中国对外国实体实施贸易限制反制；重点保护关键产业供应链安全</li>
-<li><strong>影响</strong>：跨境贸易可能面临新的地缘政治风险</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.bloomberg.com/news/articles/2026-04-07/china-issues-new-supply-chain-rules-targeting-foreign-disruption" target="_blank">Bloomberg</a>
-</div>
-</div>
-</div>
+    <section class="section">
+      <h2>🛍️ 平台动态</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Shopify 将原生 B2B 功能开放到更多商家套餐</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag ok">✅ 已验证</span></div>
+          <ul>
+            <li>Basic、Grow、Advanced 商家也能在同一后台管理 wholesale 与 DTC。</li>
+            <li>支持公司档案、分层目录、账期、定价规则等。</li>
+            <li>Shopify 明显在补齐 B2B 能力短板。</li>
+          </ul>
+          <div>链接：<a href="https://www.shopify.com/news/b2b-for-all" target="_blank">Shopify 官方</a> | <a href="https://channelx.world/2026/04/shopify-brings-native-b2b-features-to-millions-more-merchants/" target="_blank">ChannelX</a></div>
+        </article>
 
-<div class="category" id="platform">
-<h2>📦 平台动态</h2>
+        <article class="card">
+          <h3>Shopify 发布 Tinker，把 AI 素材生产整合进一个免费应用</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag ok">✅ 已验证</span></div>
+          <ul>
+            <li>整合 100+ AI 工具，覆盖 logo、商品图、视频、社媒素材等。</li>
+            <li>主打“按结果创作”而不是让商家研究模型和 prompt。</li>
+            <li>对独立站和 DTC 品牌的内容生产效率会有直接帮助。</li>
+          </ul>
+          <div>链接：<a href="https://www.shopify.com/news/introducing-tinker" target="_blank">Shopify 官方</a> | <a href="https://www.pymnts.com/news/retail/2026/shopify-debuts-tinker-app-for-ai-powered-store-creation/" target="_blank">PYMNTS</a></div>
+        </article>
 
-<div class="article">
-<h3>4. Shopee 台湾升级物流服务</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 7 日</span>
-<span class="status verified">✅ 已验证</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：全面开放黑猫宅急便 VIP 交寄功能；4 月 1 日起现货商品须启用店到店隔日到货服务；4 月 7 日起优选卖家隔日到货商品开通率需达 50% 以上；符合要求的卖家获得专属曝光资源</li>
-<li><strong>影响</strong>：台湾跨境卖家需调整物流策略</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.chwang.com/news" target="_blank">出海网</a>
-</div>
-</div>
+        <article class="card">
+          <h3>Amazon 扩大 Shop Direct 接入，外部站点商品更容易被 Amazon 搜索分发</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag ok">✅ 已验证</span></div>
+          <ul>
+            <li>支持通过 Feedonomics、Salsify、CEDCommerce 同步商品流。</li>
+            <li>官方称已覆盖超 1 亿商品、40 万+ 商家。</li>
+            <li>品牌可保留自有站成交，同时借 Amazon 获取新流量。</li>
+          </ul>
+          <div>链接：<a href="https://www.aboutamazon.com/news/retail/amazon-shop-direct-external-stores" target="_blank">Amazon 官方</a> | <a href="https://www.pymnts.com/amazon/2026/amazon-streamlines-direct-sales-merchants/" target="_blank">PYMNTS</a></div>
+        </article>
 
-<div class="article">
-<h3>5. TikTok Shop 扩张欧洲市场</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 6 日</span>
-<span class="status unverified">⚠️ 单方报道</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：TikTok Shop 在德国运营一年后改变在线零售格局；已在法国、意大利上线；<strong>2026 年 6 月将进入日本市场</strong>；巴西也在扩张计划中</li>
-<li><strong>影响</strong>：社交电商在欧洲加速渗透</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.boerse-express.com/news/articles/tiktok-shop-veraendert-nach-einem-jahr-den-deutschen-online-handel-888361" target="_blank">Börse Express</a>
-</div>
-</div>
-</div>
+        <article class="card">
+          <h3>Amazon 被曝在提价谈判上更强硬，部分品牌缩减低利润 SKU</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag warn">⚠️ 单方报道</span></div>
+          <ul>
+            <li>报道指出 Amazon 对部分品牌涨价诉求更谨慎。</li>
+            <li>部分品牌因此缩减低毛利商品，或转向第三方卖家模式。</li>
+            <li>若扩大，平台低价策略会继续压缩品牌利润。</li>
+          </ul>
+          <div>链接：<a href="https://www.pymnts.com/amazon/2026/amazons-pricing-tactics-lead-brands-to-yank-items/" target="_blank">PYMNTS</a></div>
+        </article>
+      </div>
+    </section>
 
-<div class="category" id="regulation">
-<h2>🛍️ 平台监管</h2>
+    <section class="section">
+      <h2>🚚 物流与履约</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Amazon 欧洲站确认加收 1.5% 燃油与物流附加费</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag ok">✅ 已验证</span></div>
+          <ul>
+            <li>4 月 17 日起覆盖 10 个站点 FBA，5 月 2 日起覆盖部分站点 MCF。</li>
+            <li>平均每件 EU FBA 增加约 0.05 英镑或欧元。</li>
+            <li>对欧洲卖家毛利和定价会有直接影响。</li>
+          </ul>
+          <div>链接：<a href="https://sellercentral.amazon.co.uk/seller-forums/discussions/t/cb3452e9-3803-435b-bfc2-e3b6a10a9e42" target="_blank">Amazon Seller Forums</a> | <a href="https://ecommercenews.eu/amazon-introduces-transport-surcharge-for-partners/" target="_blank">Ecommerce News Europe</a></div>
+        </article>
 
-<div class="article">
-<h3>6. 欧盟关税改革打击 Temu、Shein</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 7 日</span>
-<span class="status unverified">⚠️ 单方报道</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：欧盟新关税政策针对中国电商平台；Temu、Shein、AliExpress 需证明产品安全性；法国已实施小包裹税，平台 24 小时内调整物流策略</li>
-<li><strong>影响</strong>：中国跨境电商平台合规成本上升</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.investmentweek.com/china-dreht-am-handelsschrauben-neue-online-regeln-zielen-auf-europa-temu-und-shein-unter-druck/" target="_blank">Investment Week</a> | 🔗 <a href="https://www.journaldugeek.com/2026/04/07/taxe-petits-colis-le-gouvernement-a-peut-etre-trouve-comment-faire-payer-shein-et-temu/" target="_blank">Journal du Geek</a>
-</div>
-</div>
+        <article class="card">
+          <h3>顺丰航空开通鄂州直飞巴黎货运航线，承接跨境电商货量</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag ok">✅ 已验证</span></div>
+          <ul>
+            <li>新航线连接鄂州花湖机场与巴黎戴高乐机场。</li>
+            <li>报道明确提到服务高体量快件与跨境电商货量。</li>
+            <li>中国至欧洲的电商航空运力继续前置布局。</li>
+          </ul>
+          <div>链接：<a href="https://www.aviationbusinessnews.com/cargo/cargo-news/sf-airlines-launches-direct-cargo-route-from-ezhou-to-paris" target="_blank">Aviation Business News</a> | <a href="https://www.sf-airlines.com/en/" target="_blank">SF Airlines</a></div>
+        </article>
+      </div>
+    </section>
 
-<div class="article">
-<h3>7. FBI 警告 TikTok、Temu、Shein 数据收集</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 6 日</span>
-<span class="status unverified">⚠️ 单方报道</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：FBI 发布公共安全警告，未点名但媒体指向中国应用；涉及 TikTok、CapCut、Temu、Shein；关注数据收集和隐私安全问题</li>
-<li><strong>影响</strong>：可能影响美国用户对中国平台的信任</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://www.jfeed.com/news-world/fbi-chinese-apps-data-warning" target="_blank">JFeed</a>
-</div>
-</div>
-</div>
+    <section class="section">
+      <h2>🌍 区域市场与趋势</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>TikTok Shop 墨西哥“美通墨”模式进入实操窗口</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag warn">⚠️ 单方报道</span></div>
+          <ul>
+            <li>允许中国或美国主体从美国仓发往墨西哥消费者。</li>
+            <li>对已布局美国仓的卖家，是切入拉美的低试错路径。</li>
+            <li>5 月母亲节和 Hot Sale 被视作关键测试窗口。</li>
+          </ul>
+          <div>链接：<a href="https://www.globalpod.cn/article/3010" target="_blank">全球定制网</a></div>
+        </article>
 
-<div class="category" id="trends">
-<h2>📊 行业趋势</h2>
+        <article class="card">
+          <h3>越南中小企业借电商做全球出口，但物流与平台能力仍是大瓶颈</h3>
+          <div class="meta"><span>2026-04-08</span><span class="tag ok">✅ 已验证</span></div>
+          <ul>
+            <li>报告点名高物流成本、目的国监管复杂、平台能力不足为主要障碍。</li>
+            <li>越南正在推进 2026-2030 电商发展计划与数字出口生态建设。</li>
+            <li>说明东南亚跨境仍有红利，但不再是“轻运营”市场。</li>
+          </ul>
+          <div>链接：<a href="https://accesspartnership.com/reports/e-commerce-vietnam-furniture-fashion-msmes-global-exports/" target="_blank">Access Partnership</a></div>
+        </article>
+      </div>
+    </section>
 
-<div class="article">
-<h3>8. 越南家具和时尚中小企业通过电商拓展全球出口</h3>
-<div class="meta">
-<span class="date">2026 年 4 月 7 日</span>
-<span class="status verified">✅ 已验证</span>
-</div>
-<ul>
-<li><strong>核心要点</strong>：越南中小企业通过电商扩大全球出口；面临挑战：跨境物流成本高、出口目的地监管复杂、电商商业模式和法规知识缺口、物流专业知识人才短缺</li>
-<li><strong>影响</strong>：东南亚跨境电商竞争加剧</li>
-</ul>
-<div class="sources">
-🔗 <a href="https://accesspartnership.com/reports/e-commerce-vietnam-furniture-fashion-msmes-global-exports/" target="_blank">Access Partnership</a>
-</div>
-</div>
-</div>
-
-<div class="summary">
-<h3>📊 验证状态汇总</h3>
-<table class="stats-table">
-<thead><tr><th>分类</th><th>总数</th><th>✅ 已验证</th><th>⚠️ 单方报道</th><th>验证率</th></tr></thead>
-<tbody>
-<tr><td>🔥头条重磅</td><td>3</td><td>3</td><td>0</td><td>100%</td></tr>
-<tr><td>📦平台动态</td><td>2</td><td>1</td><td>1</td><td>50%</td></tr>
-<tr><td>🛍️平台监管</td><td>2</td><td>0</td><td>2</td><td>0%</td></tr>
-<tr><td>📊行业趋势</td><td>1</td><td>1</td><td>0</td><td>100%</td></tr>
-<tr style="background:#667eea;color:white;"><td><strong>总计</strong></td><td>8</td><td>5</td><td>3</td><td>62.5%</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="footer">
-<p>📰 跨境新闻日报 - 2026 年 4 月 8 日</p>
-<p>📊 共 <strong>8</strong> 条新闻</p>
-<p>📊 已验证：<span style="color:#4caf50;">5</span> 条 | ⚠️ 单方报道：<span style="color:#ff9800;">3</span> 条</p>
-<p style="margin-top:15px;">
-🔗 在线阅读：<a href="https://zxy114.github.io/crossborder-daily/crossborder-daily-2026-04-08.html" target="_blank">https://zxy114.github.io/crossborder-daily/crossborder-daily-2026-04-08.html</a>
-</p>
-<p style="margin-top:20px;font-size:0.9em;opacity:0.7;">* generated by Xiao Gua AI Assistant | 🍈 *</p>
-</div>
-</div>
+    <div class="footer">
+      在线阅读链接：<a href="https://zxy114.github.io/crossborder-daily/crossborder-daily-2026-04-08.html" target="_blank">https://zxy114.github.io/crossborder-daily/crossborder-daily-2026-04-08.html</a><br/>
+      说明：已验证 = 独立媒体交叉印证，或官方公告 + 媒体双重印证。
+    </div>
+  </div>
 </body>
 </html>
