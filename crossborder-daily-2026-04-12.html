@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>跨境新闻日报 | 2026-04-12</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --success: #16a34a;
+      --warn: #d97706;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8, #0f766e);
+      color: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+    .hero p {
+      margin: 6px 0;
+      color: rgba(255,255,255,.92);
+    }
+    .summary, .news-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .summary {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .metric {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .label.ok { background: #dcfce7; color: var(--success); }
+    .label.warn { background: #fef3c7; color: var(--warn); }
+    h2 {
+      margin: 28px 0 14px;
+      font-size: 22px;
+    }
+    .news-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .news-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .news-card ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .news-card li { margin-bottom: 10px; }
+    .muted { color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    th { background: #eff6ff; }
+    @media (max-width: 720px) {
+      .hero h1 { font-size: 26px; }
+      .wrap { padding: 16px 12px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>📰 跨境新闻日报</h1>
+      <p><strong>日期：</strong>2026-04-12（整理北京时间 2026-04-11 热点）</p>
+      <p><strong>覆盖：</strong>跨境电商、Amazon FBA、Shopify/DTC、TikTok Shop、Temu、Shein、跨境物流</p>
+      <p><strong>结论：</strong>平台正在把流量分配和履约能力深度绑定，低价直邮模式面临更强合规与成本压力。</p>
+    </section>
+
+    <section class="summary">
+      <div class="card">
+        <div class="muted">新闻总数</div>
+        <div class="metric">12</div>
+      </div>
+      <div class="card">
+        <div class="muted">已验证条目</div>
+        <div class="metric">10</div>
+        <div class="label ok">✅ 已验证</div>
+      </div>
+      <div class="card">
+        <div class="muted">单方报道</div>
+        <div class="metric">2</div>
+        <div class="label warn">⚠️ 单方报道</div>
+      </div>
+    </section>
+
+    <h2>验证状态汇总</h2>
+    <table>
+      <thead>
+        <tr><th>维度</th><th>数量</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>已验证</td><td>10</td><td>存在明确平台动作、数字或时间点</td></tr>
+        <tr><td>单方报道</td><td>2</td><td>仅单一路径披露，已在正文中保守处理</td></tr>
+        <tr><td>总计</td><td>12</td><td>保留可执行、可研判的核心新闻</td></tr>
+      </tbody>
+    </table>
+
+    <h2>头条新闻</h2>
+    <section class="news-grid">
+      <article class="card news-card">
+        <h3>Amazon 与 USPS 续签包裹合作</h3>
+        <ul>
+          <li><strong>核心事件：</strong>USPS 继续承接 Amazon 约 80% 包裹业务。</li>
+          <li><strong>关键数据：</strong>每年处理超 10 亿件 Amazon 包裹。</li>
+          <li><strong>影响范围：</strong>北美 FBA 卖家与尾程网络稳定性直接相关。</li>
+          <li><strong>后续动作：</strong>关注 Q2 尾程成本与附加费是否继续外溢。</li>
+          <li><strong>解读分析：</strong>Amazon 暂未完全放弃外部公共配送网络，卖家仍需把 USPS 时效和偏远地区签收纳入运营模型。</li>
+        </ul>
+      </article>
+      <article class="card news-card">
+        <h3>Amazon 传 5 月或裁员 1.4 万人</h3>
+        <ul>
+          <li><strong>核心事件：</strong>消息称 Amazon 将在 5 月进行新一轮大裁员。</li>
+          <li><strong>关键数据：</strong>约 1.4 万人，波及 AWS、零售、人力等部门。</li>
+          <li><strong>影响范围：</strong>卖家支持、平台招商、工具节奏可能变慢。</li>
+          <li><strong>后续动作：</strong>卖家应预设更多自助化、少人工支持的运营环境。</li>
+          <li><strong>解读分析：</strong>平台资源继续向高利润与自动化业务集中，第三方卖家需要更强 SOP 和多渠道备份。</li>
+        </ul>
+      </article>
+      <article class="card news-card">
+        <h3>TikTok Shop 越南收紧联盟营销资格</h3>
+        <ul>
+          <li><strong>核心事件：</strong>过去 30 天有服务类负面违规的商家不能参与联盟营销。</li>
+          <li><strong>关键数据：</strong>按 30 个自然日服务相关净分率评估。</li>
+          <li><strong>影响范围：</strong>依赖达人分销的越南站卖家会明显分化。</li>
+          <li><strong>后续动作：</strong>立即排查空包、假货、欺诈与物流差评。</li>
+          <li><strong>解读分析：</strong>平台正把流量资格和履约体验绑定，低价冲量但服务粗糙的打法会失效。</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2>平台政策与市场变化</h2>
+    <section class="news-grid">
+      <article class="card news-card"><h3>TikTok Shop 越南暂停 Star Shop+ 新增</h3><p class="muted">新申请自 4 月 1 日起暂停，常规 Star Shop 继续运营。平台资源分配转向更强筛选。</p></article>
+      <article class="card news-card"><h3>Shopee 台湾严管“现货”宣传</h3><p class="muted">4 月 13 日起执行，预售商品占比超 10% 且店铺名带“现货”可能被冻结。</p></article>
+      <article class="card news-card"><h3>eBay Q2 工业品激励计划上线</h3><p class="muted">4 月 1 日至 6 月 30 日，最高返还 40% 成交费，单卖家上限 20000 美元。</p></article>
+      <article class="card news-card"><h3>印尼 TikTok Shop 与 Tokopedia 直播爆发</h3><p class="muted">斋月直播观看 380 亿次，sahur 时段交易峰值达平时 15 倍。</p></article>
+      <article class="card news-card"><h3>马来西亚 TikTok Shop 销售额同比增超 130%</h3><p class="muted">JomLokal Booster 投入 2000 万林吉特，已覆盖 5000+ 中小企业。</p></article>
+      <article class="card news-card"><h3>欧盟 7 月对低货值包裹征收固定费用</h3><p class="muted">150 欧元以下非欧盟包裹每件增加 3 欧元，Temu、Shein 直邮模型承压。</p></article>
+    </section>
+
+    <h2>物流供应链</h2>
+    <section class="news-grid">
+      <article class="card news-card"><h3>沃尔玛关闭伊利诺伊履约中心</h3><p class="muted">5 月 29 日生效，111 个岗位受影响，新一代自动化仓网继续替换旧仓。</p></article>
+      <article class="card news-card"><h3>Amazon 欧洲站加收 1.5% 燃油附加费</h3><p class="muted">覆盖 FBA 与 MCF，欧洲站低毛利商品利润空间进一步被压缩。</p></article>
+      <article class="card news-card"><h3>TikTok Shop 爆单倒逼 DTC 升级履约体系</h3><p class="muted">单 SKU 可在几小时内占到 70%-80% 订单量，传统按订单履约模型被算法流量击穿。</p></article>
+    </section>
+  </div>
+</body>
+</html>
