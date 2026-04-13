@@ -10,247 +10,302 @@
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --accent: #2563eb;
+      --primary: #2563eb;
+      --primary-soft: #dbeafe;
+      --accent: #ea580c;
       --border: #e5e7eb;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 220px);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
     }
-    .wrap {
-      max-width: 1200px;
+    .container {
+      width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 32px 16px 48px;
+      padding: 32px 0 56px;
     }
     .hero {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      background: linear-gradient(135deg, #1d4ed8, #2563eb 55%, #0ea5e9);
       color: #fff;
-      border-radius: 20px;
-      padding: 28px 24px;
+      border-radius: 24px;
+      padding: 32px;
       box-shadow: var(--shadow);
       margin-bottom: 24px;
     }
     .hero h1 {
-      margin: 0 0 8px;
-      font-size: 32px;
-      line-height: 1.2;
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
     }
     .hero p {
-      margin: 6px 0;
-      color: rgba(255,255,255,0.88);
+      margin: 8px 0;
+      max-width: 900px;
+      color: rgba(255,255,255,0.92);
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 22px 0 0;
+    }
+    .summary .pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      padding: 14px 16px;
+      backdrop-filter: blur(8px);
+    }
+    .section-title {
+      font-size: 22px;
+      margin: 28px 0 16px;
+      color: #0f172a;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 18px;
     }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-    }
-    .card h2 {
-      margin: 0 0 14px;
-      font-size: 20px;
-      line-height: 1.35;
-      color: #111827;
-    }
-    .item {
-      margin-bottom: 12px;
-    }
-    .label {
-      display: inline-block;
-      font-size: 12px;
-      color: var(--accent);
-      background: rgba(37, 99, 235, 0.08);
-      padding: 3px 8px;
-      border-radius: 999px;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    .item p {
-      margin: 0;
-      color: var(--text);
-      font-size: 14px;
-    }
-    .summary, .sources {
-      margin-top: 24px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 22px;
       box-shadow: var(--shadow);
     }
-    .summary h2, .sources h2 {
-      margin-top: 0;
-      font-size: 22px;
+    .card.headline {
+      border: 1px solid #bfdbfe;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
     }
-    .summary ol, .sources ul {
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      margin-bottom: 12px;
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+    .tag.orange {
+      background: #ffedd5;
+      color: var(--accent);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.35;
+    }
+    .item {
+      margin: 10px 0;
+      color: var(--text);
+    }
+    .item strong {
+      color: #111827;
+    }
+    .source {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 12px;
+    }
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-top: 24px;
+    }
+    .conclusion ol {
       margin: 0;
       padding-left: 20px;
     }
-    .summary li, .sources li {
-      margin: 8px 0;
-      color: var(--text);
-    }
-    .meta {
-      margin-top: 12px;
+    .footer {
+      margin-top: 20px;
       font-size: 13px;
       color: var(--muted);
+      text-align: center;
     }
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 26px; }
-      .wrap { padding: 20px 12px 36px; }
-      .card { padding: 16px; }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 20px, 1180px); padding-top: 20px; }
+      .hero, .card, .conclusion { border-radius: 18px; padding: 18px; }
+      h2 { font-size: 20px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <section class="hero">
       <h1>2026-04-13 跨境新闻日报</h1>
-      <p>聚焦 Amazon、TikTok Shop、Temu、Shein、Shopify 及跨境物流近一周关键动态。</p>
-      <p>核心主线：物流成本上行、平台全球化中台升级、卖家经营从粗放增长转向系统化运营。</p>
-      <div class="meta">更新日期：2026-04-13 | 最多 12 条重点事件</div>
+      <p>聚焦 4 月 12 日前后跨境电商、Amazon FBA、TikTok Shop、Temu、Shein 与跨境物流的重要变化，筛选出对卖家经营决策最有参考价值的 10 条动态。</p>
+      <p>本期重点信号：欧洲履约成本上升，TikTok Shop 欧洲渗透加速，东南亚监管继续趋严，多平台履约与内容分销正在同步升级。</p>
+      <div class="summary">
+        <div class="pill"><strong>头条方向</strong><br/>亚马逊欧洲附加费、TikTok Shop 德国渗透</div>
+        <div class="pill"><strong>平台焦点</strong><br/>Amazon、TikTok Shop、eBay、Redshop</div>
+        <div class="pill"><strong>经营主题</strong><br/>成本、合规、履约、本地化内容</div>
+        <div class="pill"><strong>今日结论</strong><br/>多平台增长必须建立在稳履约与强合规之上</div>
+      </div>
     </section>
 
+    <h3 class="section-title">头条新闻</h3>
+    <section class="grid">
+      <article class="card headline">
+        <div class="tag">头条 1</div>
+        <h2>亚马逊欧洲站加收运输附加费，FBA/MCF 履约成本再抬升</h2>
+        <div class="item"><strong>核心事件：</strong>亚马逊宣布将对欧洲 10 个站点的 FBA 订单加收运输附加费，并在随后对主要市场的 MCF 订单同步执行，原因是燃油与物流成本持续走高。</div>
+        <div class="item"><strong>关键数据：</strong>附加费率为运费的 1.5%，按欧盟区 FBA 平均测算，单件商品约增加 0.05 欧元；北美市场同期附加费为 3.5%。</div>
+        <div class="item"><strong>影响范围：</strong>欧洲 FBA 卖家、用 MCF 承接 Shopify 和其他渠道订单的品牌，以及低毛利、重货、大件类目的商家都会明显承压。</div>
+        <div class="item"><strong>后续动作：</strong>建议立即重算欧盟站 SKU 毛利，拆分可提价与不可提价商品，同时评估海外仓与第三方承运商替代方案，并把新费率纳入后续广告和促销预算。</div>
+        <div class="item"><strong>解读分析：</strong>这表明平台开始更系统地把全球物流波动向卖家端传导。接下来比拼的不只是拿流量能力，而是能否用 FBA、第三方仓和本地配送组合守住履约成本与利润空间。</div>
+        <div class="source">来源：ecommercenews.eu / Amazon Seller Central</div>
+      </article>
+
+      <article class="card headline">
+        <div class="tag orange">头条 2</div>
+        <h2>TikTok Shop 在德国加速渗透，社交电商进入常态化消费阶段</h2>
+        <div class="item"><strong>核心事件：</strong>NielsenIQ 数据显示，TikTok Shop 在德国上线一年后，已从尝鲜型平台逐步进入部分用户的固定购物清单。</div>
+        <div class="item"><strong>关键数据：</strong>约 15% 的德国线上消费者至少购买过一次，平台已升至德国第 15 大在线零售商。时尚、电子和家居是主要成交品类，卖家费率已从 5% 提高到 9%。</div>
+        <div class="item"><strong>影响范围：</strong>欧洲 TikTok Shop 卖家、内容品牌、达人服务商，以及同时做 Amazon 与独立站的商家都会受影响，德国样本对法意市场也有较强参考意义。</div>
+        <div class="item"><strong>后续动作：</strong>有欧洲计划的卖家应优先准备德语内容、本地达人合作与 FBT 履约能力，把 TikTok 从引流工具升级为独立成交渠道来配置库存和客服。</div>
+        <div class="item"><strong>解读分析：</strong>德国用户一年内完成从低认知到复购，说明欧洲社交电商成熟速度快于市场预期。内容种草、本地履约、平台内成交的闭环正在成型，传统货架电商的单线程打法会越来越吃力。</div>
+        <div class="source">来源：ecommercenews.eu / NielsenIQ</div>
+      </article>
+    </section>
+
+    <h3 class="section-title">重点动态</h3>
     <section class="grid">
       <article class="card">
-        <h2>1. Amazon 上调 FBA 燃油与物流附加费</h2>
-        <div class="item"><span class="label">核心事件</span><p>Amazon 宣布对 FBA 卖家加收 3.5% 的燃油与物流相关附加费，4 月 17 日起在美国和加拿大执行。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>附加费比例为 3.5%，同期 USPS 还拟对部分包裹服务临时涨价 8%。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>北美站低毛利、重货和低客单卖家压力最大，利润模型将被重新压缩。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>尽快重算单品毛利，评估提价、调广告、降包材或切换仓配组合。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>这说明物流涨价已从承运商传导到平台生态，卖家将进入更强的精细化经营阶段。</p></div>
+        <div class="tag">01</div>
+        <h2>亚马逊与 USPS 续签深度合作</h2>
+        <div class="item"><strong>核心事件：</strong>亚马逊与美国邮政达成新协议，后者继续承接亚马逊大部分包裹配送业务。</div>
+        <div class="item"><strong>关键数据：</strong>USPS 将保留约 80% 的亚马逊包裹业务，年处理量超过 10 亿件。</div>
+        <div class="item"><strong>影响范围：</strong>北美站卖家与物流服务商能获得更稳定的末端配送预期，旺季排产判断更清晰。</div>
+        <div class="item"><strong>后续动作：</strong>卖家仍应准备多承运商备份方案，但短期可把 USPS 视作相对稳定的基础网络。</div>
+        <div class="item"><strong>解读分析：</strong>亚马逊并未完全脱离传统邮政体系，北美末端配送仍将维持“自建加外协”的混合格局。</div>
+        <div class="source">来源：TT123 / 亿恩</div>
       </article>
 
       <article class="card">
-        <h2>2. Amazon 与 USPS 达成新包裹协议</h2>
-        <div class="item"><span class="label">核心事件</span><p>Amazon 与 USPS 完成新一轮合作续签，稳住美国末端派送网络。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>USPS 将继续承接约 80% 的 Amazon 包裹业务，每年处理超 10 亿件。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>对大促节点和偏远地区配送稳定性有积极作用，也影响卖家的时效预期。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>关注 Prime Day 前后的派送表现、入仓节奏和履约 SLA 变化。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>Amazon 一边提高费用，一边稳住底层运力，说明平台更重视利润和体验的同步控制。</p></div>
+        <div class="tag">02</div>
+        <h2>TikTok Shop 越南收紧联盟营销门槛</h2>
+        <div class="item"><strong>核心事件：</strong>越南站要求商家过去 30 天内不得出现服务相关负面评价违规，否则无法参与联盟营销。</div>
+        <div class="item"><strong>关键数据：</strong>考核周期为 30 天，空包、售假、欺诈等高风险投诉会被重点审查。</div>
+        <div class="item"><strong>影响范围：</strong>依赖达人分销做冷启动的新店和服务稳定性较差的商家会首当其冲。</div>
+        <div class="item"><strong>后续动作：</strong>优先清理物流延误、售后慢和包裹异常问题，再扩达人群与达人投放。</div>
+        <div class="item"><strong>解读分析：</strong>联盟流量正从普惠资源变成带准入门槛的优质资源，粗放铺货空间继续收缩。</div>
+        <div class="source">来源：TT123</div>
       </article>
 
       <article class="card">
-        <h2>3. TikTok Shop 升级“一商卖全球”</h2>
-        <div class="item"><span class="label">核心事件</span><p>TikTok Shop 为跨境 POP 商家新增“内容全球分发”和“跨店一键铺品”功能。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>项目形成七大核心能力，目前优先支持美国市场向全球分发，预计 4 月下旬拓展到更多区域互发。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>多店铺、多市场品牌商家将明显受益，尤其适合内容驱动和 SKU 可复制团队。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>提前梳理店铺经营组、内容翻译流程、商品映射和跨市场素材复用机制。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>TikTok Shop 正在把流量平台升级为全球经营中台，降低跨国复制的组织成本。</p></div>
+        <div class="tag">03</div>
+        <h2>TikTok Shop 越南暂停 Star Shop+ 新增申请</h2>
+        <div class="item"><strong>核心事件：</strong>针对中国商家的 Star Shop+ 计划暂停新增申请，存量商家权益暂时保留。</div>
+        <div class="item"><strong>关键数据：</strong>政策自 2026 年 4 月 1 日生效，常规 Star Shop 计划仍继续运行。</div>
+        <div class="item"><strong>影响范围：</strong>原计划依靠平台额外扶持获取增长的新商家受影响最大。</div>
+        <div class="item"><strong>后续动作：</strong>把经营重心转向店铺评分、履约与内容转化，降低对短期官方权益的依赖。</div>
+        <div class="item"><strong>解读分析：</strong>平台正在重新校准扶持资源效率，说明基本盘能力比资格红利更重要。</div>
+        <div class="source">来源：TT123 / 亿邦动力</div>
       </article>
 
       <article class="card">
-        <h2>4. TikTok Shop 越南站收紧联盟准入</h2>
-        <div class="item"><span class="label">核心事件</span><p>越南本土店要求商家过去 30 天内不得有服务类负评违规，方可参与联盟营销。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>平台按近 30 日“服务相关净分率”评估，空包、假货、欺诈投诉也会触发资格取消。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>依赖达人分销和联盟流量的商家，将更受物流与客服质量约束。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>立刻排查服务评分、售后投诉和物流异常，避免失去联盟流量入口。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>平台把流量分发与服务质量强绑定，意味着内容红利正在转化为合规红利。</p></div>
+        <div class="tag">04</div>
+        <h2>eBay Q2 工业品激励计划上线</h2>
+        <div class="item"><strong>核心事件：</strong>eBay 针对美英德站海外仓卖家推出工业与商业用品专项返利计划。</div>
+        <div class="item"><strong>关键数据：</strong>活动期为 4 月 1 日至 6 月 30 日，成交费返还最高 40%，单卖家奖励上限 2 万美元。</div>
+        <div class="item"><strong>影响范围：</strong>有工业品供应链、本地仓资源和专业长尾运营能力的卖家更具优势。</div>
+        <div class="item"><strong>后续动作：</strong>对照类目清单，优先上架高客单、低竞争、专业需求稳定的 SKU。</div>
+        <div class="item"><strong>解读分析：</strong>成熟平台正在把增长重心引向更抗价格战的工业蓝海品类。</div>
+        <div class="source">来源：TT123 / 出海网</div>
       </article>
 
       <article class="card">
-        <h2>5. Temu 在阿联酋推进本地卖家计划</h2>
-        <div class="item"><span class="label">核心事件</span><p>Temu 在阿联酋推动本地卖家计划，允许拥有本地主体与库存的企业入驻。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>该计划已在全球 30 多个市场落地，重点强化“本地对本地”履约模式。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>中东本地商家、海外仓服务商与具备前置库存能力的卖家将获得更多机会。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>评估阿联酋主体、税务、仓储与配送网络，准备切入中东本地履约通道。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>Temu 的竞争逻辑已从纯低价扩张转向“低价 + 更快履约”的本地化升级。</p></div>
+        <div class="tag">05</div>
+        <h2>TikTok Shop 美区 3C 家电促销聚焦西语达人</h2>
+        <div class="item"><strong>核心事件：</strong>TikTok Shop 美国站启动 2026 Tech Vibes 主题活动，鼓励 3C 与家电卖家结合高带货达人及西语内容资源做场景营销。</div>
+        <div class="item"><strong>关键数据：</strong>西语达人合作佣金加码 3% 到 5%，指定机构合作可再加码 5%，并配套 1 万美元挑战赛资源。</div>
+        <div class="item"><strong>影响范围：</strong>3C、小家电、季节性电子产品卖家，以及希望切入美国西语消费圈层的品牌会更直接受益。</div>
+        <div class="item"><strong>后续动作：</strong>尽快准备西语素材、双语详情页和场景化短视频，围绕露营、观赛、制冷等节点打包投放。</div>
+        <div class="item"><strong>解读分析：</strong>平台红利正在从单纯活动参与，转向对特定语言圈层和内容能力的精细化运营。</div>
+        <div class="source">来源：TT123</div>
       </article>
 
       <article class="card">
-        <h2>6. Shein 调整美国卖家发货模式</h2>
-        <div class="item"><span class="label">核心事件</span><p>公开报道显示，Shein 将在 4 月中旬关闭部分美国卖家的自发货功能，转向统一履约模式。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>调整对象为部分美国卖家，节奏集中在 4 月中旬，旨在统一订单处理与发货链路。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>卖家运营灵活性可能下降，但平台整体履约一致性会提升。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>尽快确认是否在调整范围内，并同步修改仓配 SOP、库存和订单处理流程。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>Shein 正继续收紧平台控制权，流量红利会越来越依赖对平台规则的深度适配。</p></div>
+        <div class="tag">06</div>
+        <h2>越南强化打击平台走私与假货</h2>
+        <div class="item"><strong>核心事件：</strong>越南海关披露，针对通过电商平台和快递渠道进行的走私、欺诈和假货交易正持续加强执法。</div>
+        <div class="item"><strong>关键数据：</strong>近阶段共查处 8879 起违规案件，涉案金额约 8041 亿越南盾，其中 83 起涉嫌刑事犯罪。</div>
+        <div class="item"><strong>影响范围：</strong>越南及东南亚市场的跨境卖家、集运商和清关服务商都需要提高合规警觉。</div>
+        <div class="item"><strong>后续动作：</strong>复查报关、品牌授权、原产地与货描一致性，强化揽收前审单与异常识别。</div>
+        <div class="item"><strong>解读分析：</strong>东南亚流量红利仍在，但监管也在同步补课，合规能力已经成为基础运营能力。</div>
+        <div class="source">来源：TT123 / 越南海关总局</div>
       </article>
 
       <article class="card">
-        <h2>7. Amazon 在深圳启用 GWD 枢纽仓</h2>
-        <div class="item"><span class="label">核心事件</span><p>Amazon 4 月 11 日在深圳启用全球智能枢纽仓，为中国卖家提供仓储、清关和跨境运输一体化服务。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>公开报道提到，跨境配送时效最多可缩短 7 天。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>华南货源型卖家和多站点运营团队受益更明显，有助于提升补货与分拨效率。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>评估是否前移部分库存与集货链路，优化补货周期和海外仓协同。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>Amazon 正把供应链触角前移到货源地，帮助卖家提效，也强化了平台对链路的控制力。</p></div>
+        <div class="tag">07</div>
+        <h2>ChannelEngine 与 Monta 打通欧洲多平台履约</h2>
+        <div class="item"><strong>核心事件：</strong>两家公司扩大战略合作，把 marketplace 连接、订单管理和本地仓配整合到同一体系中。</div>
+        <div class="item"><strong>关键数据：</strong>ChannelEngine 对接 1300 多个平台，Monta 服务约 3000 家网店，并覆盖欧洲 5 个市场。</div>
+        <div class="item"><strong>影响范围：</strong>做 Amazon、TikTok Shop、独立站和欧洲多平台联营的品牌，将更重视系统加履约一体化方案。</div>
+        <div class="item"><strong>后续动作：</strong>评估德国、法国、英国等重点市场的本地仓提速收益，降低库存与订单割裂问题。</div>
+        <div class="item"><strong>解读分析：</strong>未来壁垒不只是多上平台，而是能否用一套系统稳定跑通多个平台与多个国家。</div>
+        <div class="source">来源：ecommercenews.eu</div>
       </article>
 
       <article class="card">
-        <h2>8. Amazon 强化欧洲多站点机会</h2>
-        <div class="item"><span class="label">核心事件</span><p>Amazon 面向中国卖家强化欧洲布局，开放 10 个站点，并释放新卖家降费与新站点红利信号。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>荷兰、瑞典、波兰、比利时、爱尔兰等站点 2026 年销售额较 2022 年预计增长超过 35%。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>适合高客单、品牌化和具备合规能力的商家从成熟站点向新市场外扩。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>重新评估欧洲站点进入顺序，结合税务、VAT 与本地履约能力做区域化布局。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>欧洲市场的竞争正从单站打法进入区域协同阶段，谁先完成系统布局，谁更占优。</p></div>
+        <div class="tag">08</div>
+        <h2>荷兰线上消费微降，跨境购买继续升温</h2>
+        <div class="item"><strong>核心事件：</strong>荷兰 2025 年整体线上消费略降，但跨境下单次数和消费额继续增长。</div>
+        <div class="item"><strong>关键数据：</strong>线上支出约 357 亿欧元，同比降 1%；跨境购买次数达 4480 万次，同比增 9%；中国站点占跨境订单 31%。</div>
+        <div class="item"><strong>影响范围：</strong>中国卖家、跨境平台和欧盟直邮商家都可从中观察欧洲成熟市场的份额迁移方向。</div>
+        <div class="item"><strong>后续动作：</strong>优先布局家居、电子、玩具等增长品类，并提升税费透明、时效与退货体验。</div>
+        <div class="item"><strong>解读分析：</strong>成熟市场总量放缓后，跨境平台依旧能扩份额，关键在于价格、选择和服务三者平衡。</div>
+        <div class="source">来源：ecommercenews.eu</div>
       </article>
 
       <article class="card">
-        <h2>9. Temu 登顶波兰电商用户榜首</h2>
-        <div class="item"><span class="label">核心事件</span><p>2026 年 3 月 Temu 在波兰的用户规模超过本土平台 Allegro，跃居第一。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>Temu 约 1910 万用户，Allegro 约 1850 万，Shein 约 830 万，Amazon 约 770 万。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>中东欧市场流量格局被重塑，Temu 对本土平台的冲击进入新阶段。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>关注波兰和中东欧的平台招商、物流布局与欧盟税改对成交成本的影响。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>Temu 在欧洲已不只是低价渠道，而是逐步成为真正的主流流量入口。</p></div>
+        <div class="tag">09</div>
+        <h2>小红书 Redshop 计划 6 月上线</h2>
+        <div class="item"><strong>核心事件：</strong>小红书旗下独立跨境平台 Redshop 将采用定向邀请制试运行，主打差异化内容与特色商品。</div>
+        <div class="item"><strong>关键数据：</strong>首批仅招募 50 家种子商家，覆盖美国、英国、澳大利亚、加拿大及东南亚多个市场。</div>
+        <div class="item"><strong>影响范围：</strong>文创、非遗、手工艺和高内容密度品牌将迎来新的出海实验场。</div>
+        <div class="item"><strong>后续动作：</strong>准备品牌故事、图文和短视频资产、英文商品页与轻量履约方案，争取进入首轮名单。</div>
+        <div class="item"><strong>解读分析：</strong>社区种草向跨境交易闭环延伸，说明内容型平台仍在寻找差异化出海路径。</div>
+        <div class="source">来源：出海网</div>
       </article>
 
       <article class="card">
-        <h2>10. 澳大利亚市场向全球平台集中</h2>
-        <div class="item"><span class="label">核心事件</span><p>Pattern 研究显示，澳大利亚电商竞争正向 Amazon、Temu、Shein 等全球平台集中。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>Amazon 触达 60% 消费者，拥有 880 万活跃买家；Temu 销售额达 26 亿澳元，47% 消费者购买；Shein 触达率升至 30%。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>面向澳洲市场的卖家和品牌，需要优先考虑全球平台渠道而非本土平台。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>同步优化澳洲市场的本地配送、评价体系和平台投放策略。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>澳大利亚成为全球平台竞争的缩影，竞争点正从价格转向信任、履约和规模效率。</p></div>
-      </article>
-
-      <article class="card">
-        <h2>11. 美国电商大盘保持增长但趋稳</h2>
-        <div class="item"><span class="label">核心事件</span><p>美国电商市场继续扩张，但年增速维持在个位数，进入更成熟的发展阶段。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>2025 年销售额预计 1.234 万亿美元，同比增长 5.4%；渗透率 23.1%，Q4 首次突破 25%；移动端占比 56.4%。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>所有跨境卖家都需要从增量思维转向利润、复购和效率思维。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>聚焦复购、品牌沉淀、移动端转化与更稳健的投流回报。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>美国市场仍大，但红利不再粗放，真正的机会属于能长期精耕的人。</p></div>
-      </article>
-
-      <article class="card">
-        <h2>12. Amazon 收紧参考定价规则</h2>
-        <div class="item"><span class="label">核心事件</span><p>Amazon 更新参考定价规则，进一步规范划线价和常规价展示逻辑。</p></div>
-        <div class="item"><span class="label">关键数据</span><p>4 月 23 日起划线价需基于真实价格；5 月 18 日起，若过去 90 天中超过 45 天低价销售，促销价也将计入常规价。</p></div>
-        <div class="item"><span class="label">影响范围</span><p>依赖长期促销和高划线价展示的卖家，将面临折扣呈现能力下降。</p></div>
-        <div class="item"><span class="label">后续动作</span><p>尽快排查历史成交价与促销节奏，调整后续活动策略和价格锚点。</p></div>
-        <div class="item"><span class="label">解读分析</span><p>平台正在清理“伪折扣”空间，今后活动效果会更依赖真实价格竞争力。</p></div>
+        <div class="tag">10</div>
+        <h2>卖家精灵强化 Amazon 与 TikTok 双平台数据</h2>
+        <div class="item"><strong>核心事件：</strong>工具服务商正在把亚马逊与 TikTok Shop 的选品、达人和内容数据进一步打通，帮助卖家做跨平台运营决策。</div>
+        <div class="item"><strong>关键数据：</strong>相关生态工具覆盖 20 多个 TikTok 主流站点，配套达人分析工具已积累超 10 万卖家用户。</div>
+        <div class="item"><strong>影响范围：</strong>中小卖家可降低平台切换成本，更快建立“内容种草加货架转化”的联动打法。</div>
+        <div class="item"><strong>后续动作：</strong>把双平台工具用于验证 TikTok 爆款是否具备亚马逊长尾潜力，反向补充选品判断。</div>
+        <div class="item"><strong>解读分析：</strong>跨境工具正在从单平台优化迈向全链路协同，系统化决策能力会越来越重要。</div>
+        <div class="source">来源：AMZ123</div>
       </article>
     </section>
 
-    <section class="summary">
-      <h2>今日观察</h2>
+    <section class="conclusion">
+      <h3 class="section-title" style="margin-top:0;">今日结论</h3>
       <ol>
-        <li>物流与履约成本继续上行，卖家利润管理将成为 2026 年的核心能力之一。</li>
-        <li>平台都在建设全球化经营中台，帮助大卖复制效率，也同步加强平台控制力。</li>
-        <li>联盟准入、价格规则、履约模式都在收紧，粗放增长窗口继续缩小。</li>
+        <li>亚马逊欧洲加费意味着履约成本仍在上升，低毛利模式继续承压。</li>
+        <li>TikTok Shop 在欧洲和东南亚持续扩张，但平台门槛和规则也同步提高。</li>
+        <li>越南等市场的高压监管提醒卖家，合规已经不是附属环节，而是经营底座。</li>
+        <li>多平台履约、达人分销与系统整合，正在成为跨境卖家的新基础设施。</li>
+        <li>工业品、西语圈层、欧洲本地履约和内容型品牌，仍是当下值得重点跟进的结构性机会。</li>
       </ol>
     </section>
 
-    <section class="sources">
-      <h2>信息来源</h2>
-      <ul>
-        <li>Newsweek</li>
-        <li>新浪科技 / 亿邦动力</li>
-        <li>白鲸跨境 / TT123</li>
-        <li>AMZ123</li>
-        <li>Supply Chain Insights</li>
-        <li>网易订阅（引述公开报道）</li>
-      </ul>
-    </section>
+    <div class="footer">生成时间：2026-04-13 UTC · Cross-border Daily Report</div>
   </div>
 </body>
 </html>
