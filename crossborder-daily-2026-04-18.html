@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📰 跨境新闻日报 — 2026-04-18</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --accent: #0071e3;
+    --verified: #34c759;
+    --unverified: #ff9500;
+    --border: #e5e5e7;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+
+  .header {
+    background: linear-gradient(135deg, #0071e3 0%, #40a9ff 100%);
+    color: white;
+    padding: 32px 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .header h1 { font-size: 1.75rem; margin-bottom: 8px; }
+  .header p { opacity: 0.9; font-size: 0.95rem; }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .stat-card .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat-card .label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 32px 0 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .news-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+  }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+  .news-card.headline { border-left: 4px solid #ff3b30; }
+  .news-card .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .news-card .card-header h3 { font-size: 1.1rem; flex: 1; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge.verified { background: #e8f9ee; color: #248a3d; }
+  .badge.unverified { background: #fff4e5; color: #c27400; }
+
+  .dim-table { width: 100%; border-collapse: collapse; }
+  .dim-table td {
+    padding: 8px 12px;
+    vertical-align: top;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .dim-table tr:last-child td { border-bottom: none; }
+  .dim-label {
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    width: 90px;
+    font-size: 0.85rem;
+  }
+
+  .sources {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .calendar-table th, .calendar-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .calendar-table th {
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+  }
+  .calendar-table tr:last-child td { border-bottom: none; }
+
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 24px 16px; }
+    .header h1 { font-size: 1.35rem; }
+    .news-card { padding: 16px; }
+    .dim-label { width: 70px; font-size: 0.8rem; }
+    .dim-table td { padding: 6px 8px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📰 跨境新闻日报</h1>
+    <p>2026年4月18日（周六） · 覆盖时段：4月16日–17日（北京时间）</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="num">15</div>
+      <div class="label">新闻总量</div>
+    </div>
+    <div class="stat-card">
+      <div class="num" style="color: var(--verified);">12</div>
+      <div class="label">✅ 已验证</div>
+    </div>
+    <div class="stat-card">
+      <div class="num" style="color: var(--unverified);">3</div>
+      <div class="label">⚠️ 单方报道</div>
+    </div>
+  </div>
+
+  <!-- ===== HEADLINES ===== -->
+  <div class="section-title">🏆 头条新闻</div>
+
+  <!-- Card 1 -->
+  <div class="news-card headline">
+    <div class="card-header">
+      <h3>🔥 Amazon 卖家广告抵制成功：扣款新规推迟至 8 月</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>数百名七位数级 Amazon 卖家 4/15 发起 24 小时广告抵制，Amazon 于 4/16 宣布将广告自动扣款新规推迟至 8/1。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>MDS 联盟 700+ 成员，合计年营收约 140 亿美元。广告费占卖家营收 15–30%。新规取消信用卡支付广告费。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>全美数百万第三方卖家，Amazon 美国站 60%+ 商品由第三方销售。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>8/1 自动扣款仍生效，卖家有 3 个月缓冲。收款周期拉长政策（送达后 7 天）不变。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>卖家联盟从"发牢骚"进化到"能倒逼平台让步"。但平台在现金流控制权上不会松手，需在 8 月前完成财务系统适配。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://www.cnbc.com/2026/04/15/amazon-sellers-boycott-ads-payment-changes.html">CNBC</a> · <a href="https://www.pymnts.com/amazon/2026/amazon-sellers-protest-policy-changes-with-one-day-ad-boycott/">PYMNTS</a> · <a href="https://ppc.land/amazon-ads-delays-advertiser-payment-overhaul-to-august-after-pushback/">PPC Land</a></div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="news-card headline">
+    <div class="card-header">
+      <h3>🔥 Amazon 116 亿美元收购 Globalstar，卫星互联网对决 Starlink</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>Amazon 以每股 90 美元、总价约 115.7 亿美元收购低轨卫星运营商 Globalstar，加速 Project Kuiper 部署。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>交易金额 ~116 亿美元。FCC 要求 2026 年 7 月前完成 1600 颗卫星部署，目前仅 240+ 颗。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>直接挑战 Starlink 垄断。中长期若 Kuiper 在新兴市场落地，将创造新的电商增量市场。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>需监管审批，预计 H2 2026 完成。FCC 频谱许可延期审批是关键节点。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>太空竞赛从概念进入并购战阶段。Amazon 收购 Globalstar 核心是抢时间。对中国卖家，中长期利好东南亚、非洲、拉美电商基建。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://www.huxiu.com/article/4851536.html">虎嗅</a> · <a href="https://finance.sina.com.cn/jjxw/2026-04-16/doc-inhurihs3215913.shtml">证券时报</a> · <a href="https://www.stcn.com/article/detail/3750944.html">新浪财经</a></div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="news-card headline">
+    <div class="card-header">
+      <h3>🔥 QVC & HSN 申请破产——直播电商终结电视购物时代</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>QVC Group（含 HSN）提交破产保护申请，电视购物模式被 TikTok 直播电商和 Temu/Shein 取代。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>QVC 营收较 2019 峰值下降约 40%。TikTok 直播购物 GMV 2025–2026 年增长超 300%。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>电视购物行业全面萎缩。TikTok Shop 直播带货成为主流零售基础设施。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>破产重组期间继续运营。HSN 品牌可能被直播平台或电商公司收购。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>消费者注意力转移是必然趋势。TikTok Shop 已从"试试看"进化为主流渠道，跨境卖家应加大布局力度。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://apnews.com/article/qvc-bankruptcy-retail-9cbd98c14641ae7bb65c9d2dbb986fc9">AP News</a> · <a href="https://www.hollywoodreporter.com/business/business-news/qvc-hsn-file-chapter-11-bankruptcy-tiktok-1236566529/">Hollywood Reporter</a></div>
+  </div>
+
+  <!-- ===== PLATFORM POLICY ===== -->
+  <div class="section-title">📋 平台政策 & 费用</div>
+
+  <!-- Card 4 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>Amazon FBA 3.5% 燃油附加费 4/17 正式生效</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>Amazon 对所有 FBA 订单加收 3.5% 临时燃油和物流附加费，抵消美伊冲突导致的油价上涨。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>波斯湾 40 尺大柜运费突破 8000 美元（战前 4 倍）。美国国内油价上涨约 25%。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>全美 FBA 卖家，低客单价品类受冲击最大。多位卖家称利润已压缩至盈亏线。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>未给出取消时间表。Q2 财报后（7 月底）可能根据油价决定是否延续。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>开创平台将宏观风险成本转卖家的先例。叠加收款周期拉长和广告费扣款，卖家面临"三管齐下"现金流挤压。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://sellercentral.amazon.com/">Amazon Seller Central</a> · <a href="https://www.goatconsulting.com/amazon-fulfillment/amazon-fba-fee-changes-for-2026">Goat Consulting</a></div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>Amazon 法国投资 2.5 亿欧元建欧洲最大配送中心之一</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>Amazon 在法国 Ensisheim 建设大型配送中心，投资超 2.5 亿欧元，2027 年底运营，创造 2000 岗位。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>2.5 亿欧元投资。Grand Est 地区累计投资已达 15 亿欧元，雇员 4000+。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>欧洲站卖家获得更快本地配送，利好家居、大件类目。欧洲跨境物流时效有望缩短 1–2 天。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>4/13 已开工。2026 年底前法国另开 2 个配送中心（TUF1 + 里昂）。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>Amazon 持续加码欧洲，表明欧洲市场在其全球战略中权重上升。建议有欧洲站的卖家提前调整 FBA 入仓策略。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://france3-regions.franceinfo.fr/grand-est/haut-rhin/un-entrepot-amazon-s-installe-en-alsace-fin-2027-250-millions-d-euros-investis-et-2-000-emplois-annonces-3334922.html">France 3</a> · <a href="https://fashionunited.uk/news/business/amazon-announces-construction-of-a-new-distribution-centre-in-france-one-of-europes-largest/2026041487454">FashionUnited</a></div>
+  </div>
+
+  <!-- ===== TARIFF & POLICY ===== -->
+  <div class="section-title">🌍 关税 & 政策</div>
+
+  <!-- Card 6 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>美国 4/20 启动 1660 亿美元关税退款——史上最大规模退税</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>CBP 宣布 4/20 上线 CAPE 系统处理 IEEPA 关税退款，涉及 1660–1700 亿美元，覆盖超 33 万家进口商。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>1660 亿美元退款，33 万+ 进口商，53 万+ 报关单。处理周期 60–90 天。不含 301/232/122 条关税。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>此前按 IEEPA 缴关税的美国进口商均可申请。退款归属存在法律争议。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>4/20 系统上线即可申请。首批退款预计 6–7 月到账。Temu/Shein 已被集体诉讼。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>政府为"错误征税"买单。中国卖家间接受益——美国进口商拿退款后可能增加采购。Temu/Shein 集体诉讼可能开创消费者维权先例。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://m.thepaper.cn/newsDetail_forward_32977645">央视/路透</a> · <a href="https://www.52by.com/article/215781">邦阅网</a></div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>美国财长贝森特：301 关税最早 7 月恢复</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>贝森特 4/14 明确表示将援引 301 条款重建关税墙，最早 7 月初恢复至此前水平。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>当前基于第 122 条的临时关税为 10%。若恢复 301，中国商品可能重新面临 25% 额外关税。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>所有对美出口中国企业，跨境电商成本优势进一步被削弱。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>6–7 月是关键窗口。301 调查启动后有 30–60 天评议期。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>关税是"换马甲回来"，不是取消。"低价铺货"模式生存空间将被进一步压缩，品牌化是唯一出路。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://www.yicai.com/news/103134759.html">第一财经</a> · <a href="https://www.amz123.com/kx/jHWNZjhG">AMZ123</a></div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>Temu、Shein 遭集体诉讼——被要求退还"关税暴利"</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>McGuire Law 对 Temu 和 Shein 提起集体诉讼，指控涨价幅度远超实际关税成本，要求退还"暴利"。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>覆盖 2025.2–2026.2 购物消费者。部分商品涨价幅度高达 377%，远超 IEEPA 最高税率 145%。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>两平台美国数亿消费者可加入。败诉可能面临数十亿美元赔偿。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>预计 H2 2026 进入证据开示。关注集体诉讼认证结果。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>可能确立先例：以"关税"为由涨价，若涨幅超过实际成本，差额构成"不当得利"。中国卖家需关注平台是否因此加大对供应商压价。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://wwd.com/sourcing-journal/trade/shein-temu-class-action-lawsuit-ieepa-tariff-refund-1238917787/">WWD</a> · <a href="https://www.aol.com/news/temu-shein-hit-class-actions-003900871.html">AOL</a></div>
+  </div>
+
+  <!-- ===== LOGISTICS ===== -->
+  <div class="section-title">🚢 物流 & 供应链</div>
+
+  <!-- Card 9 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>霍尔木兹海峡封锁持续——中东航线运费飙至战前 4 倍</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>美伊谈判破裂后海峡航运持续受阻，中国货代中东业务减半，绕行好望角导致运费飙升。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>40 尺大柜海运突破 8000 美元（战前 4 倍）。绕行增加 3500–4000 海里，航程延长 10–14 天，运力缩水 15%。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>所有经波斯湾航线的跨境物流。达飞加收 2000–4000 美元/箱，赫伯罗特加收 1500 美元/箱。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>海峡"关闭—放开—再关闭"反复，短期无解。需预留物流预算，考虑多式联运替代。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>已从地缘风险演变为持续性供应链断裂。建议评估海外仓提前备货，或通过中欧班列分散风险。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://news.sina.com.cn/o/2026-04-16/doc-inhusviy2862165.shtml">新浪新闻</a> · <a href="https://www.amz123.com/kx/UwEMx3O8">AMZ123</a></div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>UPS 全面部署 RFID 技术——包裹追踪进入"自动感知"时代</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>UPS 完成美国小包裹网络 RFID 第二阶段部署，实现揽收到投递全过程自动追踪。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>累计投资超 1 亿美元，消除约 2000 万次/年人工扫描。2026–2027 年向客户开放 RFID 标签打印。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>美国所有使用 UPS 的电商卖家。"丢失包裹"争议将显著减少。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>H2 2026 扩展至更多枢纽。2026–2027 年开放客户 RFID 标签打印。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>物流行业从"扫码"到"感知"的技术跃迁。跨境物流全链路可视性提升将有助于库存优化和客户体验。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-s-rfid-sensingtechnologytransformslogisticsindustry-givingcu.html">UPS</a> · <a href="https://www.supplychaindive.com/news/ups-rfid-sensor-hub-expansion-2026/817288/">Supply Chain Dive</a></div>
+  </div>
+
+  <!-- ===== REGIONAL & TRENDS ===== -->
+  <div class="section-title">🛒 区域市场 & 行业趋势</div>
+
+  <!-- Card 11 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>Q1 全球电商发货量增 22%——欧洲取代美国成增长新引擎</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>Scurri Q1 数据：发货量同比 +22%，GMV 破 50 亿欧元。美国下降，欧洲两位数增长。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>玩具/宠物/家居/体育发货量 +25–52%。非必需礼品和时尚服饰显著下滑。情人节日发货量 +100% YoY。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>欧洲站卖家受益，美国站增长放缓。实用型品类逆势增长。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>关注 Q2 母亲节、父亲节欧洲站备货。欧洲物流基础设施持续升级。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>增长引擎从美国转向欧洲（关税+地缘因素）。消费者从"想要"转向"需要"。选品应向实用型和兴趣驱动型倾斜。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://www.amz123.com/kx/PlcfK1OW">AMZ123</a> · <a href="https://retailtimes.co.uk/seasonal-peaks-drive-22-surge-in-q1-ecommerce-deliveries-as-retailers-rebalance-towards-domestic-demand-new-data-reveals/">Retail Times</a></div>
+  </div>
+
+  <!-- Card 12 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>巴西支付巨头 Ebanx 进军东南亚——覆盖 6100 亿美元数字市场</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>Ebanx（Uber、Shein 支付服务商）宣布立即进入泰国、印尼、土耳其，计划下季度进入马来西亚、越南。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>新市场数字支付规模约 6100 亿美元。股东包括 Advent International 和 FTV Capital。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>东南亚跨境电商平台获得更多本地支付选择，降低交易摩擦。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>泰/印尼/土耳其已开通。马/越预计 Q3 上线。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>跨境支付从"拉美独角"向"全球新兴市场"转型。建议出海品牌主动对接本地支付方案提升结账转化率。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://www.reuters.com/world/americas/brazilian-payments-firm-ebanx-makes-southeast-asia-push-2026-04-16/">Reuters</a> · <a href="https://www.businesstimes.com.sg/companies-markets/banking-finance/brazilian-payments-unicorn-ebanx-makes-south-east-asia-push">Business Times</a></div>
+  </div>
+
+  <!-- Card 13 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>Shopify B2B 功能全面开放——中小卖家也能做批发了</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>Shopify 将原生 B2B 功能从 Plus 计划下放到所有付费计划（Basic/Shopify/Advanced）。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>非 Plus 用户现可使用：公司档案、3 个定制目录、批量折扣、账期付款。此前仅 Plus（月费 $2000+）可用。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>全球数百万中小 Shopify 商家可低成本启动 B2B 业务。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>持续 rollout 中。同期推出 VAT 号码自动验证，利好欧洲跨境 B2B。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>Shopify 在抢夺 B2B 电商市场。适合有工厂资源、想做"零售+批发"双轨的卖家。评估迁移到原生功能可省数百美元/月。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://ecommercepartners.com/2026/04/14/shopify-b2b-features-now-on-all-plans/">Ecommerce Partners</a> · <a href="https://www.retailbiz.com.au/latest-news/shopify-rolls-out-native-b2b-tools-across-all-plans/">RetailBiz</a></div>
+  </div>
+
+  <!-- ===== OTHER ===== -->
+  <div class="section-title">📦 其他值得关注的动态</div>
+
+  <!-- Card 14 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>DTC 市场规模达 1866 亿美元——DSCP Smart Fulfillment 扩展 3PL 服务</h3>
+      <span class="badge verified">✅ 已验证</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>DSCP Smart Fulfillment 扩展 3PL 服务专攻 DTC 品牌。美国 DTC 市场 2025 年达 1866 亿美元。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>2025 年 $186.6B → 2026 年预计 $212.9B（+16.6%）。89% 企业对经常性收入增长乐观。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>DTC 品牌获更专业 3PL 选择，降低自建仓储成本。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>DSCP 服务持续扩展覆盖更多城市和品类。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>DTC 从"爆发期"进入"成熟期"。单纯 DTC 增长空间收窄，需结合平台电商做全渠道布局。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://www.globenewswire.com/news-release/2026/04/14/3273845/0/en/DSCP-Smart-Fulfillment-Launches-Expanded-Services-as-Direct-to-Consumer-Market-Reaches-186-6-Billion.html">GlobeNewswire</a> · <a href="https://www.trendtrack.io/blog-post/top-dtc-brands">Trendtrack</a></div>
+  </div>
+
+  <!-- Card 15 -->
+  <div class="news-card">
+    <div class="card-header">
+      <h3>Amazon Prime Day 2026 预计 7 月 8 日——卖家需提前备货</h3>
+      <span class="badge unverified">⚠️ 单方报道</span>
+    </div>
+    <table class="dim-table">
+      <tr><td class="dim-label">核心事件</td><td>多方消息源显示 Prime Day 2026 预计 7/8（周三），Amazon 尚未官方确认。卖家中心已接收促销提报。</td></tr>
+      <tr><td class="dim-label">关键数据</td><td>2025 年为 4 天（7/8–11），2026 预计回归 2 天。卖家提报截止预计 5 月底。</td></tr>
+      <tr><td class="dim-label">影响范围</td><td>全球所有 Amazon 卖家。Prime Day 通常贡献 Q3 营收的 20–30%。</td></tr>
+      <tr><td class="dim-label">后续动作</td><td>需 5 月底前完成促销提报和 FBA 入仓。建议比往年提前 2–3 周备货（物流延迟）。</td></tr>
+      <tr><td class="dim-label">解读分析</td><td>2 天模式意味着销售密度更高但备货风险更大。建议根据 2025 年数据做精细化预测。</td></tr>
+    </table>
+    <div class="sources">来源：<a href="https://outside.so/what-day-is/what-day-is-amazon-prime-day">Outside</a> · <a href="https://quivo.co/uk/amazon-prime-days-2026-dates-tips/">Quivo</a></div>
+  </div>
+
+  <!-- Calendar -->
+  <div class="section-title">📌 关键日历</div>
+  <table class="calendar-table">
+    <thead><tr><th>日期</th><th>事件</th></tr></thead>
+    <tbody>
+      <tr><td><strong>4/17</strong></td><td>Amazon FBA 3.5% 燃油附加费生效</td></tr>
+      <tr><td><strong>4/20</strong></td><td>美国 CAPE 关税退款系统上线</td></tr>
+      <tr><td><strong>5 月底</strong></td><td>Amazon Prime Day 促销提报截止（预计）</td></tr>
+      <tr><td><strong>7 月初</strong></td><td>301 关税可能恢复</td></tr>
+      <tr><td><strong>7/8</strong></td><td>Amazon Prime Day 2026（预计）</td></tr>
+      <tr><td><strong>8/1</strong></td><td>Amazon 广告费用自动扣款新规生效</td></tr>
+      <tr><td><strong>Q3</strong></td><td>Ebanx 进入马来西亚、越南</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <p>报告生成时间：2026-04-18 07:15（北京时间） · 下次更新：2026-04-19</p>
+  </div>
+</div>
+</body>
+</html>
