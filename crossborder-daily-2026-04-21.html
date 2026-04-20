@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境新闻日报 — 2026-04-21</title>
+<style>
+  :root {
+    --primary: #1a73e8;
+    --primary-dark: #1557b0;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --border: #e5e5ea;
+    --verified: #34c759;
+    --single: #ff9500;
+    --red: #ff3b30;
+    --blue-light: #e8f0fe;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+  
+  /* Header */
+  .header { background: linear-gradient(135deg, var(--primary), #4a90d9); color: #fff; padding: 32px 24px; border-radius: 16px; margin-bottom: 24px; box-shadow: var(--shadow); }
+  .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .header .meta { font-size: 14px; opacity: 0.9; }
+  .header .time { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-top: 8px; }
+
+  /* Stats */
+  .stats { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .stat-card { flex: 1; min-width: 120px; background: var(--card-bg); border-radius: 12px; padding: 16px; text-align: center; box-shadow: var(--shadow); }
+  .stat-card .num { font-size: 28px; font-weight: 700; }
+  .stat-card .label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+  .stat-card.verified .num { color: var(--verified); }
+  .stat-card.single .num { color: var(--single); }
+  .stat-card.total .num { color: var(--primary); }
+
+  /* Section */
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; padding-left: 12px; border-left: 4px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+  .section-title .emoji { font-size: 24px; }
+
+  /* News Card */
+  .news-card { background: var(--card-bg); border-radius: 14px; padding: 24px; margin-bottom: 16px; box-shadow: var(--shadow); border: 1px solid var(--border); transition: transform 0.15s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+  .news-card .card-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+  .news-card .badge { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .badge.verified { background: #e6f9ed; color: #1b7a34; }
+  .badge.single { background: #fff3e0; color: #c47a00; }
+  .news-card .title { font-size: 17px; font-weight: 700; line-height: 1.4; }
+  .news-card .date { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  /* 5-dimension grid */
+  .dims { display: grid; gap: 10px; margin-top: 14px; }
+  .dim { padding: 12px 14px; border-radius: 10px; font-size: 14px; }
+  .dim .dim-label { font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
+  .dim.event { background: #f0f7ff; border-left: 3px solid var(--primary); }
+  .dim.event .dim-label { color: var(--primary); }
+  .dim.data { background: #f5f0ff; border-left: 3px solid #8b5cf6; }
+  .dim.data .dim-label { color: #8b5cf6; }
+  .dim.impact { background: #fff5f5; border-left: 3px solid var(--red); }
+  .dim.impact .dim-label { color: var(--red); }
+  .dim.action { background: #f0fdf4; border-left: 3px solid var(--verified); }
+  .dim.action .dim-label { color: #16a34a; }
+  .dim.analysis { background: #fefce8; border-left: 3px solid #eab308; }
+  .dim.analysis .dim-label { color: #ca8a04; }
+
+  /* Table */
+  .event-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card-bg); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); font-size: 14px; }
+  .event-table th { background: var(--primary); color: #fff; padding: 12px 14px; text-align: left; font-weight: 600; }
+  .event-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .event-table tr:last-child td { border-bottom: none; }
+  .event-table tr:nth-child(even) td { background: #fafafa; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 24px 0 0; font-size: 12px; color: var(--text-secondary); border-top: 1px solid var(--border); margin-top: 32px; }
+
+  @media (max-width: 640px) {
+    .header { padding: 24px 16px; }
+    .header h1 { font-size: 20px; }
+    .news-card { padding: 16px; }
+    .news-card .title { font-size: 15px; }
+    .dim { padding: 10px 12px; font-size: 13px; }
+    .stats { gap: 8px; }
+    .stat-card { padding: 12px; }
+    .stat-card .num { font-size: 22px; }
+    .event-table { font-size: 12px; }
+    .event-table th, .event-table td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📰 跨境新闻日报</h1>
+    <div class="meta">2026年4月21日（周二） · 覆盖 4月20日及近期重大事件</div>
+    <div class="time">🕖 生成时间：北京时间 07:15</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card verified">
+      <div class="num">8</div>
+      <div class="label">✅ 已验证</div>
+    </div>
+    <div class="stat-card single">
+      <div class="num">7</div>
+      <div class="label">⚠️ 单方报道</div>
+    </div>
+    <div class="stat-card total">
+      <div class="num">17</div>
+      <div class="label">📄 总新闻数</div>
+    </div>
+  </div>
+
+  <!-- 🔥 头条 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🔥</span> 头条新闻</div>
+
+    <!-- Card 1 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">加州总检察长在反垄断案中击败 Amazon 第七项抗辩动议</div>
+          <div class="date">4月20日 · AuctionBytes / California AG Office</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>旧金山高等法院驳回 Amazon 在价格垄断案中的第七项简易判决抗辩动议，这是 Amazon 关键防线之一。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>Amazon 拥有 2 亿 Prime 会员，92% 消费者更倾向在 Amazon 购物。7/23 初步禁令听证，2027/1/19 正式开庭。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>全球 200 万+ 活跃第三方卖家。如初步禁令获准，Amazon Buy Box 定价算法可能被迫调整，跨平台定价限制将被打破。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>7月23日初步禁令听证会将决定 Amazon 是否需要提前停止定价干预行为。跨境卖家应重新评估多平台定价策略。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>这是加州自 2022 年起诉 Amazon 以来最重要的阶段性胜利。如果初步禁令获准，跨境卖家在多平台定价策略上将获得更大的灵活性——在其他平台提供更低价格将不再被 Amazon 降权。这意味着多渠道运营的价值将进一步凸显。</div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">USPS 监察长办公室发布伪造邮资管理警报</div>
+          <div class="date">4月20日 · EcommerceBytes</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>USPS OIG 于 4 月 8 日发布 counterfeit postage 管理警报，明确指出伪造邮资已成为系统性风险。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>报告被大量编辑，但确认 APV（Automated Package Verification）计划将用于自动检测邮资差异。USPS 正在收集公众反馈。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>所有使用 USPS 在线邮资的电商卖家，包括 eBay、Etsy、Amazon 平台卖家，尤其使用第三方邮资服务的小卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>USPS 预计在未来几个月加强在线邮资审查力度，可能推出更严格的验证措施。建议卖家审查当前使用的邮资工具是否合规。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>伪造邮资问题的曝光意味着 USPS 监管趋严。对于使用 Pirateship、Stamps.com 等第三方邮资打折服务的跨境卖家，合规风险上升。APV 计划虽然能自动纠正邮资差异，但也意味着容错空间更小。</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">Amazon 推迟 Ads 支付变更，避免加剧卖家现金流危机</div>
+          <div class="date">4月16日 · EcommerceBytes</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Amazon 原计划修改 Amazon Ads 账户支付机制，在引发卖家抵制威胁后宣布推迟。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>4月6日卖家开始分享相关邮件。中小卖家广告预算通常占营收 10-25%。新扣款时间将提前压缩卖家现金流。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>全球使用 Amazon Advertising 的数百万卖家，中小卖家受影响最大。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>Amazon 尚未公布新的实施时间表。建议预留至少 30 天的广告费用缓冲，密切关注 Seller Central 通知。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>在 3.5% 燃料附加费已施加的背景下，支付机制的进一步变化将雪上加霜。Amazon 的推迟决定反映了卖家社群集体行动的威慑力。但变更迟早会实施，卖家需提前做现金流压力测试。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🏪 平台动态 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🏪</span> 平台动态</div>
+
+    <!-- Card 4 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">Shein、Temu 面临集体诉讼，要求退还 IEPA 关税</div>
+          <div class="date">4月14-16日 · WWD / The Center Square</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Shein 和 Temu 遭到集体诉讼，原告要求退还根据《国际紧急经济权力法》（IEPA）征收的关税。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>IEPA 关税在 2025 年美国取消 de minimis 豁免后征收，影响从中国直发美国的包裹。多源交叉报道验证。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>美国消费者及通过 Shein/Temu 购物的用户。通过 Amazon FBA 发货的跨境卖家影响有限。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>诉讼刚启动，关键观察点是法院是否受理并裁定 IEPA 关税的合法性。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>如果关税被判定违法，可能带来数十亿美元退税，并改变美国对小额包裹的征税逻辑。对 FBA 卖家影响有限，但对直发模式的卖家可能是重大利好。</div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge single">⚠️ 单方报道</span>
+        <div>
+          <div class="title">QVC 准备申请破产保护，受 TikTok Shop 和 Temu 冲击</div>
+          <div class="date">4月17日 · Chicago Tribune</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>传统电视购物巨头 QVC 正为申请破产保护做准备。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>来自 Chicago Tribune 单一来源报道。QVC 的衰落反映了传统零售渠道在直播电商和低价平台冲击下的结构性困境。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>QVC 供应商和品牌价值合作伙伴。对 TikTok Shop 和 Temu 卖家验证了渠道增长潜力。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>关注破产申请时间和债权人安排，可能引发供应商与新兴平台的重新对接。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>QVC 的困境验证了 TikTok Shop 和 Temu 渠道的长期增长潜力。但平台格局的快速变化意味着今天的赢家可能在明天面临新挑战。</div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge single">⚠️ 单方报道</span>
+        <div>
+          <div class="title">Amazon 利用更紧密的中国供应链关系应对关税和 Shein/Temu 竞争</div>
+          <div class="date">4月17日 · South China Morning Post</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Amazon 正在加强与中国供应链的直接联系，以应对关税压力和来自 Shein、Temu 的竞争。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>SCMP 报道。这是 Amazon 在 de minimis 豁免取消后的战略调整。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>中国工厂和供应商、Amazon 第三方卖家、依赖中国制造的美国零售商。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>预计 Amazon 将扩大与中国工厂的直采比例，可能推出更多供应商激励计划。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>Amazon 正从"平台中间商"向"供应链管理方"转型。对能直接对接工厂的卖家是利好，但对纯贸易型卖家竞争压力将进一步加剧。</div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">Etsy 向卖家追收 2021 年运费调整费用</div>
+          <div class="date">4月16日 · EcommerceBytes / Reddit</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Etsy 通知卖家补缴 5 年前（2021 年）的运费标签调整费用，引发恐慌。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>有卖家被追收 $3，也有收到 $500 调整通知。大部分问题后被修复。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>Etsy 全球约 750 万活跃卖家，特别是 2021 年大量使用运费标签的卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>Etsy 已承认并修复问题。建议受影响卖家检查账户并保留记录。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>事件暴露了平台在长期财务追溯方面的系统风险。跨境卖家需要定期审查账户财务记录，及时发现异常扣费。</div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">日本邮政恢复接受发往美国的商品邮件</div>
+          <div class="date">4月13日 · EcommerceBytes / Japan Post</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>日本邮政 4/14 起恢复接受发往美国的包裹邮件，结束了 8 个月的暂停。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>暂停原因是 2025 年美国总统令取消 de minimis 豁免。恢复条件是通过 CBP 认证应用预付关税。$100 以下个人礼品仍免税。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>所有通过日本邮政向美国发货的寄件人，包括 Mercari Japan、Rakuten 等平台的卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>寄件人需在指定邮局办理并使用指定应用预付关税。具体费用尚未公布。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>这是 de minimis 政策调整后第一个恢复美国线路的主要邮政。"预付关税"将成为国际小包标准流程，跨境发货成本将结构性上升。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🚚 物流与供应链 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🚚</span> 物流与供应链</div>
+
+    <!-- Card 9 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">UPS 推出 RFID 标签技术，取代传统扫描</div>
+          <div class="date">4月15日 · EcommerceBytes / UPS Press Release</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>UPS 已在全美所有快递车辆和设施部署 RFID 传感技术，包裹自动追踪无需人工扫描。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>覆盖全美所有 UPS 车辆、配送设施和 5,500+ 家 UPS Store。RFID 取件感应可确认包裹已被收取——目前无其他快递商提供此项保证。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>eBay、Etsy、Amazon 平台卖家均可受益，对需要追踪证明的跨境卖家尤其重要。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>技术已全面部署。eBay 已再次从运费选项中移除 USPS Media Mail。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>RFID 自动追踪意味着物流透明度的飞跃。对北美有海外仓的卖家，这是降低运营成本和减少纠纷的重要机会。</div>
+      </div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">Amazon FBA 加收 3.5% 燃料和物流附加费</div>
+          <div class="date">4月2日 · EcommerceBytes / CNBC</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Amazon 4/17 起对 FBA 订单加收 3.5% 燃料和物流附加费，Buy with Prime 和 MCF 于 5/2 生效。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>平均每单增加 $0.17（美国 FBA）。背景是伊朗战争推高燃油价格。2022 年曾加收 5%。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>全球 200 万+ FBA 活跃卖家。附加费按履约费用计算。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>建议立即更新定价模型，考虑将部分成本转嫁或优化产品尺寸降低基础费用。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>"临时附加费"在 Amazon 语境中几乎从未真正取消。卖家应评估向 Walmart、TikTok Shop 等替代渠道分散风险。</div>
+      </div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">Amazon 修改参考价格规则，颠覆折扣定价</div>
+          <div class="date">4月8日 · EcommerceBytes / Amazon Seller Central</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Amazon 更新 List Price 和 Typical Price 验证规则，4/23 起生效，打击虚假折扣。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>4/23 起 List Price 需在其他零售商或以 Featured Offer 价格成交过。5/18 起 Typical Price 规则进一步收紧。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>所有展示折扣价格的卖家，特别是 Prime Day、黑五等促销期间使用高对比定价策略的卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>需在 4/23 前审查所有产品参考价格设置，5/18 前完成 Typical Price 相关调整。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>国内电商常用的"划线价"策略在 Amazon 将不再有效。合规定价卖家是利好，习惯虚高原价的卖家转化率将直接下降。</div>
+      </div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">USPS 保留 Amazon 80% 的包裹配送业务</div>
+          <div class="date">4月6日 · EcommerceBytes / Reuters</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Amazon 与 USPS 达成新协议，USPS 继续承担约 80% 的 Amazon 包裹配送（每年超 10 亿包裹）。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>Amazon 是 USPS 最大客户。此前 Amazon 曾威胁削减配送业务以回应 USPS 开放最后一公里竞标。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>USPS 财务稳定性及依赖 USPS 配送的其他电商卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>新协议已生效。USPS 仍维持开放竞标的最后一公里配送平台。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>Amazon 的保留确保了 USPS 基本盘稳定。但 USPS 仍在加速涨价，成本压力将持续传导给卖家。</div>
+      </div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">USPS 4/26 起实施 8% 包裹附加费</div>
+          <div class="date">3月25日 · EcommerceBytes / USPS PRC 文件</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>USPS 自 4 月 26 日起对包裹服务加收 8% 临时附加费，持续至 2027 年初。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>覆盖 Priority Mail Express、Priority Mail、Ground Advantage、Parcel Select。First Class 信件不受影响。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>所有使用 USPS 包裹服务的电商卖家，包括 Amazon、eBay、Etsy 平台卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>4/26 自动生效。建议评估转向 FedEx SmartPost、UPS Mail Innovations 等替代方案。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>2026 年 USPS 实际上进行了两次全面提价。"临时"附加费持续至 2027 年初，几乎等同于永久涨价。跨境卖家应加速向海外仓+本地配送模式转型。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📱 其他平台新闻 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">📱</span> 其他平台新闻</div>
+
+    <!-- Card 14 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">Etsy 购买保护案件人工审核人数翻倍</div>
+          <div class="date">4月8日 · EcommerceBytes / Etsy Seller Handbook</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>Etsy 将购买保护案件人工审核团队扩大近一倍，保护范围扩至 $250。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>买家开案窗口从 100 天缩短至预计交付后 30 天。延迟 7 天以上送达的订单纳入保护。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>Etsy 全球 750 万活跃卖家，特别是高价值手工艺品卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>卖家需满足 48 小时内回复"Help with Order"消息的最低客服标准。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>缩短开案窗口减少长尾纠纷风险。$250 覆盖上限意味着高价值卖家仍需自行购买额外保险。</div>
+      </div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge single">⚠️ 单方报道</span>
+        <div>
+          <div class="title">eBay 禁止拍卖买家取消订单</div>
+          <div class="date">4月13日 · EcommerceBytes Blog</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>eBay 5/13 起美国站拍卖获胜买家将不再看到取消订单选项。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>预计减少 5-10% 的无效中标情况。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>eBay 拍卖类目卖家，特别是收藏品、二手商品和限量品类目。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>5/13 自动生效。关注是否扩展到其他站点和固定价格 listing。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>这是 eBay 近年来少有的明显偏向卖家的政策调整，可能吸引更多卖家回归 eBay 拍卖模式。</div>
+      </div>
+    </div>
+
+    <!-- Card 16 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge verified">✅ 已验证</span>
+        <div>
+          <div class="title">USPS 邮件费率 7 月将涨近 5%</div>
+          <div class="date">4月9日 · EcommerceBytes / USPS 官方通知</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>USPS 7 月起邮件费率平均上涨 4.8%，First Class 邮票涨至 $0.82。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>First Class 从 $0.78 涨至 $0.82。包裹服务新费率将在 5 月初公布。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>所有使用 USPS 的电商卖家，特别是轻小件卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>关注 5 月初包裹费率公布。建议评估替代物流方案。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>邮费占比可能从 15% 升至 20%+，直接影响轻小件跨境卖家的定价竞争力。</div>
+      </div>
+    </div>
+
+    <!-- Card 17 -->
+    <div class="news-card">
+      <div class="card-header">
+        <span class="badge single">⚠️ 单方报道</span>
+        <div>
+          <div class="title">Linnworks Meet the Marketplace 2026 — Amazon、TikTok Shop、SHEIN 齐聚</div>
+          <div class="date">4月15日 · Ecommerce Fastlane</div>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim event"><div class="dim-label">核心事件</div>多渠道管理平台 Linnworks 举办行业大会，Amazon、TikTok Shop、SHEIN 等主要平台参与。</div>
+        <div class="dim data"><div class="dim-label">关键数据</div>参与平台涵盖主流跨境电商渠道。</div>
+        <div class="dim impact"><div class="dim-label">影响范围</div>多渠道运营卖家、电商服务商、希望拓展新平台的品牌卖家。</div>
+        <div class="dim action"><div class="dim-label">后续动作</div>关注大会日程和平台政策更新，可能发布平台间新集成和合作信息。</div>
+        <div class="dim analysis"><div class="dim-label">解读分析</div>多个主要平台同时参与同一活动，释放行业加速整合信号。TikTok Shop 和 SHEIN 正从新兴渠道向主流渠道转型。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📌 活动日历 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">📌</span> 重要时间节点</div>
+    <table class="event-table">
+      <thead>
+        <tr><th>日期</th><th>事件</th><th>地点/方式</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>4/22</td><td>品牌营销沙龙 — DTC 品牌出海一站式解决方案</td><td>杭州</td></tr>
+        <tr><td>4/23</td><td>Ozon 千人启动大会 — 2026 Ozon 出海先机</td><td>厦门</td></tr>
+        <tr><td><b>4/23</b></td><td><b>⚠️ Amazon 参考价格新规生效</b></td><td>线上</td></tr>
+        <tr><td>4/24</td><td>亚马逊春耕启动大会 — 从代工到品牌化路径</td><td>佛山</td></tr>
+        <tr><td><b>4/26</b></td><td><b>⚠️ USPS 8% 包裹附加费生效</b></td><td>—</td></tr>
+        <tr><td>5/2</td><td>Amazon Buy with Prime / MCF 附加费生效</td><td>—</td></tr>
+        <tr><td>5/12</td><td>Wayfair 招商启动大会</td><td>杭州</td></tr>
+        <tr><td><b>5/13</b></td><td><b>⚠️ eBay 拍卖取消禁令生效</b></td><td>—</td></tr>
+        <tr><td>5/14</td><td>CCEE 雨果跨境选品大会</td><td>深圳</td></tr>
+        <tr><td><b>5/18</b></td><td><b>⚠️ Amazon Typical Price 新规生效</b></td><td>线上</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    报告由 AI 自动采集生成 · 数据来源：EcommerceBytes、Ecommerce Fastlane、WWD、SCMP、Chicago Tribune 等<br>
+    建议交叉核实重要决策信息 · 生成时间：北京时间 07:15
+  </div>
+
+</div>
+</body>
+</html>
