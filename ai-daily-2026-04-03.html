@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 - 2026年4月3日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#e0e0e0;line-height:1.7;min-height:100vh}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+.header h1{font-size:1.8em;background:linear-gradient(90deg,#722ed1,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header .date{color:#aaa;font-size:0.9em;margin-top:8px}
+.section-title{font-size:1.3em;margin:30px 0 15px;padding-left:12px;border-left:3px solid #722ed1;color:#fff}
+.card{background:rgba(255,255,255,0.05);border-radius:12px;padding:18px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.08);transition:transform 0.2s}
+.card:hover{transform:translateY(-2px);border-color:rgba(114,46,209,0.3)}
+.card-title{font-size:1.1em;font-weight:600;color:#fff;margin-bottom:6px}
+.meta{font-size:0.8em;color:#888;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.badge{padding:2px 8px;border-radius:4px;font-size:0.75em;font-weight:600}
+.badge-hot{background:#ff4d4f;color:#fff}
+.badge-important{background:#faad14;color:#000}
+.badge-trend{background:#52c41a;color:#fff}
+.badge-verified{background:#1890ff;color:#fff}
+.badge-uncertain{background:#fa8c16;color:#fff}
+.source-link{color:#00d4ff;text-decoration:none;font-size:0.85em}
+.source-link:hover{text-decoration:underline}
+.detail{font-size:0.9em;color:#ccc;margin-top:8px}
+.detail b{color:#e0e0e0}
+.footer{text-align:center;padding:30px 0;border-top:1px solid rgba(255,255,255,0.1);color:#666;font-size:0.8em;margin-top:30px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🤖 AI 新闻日报</h1>
+<div class="date">📅 2026年4月3日（星期四）| 🕐 北京时间 09:00</div>
+</div>
+
+<div class="section-title">🔴 今日头条</div>
+
+<div class="card">
+<div class="card-title">Claude Code 源码泄露事件持续发酵：恶意木马、DMCA 删除、OpenClaude 分支</div>
+<div class="meta">
+<span class="badge badge-hot">热点</span>
+<span class="badge badge-verified">✅ 多源验证</span>
+<span>来源：<a href="https://www.theregister.com/2026/04/02/trojanized_claude_code_leak_github/" class="source-link">The Register</a> | <a href="https://www.businessinsider.com/claude-code-leak-what-happened-recreated-python-features-revealed-2026-4" class="source-link">Business Insider</a> | <a href="https://cybernews.com/security/anthropic-claude-code-source-leak/" class="source-link">Cybernews</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>3月31日 Claude Code 源码通过 npm source map 泄露后，事件持续升级。Zscaler 发现伪装成泄露源码的恶意仓库包含 RAT 木马；Anthropic 发起 DMCA 删除 8,100+ GitHub 仓库；开发者创建 OpenClaude 分支支持多模型。<br>
+<b>关键数据：</b>泄露推文获得 2900 万浏览；某 GitHub 仓库获 30,000 星、40,200 fork；npm 安装受影响时间窗口：3月31日 00:21-03:29 UTC。<br>
+<b>影响范围：</b>AI 开发者社区安全、Anthropic 品牌声誉。<br>
+<b>后续动作：</b>Anthropic 撤回大部分 DMCA 通知（仅保留一个）；GitHub 恢复被误删的 fork。<br>
+<b>解读分析：</b>事件意义：AI 安全公司自身遭遇重大安全事故，凸显供应链安全风险。竞争格局：开源社区迅速利用泄露代码创建多模型兼容版本，可能削弱 Anthropic 的技术壁垒。风险：安装了受影响版本的用户可能已感染木马。机会：开发者可参考 Claude Code 架构改进自己的工具。
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">NVIDIA 发布 Nemotron 3 Super：120B 混合 MoE 模型，1M 上下文</div>
+<div class="meta">
+<span class="badge badge-important">重要</span>
+<span class="badge badge-verified">✅ llm-stats.com / NVIDIA Developer</span>
+<span>来源：<a href="https://llm-stats.com/ai-news" class="source-link">llm-stats.com</a> | <a href="https://developer.nvidia.com/nemotron" class="source-link">NVIDIA Developer</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>NVIDIA 发布 Nemotron 3 Super，120B 参数混合 Mamba-Transformer MoE 架构。<br>
+<b>关键数据：</b>12B 活跃参数，1M token 上下文，吞吐量是 GPT-OSS-120B 的 2.2 倍。<br>
+<b>影响范围：</b>开源 LLM 生态、多 Agent 应用。<br>
+<b>后续动作：</b>可通过 NVIDIA NeMo 进行微调和部署。<br>
+<b>解读分析：</b>NVIDIA 通过 MoE 架构实现大参数量下的高效推理。Mamba-Transformer 混合架构是 LLM 设计新趋势。对 OpenAI 和 Anthropic 构成开源竞争压力。
+</div>
+</div>
+
+<div class="section-title">🧠 模型与架构</div>
+
+<div class="card">
+<div class="card-title">Bonsai 8B：首个商用可行的 1-bit LLM，仅需 1.15GB 内存</div>
+<div class="meta">
+<span class="badge badge-trend">趋势</span>
+<span class="badge badge-verified">✅ PrismML / Substack</span>
+<span>来源：<a href="https://markmancapitalinsight.substack.com/p/bonsai-8b-the-first-commercially" class="source-link">MarkMan Capital</a> | <a href="https://byteiota.com/prismml-1-bit-bonsai-llm-14x-smaller-8x-faster/" class="source-link">ByteIota</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>PrismML 3月31日发布 Bonsai 8B，首个商用级 1-bit 量化 LLM。<br>
+<b>关键数据：</b>8.2B 参数压缩至 1.15GB（标准 16-bit 模型的 1/14）；推理速度 8 倍提升。<br>
+<b>影响范围：</b>边缘计算、本地 AI 部署。<br>
+<b>后续动作：</b>可在 llama.cpp 和 AnythingLLM 运行，Ollama 支持待完善。<br>
+<b>解读分析：</b>1-bit 量化使 8B 级模型可在消费设备本地运行。如果 benchmark 表现持续验证，将推动端侧 AI 大规模普及。对云计算厂商的 LLM API 业务可能产生冲击。
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">2026年4月 AI 模型格局：五大关键发展</div>
+<div class="meta">
+<span class="badge badge-verified">✅ RenovateQR</span>
+<span>来源：<a href="https://renovateqr.com/blog/ai-models-april-2026" class="source-link">RenovateQR</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>4月 AI 模型格局总结：(1) Claude Mythos 泄露 (2) Gemini 3.1 Pro 领先 16 项基准中的 13 项 (3) GPT-5.4 多步自主工作流 (4) 开放权重模型追赶闭源 (5) GPT-5.5 "Spud" 已完成预训练。<br>
+<b>关键数据：</b>2026 年前 8 周发布 10 个主要开放权重 LLM 架构。<br>
+<b>影响范围：</b>整个 AI 行业。<br>
+<b>解读分析：</b>开放权重模型快速追赶闭源，竞争白热化。企业需要制定多模型部署策略。
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">OpenClaude：将 Claude Code 开放给 200+ 模型使用</div>
+<div class="meta">
+<span class="badge badge-trend">趋势</span>
+<span class="badge badge-verified">✅ GitHub</span>
+<span>来源：<a href="https://github.com/Gitlawb/openclaude" class="source-link">GitHub - Gitlawb/openclaude</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>开发者基于 Claude Code 泄露源码创建 OpenClaude 分支，添加 OpenAI 兼容 API 层。<br>
+<b>关键数据：</b>支持 GPT-4o、DeepSeek、Gemini、Llama、Mistral 等 200+ 模型。<br>
+<b>影响范围：</b>AI 编码工具生态。<br>
+<b>后续动作：</b>DMCA 不覆盖重新编写的版本，OpenClaude 可持续发展。<br>
+<b>解读分析：</b>开源社区对 Claude Code 架构的认可和利用。AI 编码工具进入"通用化"阶段，用户可自由选择底层模型。
+</div>
+</div>
+
+<div class="section-title">💼 企业与硬件</div>
+
+<div class="card">
+<div class="card-title">三星为 OpenAI 定制 "Titan" 处理器供应 HBM4 芯片</div>
+<div class="meta">
+<span class="badge badge-important">重要</span>
+<span class="badge badge-verified">✅ Reuters / FinancialContent</span>
+<span>来源：<a href="https://www.reuters.com/technology/openai/" class="source-link">Reuters</a> | <a href="https://markets.financialcontent.com/stocks/article/marketminute-2026-4-2-the-ai-supercycle-accelerates-micron-shakes-the-market-with-771-profit-surge" class="source-link">FinancialContent</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>三星将向 OpenAI 供应下一代 HBM4 芯片，用于 OpenAI 首个自研 "Titan" AI 处理器。<br>
+<b>关键数据：</b>由 TSMC 3nm 工艺代工，Broadcom 协助设计。<br>
+<b>影响范围：</b>AI 芯片供应链格局。<br>
+<b>后续动作：</b>2026 年量产。<br>
+<b>解读分析：</b>OpenAI 走向垂直整合，自研芯片降低对 NVIDIA 依赖。三星借此重新争取 HBM 市场份额（此前因良率问题输给 Micron）。Micron 同时报告 771% 利润增长，AI 超级周期加速。
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">Claude vs ChatGPT vs Copilot vs Gemini：2026 企业级 AI 指南</div>
+<div class="meta">
+<span class="badge badge-verified">✅ IntuitionLabs</span>
+<span>来源：<a href="https://intuitionlabs.ai/articles/claude-vs-chatgpt-vs-copilot-vs-gemini-enterprise-comparison" class="source-link">IntuitionLabs.ai</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>2026 企业 AI 助手市场四强格局分析。<br>
+<b>关键数据：</b>Claude Enterprise 500K token 上下文；ChatGPT Enterprise ≤250K；GPT-4 仅 32K。<br>
+<b>解读分析：</b>大上下文窗口成为企业竞争核心。Claude 在长文档分析领域领先，Microsoft Copilot 凭借生态整合优势占据企业市场。
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">AI API 定价趋于收敛：Grok 最便宜，Claude 分层清晰</div>
+<div class="meta">
+<span class="badge badge-verified">✅ IntuitionLabs</span>
+<span>来源：<a href="https://intuitionlabs.ai/articles/ai-api-pricing-comparison-grok-gemini-openai-claude" class="source-link">IntuitionLabs.ai</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>截至2026年2月，主要 AI API 定价已显著收敛。<br>
+<b>关键数据：</b>Grok 领先成本效率；Gemini 中等价位有强预算选项；GPT-5.2 定价竞争力增强；Claude 从 Haiku 4.5（经济型）到 Opus 4.6（高端）分层完整。<br>
+<b>解读分析：</b>API 价格战使企业用户受益。厂商可能转向增值服务（微调、私有部署、安全功能）维持利润。
+</div>
+</div>
+
+<div class="section-title">📚 研究与生态</div>
+
+<div class="card">
+<div class="card-title">Claude AI 发现 Vim 和 Emacs 零日 RCE 漏洞</div>
+<div class="meta">
+<span class="badge badge-important">重要</span>
+<span class="badge badge-verified">✅ CybersecurityNews</span>
+<span>来源：<a href="https://cybersecuritynews.com/claude-ai-0-day-rce-vim/" class="source-link">CybersecurityNews</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>研究人员使用 Claude AI 发现 Vim 和 Emacs 中的零日远程代码执行漏洞。<br>
+<b>关键数据：</b>将持续到4月底发布更多由 AI 发现的漏洞。<br>
+<b>解读分析：</b>AI 辅助安全研究成为新范式，对传统软件安全审计构成颠覆。
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">2026 开放权重模型全景：50+ LLM 对比</div>
+<div class="meta">
+<span class="badge badge-verified">✅ ExplodingTopics</span>
+<span>来源：<a href="https://explodingtopics.com/blog/list-of-llms" class="source-link">ExplodingTopics</a></span>
+</div>
+<div class="detail">
+<b>核心事件：</b>2026 年 LLM 生态全景总结，涵盖 50+ 模型。<br>
+<b>关键数据：</b>GPT-5.2、Claude Opus 3.6、Gemini 3.1 已在多项基准超越 DeepSeek。<br>
+<b>解读分析：</b>DeepSeek 早期优势被后来者追上，开源与闭源差距缩小。
+</div>
+</div>
+
+<div class="footer">
+<p>© 2026 AI 新闻日报 | 数据来源：The Register、Business Insider、Reuters、llm-stats.com、CNBC 等</p>
+<p>生成时间：2026-04-03 09:00 (Beijing Time)</p>
+<p>🔗 <a href="https://zxy114.github.io/crossborder-daily/ai-daily-2026-04-03.html" class="source-link">永久链接</a></p>
+</div>
+</div>
+</body>
+</html>
