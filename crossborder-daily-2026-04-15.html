@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📰 跨境新闻日报 — 2026-04-15</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #222633;
+    --border: #2a2d3a;
+    --text: #e4e6f0;
+    --text-dim: #8b8fa3;
+    --accent: #6c5ce7;
+    --accent-glow: rgba(108,92,231,0.15);
+    --green: #00b894;
+    --green-bg: rgba(0,184,148,0.1);
+    --orange: #fdcb6e;
+    --orange-bg: rgba(253,203,110,0.1);
+    --red: #e17055;
+    --red-bg: rgba(225,112,85,0.1);
+    --blue: #74b9ff;
+    --blue-bg: rgba(116,185,255,0.1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--accent), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header .meta {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  /* Status bar */
+  .status-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .status-chip {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .status-verified { background: var(--green-bg); color: var(--green); border: 1px solid rgba(0,184,148,0.3); }
+  .status-unverified { background: var(--orange-bg); color: var(--orange); border: 1px solid rgba(253,203,110,0.3); }
+
+  /* Section */
+  .section { margin-bottom: 35px; }
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card.featured {
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(135deg, var(--card), var(--accent-glow));
+  }
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: #fff;
+  }
+  .card .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .badge-fire { background: var(--red-bg); color: var(--red); }
+  .badge-policy { background: var(--blue-bg); color: var(--blue); }
+  .badge-market { background: rgba(162,155,254,0.15); color: #a29bfe; }
+  .badge-logistics { background: rgba(0,206,209,0.12); color: #00cec9; }
+  .badge-unverified { background: var(--orange-bg); color: var(--orange); }
+
+  /* Detail items */
+  .detail { margin-bottom: 10px; }
+  .detail-label {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 6px;
+  }
+  .detail-text {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* Table */
+  .stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  .stats-table th, .stats-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .stats-table th {
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Action list */
+  .action-list { list-style: none; }
+  .action-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+  .action-list li:last-child { border-bottom: none; }
+  .action-priority {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 60px;
+    text-align: center;
+  }
+  .priority-urgent { background: var(--red-bg); color: var(--red); }
+  .priority-soon { background: var(--orange-bg); color: var(--orange); }
+  .priority-normal { background: var(--green-bg); color: var(--green); }
+
+  /* Keywords */
+  .keyword-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .keyword-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .keyword-count {
+    background: var(--accent);
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.5rem; }
+    .card { padding: 18px; }
+    .status-bar { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📰 跨境新闻日报</h1>
+    <div class="meta">2026年4月15日（周三） | 报告周期：4月13日-14日 | 北京时间 07:18 CST</div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span class="status-chip status-verified">✅ 已验证 12 条</span>
+    <span class="status-chip status-unverified">⚠️ 单方报道 3 条</span>
+  </div>
+
+  <!-- 🔥 头条 -->
+  <div class="section">
+    <div class="section-title">🔥 头条新闻</div>
+
+    <div class="card featured">
+      <h3><span class="badge badge-fire">头条</span>Amazon FBA 3.5% 燃油附加费 4月17日生效，卖家利润再承压</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">Amazon 宣布自2026年4月17日起对所有美国及加拿大FBA订单征收3.5%的"燃料和物流相关附加费"，叠加在现有履约费用之上。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">附加费适用于所有FBA履约费用、美加远程履约（含墨西哥、巴西）。以大型标准件（3磅，$10-$50价格带）为例，履约费从$6.15起涨至$6.37，每件增加$0.22+。库存超龄附加费门槛从271天缩短至181天，提前90天触发。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">覆盖美国及加拿大所有FBA第三方卖家，远程履约到墨西哥和巴西同样受影响。全球约200万活跃FBA卖家直接受到冲击。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">4月17日正式生效。Seller Central的Revenue Calculator和Fee Preview已更新可预览。Q3可能还有仓储费调整。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">这是2026年FBA费用周期中的第二轮涨价。3.5%叠加1月的费率上调和提前90天的超龄费，单件利润被进一步压缩。卖家需立即逐SKU重算利润，优先清理181天以上库存。</span></div>
+    </div>
+
+    <div class="card featured">
+      <h3><span class="badge badge-fire">头条</span>Temu、Shein 遭美国集体诉讼，要求退还关税"暴利"</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">McGuire Law于2026年3月在库克县巡回法院对Temu和Shein提起全国性集体诉讼，要求退还因非法关税多收的款项。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">原告在2025年2月至2026年2月期间通过两平台购物。诉讼称部分商品涨价高达377%。美国最高法院已于2月20日以6:3裁定IEEPA关税违宪。退款金额估计达数亿美元。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">覆盖伊利诺伊州及全美数百万消费者。将开创电商平台需向消费者返还关税加价的先例。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">案件处于初期阶段，预计需数月审理。更多消费者可能加入。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">此案确立了"关税加价≠平台合法利润"的法律原则。中国出海平台需建立"政策性调价—政策撤销—消费者返还"的闭环合规机制。</span></div>
+    </div>
+
+    <div class="card featured">
+      <h3><span class="badge badge-fire">头条</span>美国232条款关税新政：钢铝铜关税计税基础扩至产品全额价值</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">4月6日起，232条款对钢、铝、铜及其衍生品的额外从价税计税基础从仅限金属含量扩展至产品完整海关价值。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">过去仅金属成分价值计税，现覆盖100%海关申报价值。含少量金属但整体价值较高的产品（3C电子、机械设备），实际关税成本可能飙升数倍至十倍以上。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">所有含钢铝铜成分产品的出口卖家，3C电子、家电、汽配、五金类目首当其冲。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">4月6日后清关货物全部按新规计税。在途货物需立即重新核对材质和关税分类。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">堵住了"低金属含量"避税漏洞。过去可能只有5%-10%价值被征税，现在100%全额计税，成本结构彻底改变。需重新评估对美产品线定价。</span></div>
+    </div>
+  </div>
+
+  <!-- 🏢 平台政策 -->
+  <div class="section">
+    <div class="section-title">🏢 平台政策</div>
+
+    <div class="card">
+      <h3><span class="badge badge-policy">平台</span>Shopify 原生 B2B 功能扩展至所有套餐</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">4月2日起，Shopify将B2B/批发功能从仅Plus用户扩展至Basic、Grow、Advanced所有付费套餐，免费开放。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">包含批发买家公司档案、最多3个定制产品目录、批量折扣、保险库信用卡、付款条款等。全球200万+商家受益。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">所有非Plus Shopify商家可低成本同时服务批发和零售客户。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">功能已上线。3个目录上限是首个会遇到的限制，B2B业务增长后需升级Plus。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">DTC+批发一套系统搞定，大幅降低跨境商家运营复杂度。但3个目录上限意味着稍具规模的B2B业务很快需要升级，是Shopify的"钓鱼策略"。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-policy">平台</span>TikTok Shop "一商卖全球"升级：内容全球分发 + 跨店一键铺品</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">4月10日，TikTok Shop对跨境POP商家新增"内容全球分发"和"跨店一键铺品"功能。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">美国后台创作的短视频可自动翻译后一键发布至全球多个市场。2025年TikTok Shop全球GMV已突破600亿美元。4月下旬支持跨区域内容发布。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">多站点运营的跨境POP商家，大幅降低内容制作和商品上架成本。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">4月下旬跨区域内容发布上线。需验证多语言自动翻译质量。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">从"单点突破"走向"全球协同运营"的标志性升级。但"一键发全球"不等于"一键爆全球"，跨文化内容本地化仍是关键挑战。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-policy">平台</span>TikTok Shop 预计2030年占全球电商14.6%份额</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">多家机构预测TikTok Shop到2030年GMV达1万亿美元，占全球电商14.6%，成为第三大电商平台。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">2025年GMV突破600亿美元。到2030年达1万亿意味着年复合增长率约75%，将超过eBay、Shopify、Mercado Libre。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">全球电商格局将被重塑。提前卡位的卖家将享受4年高速增长红利。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">TikTok Shop正加快欧洲扩张（波兰、荷兰、比利时），同时加码东南亚和拉美。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">75%年复合增长率极为罕见——Amazon用了近20年达到同等规模。"内容+电商"效率远超传统货架电商。但美国市场监管不确定性仍是最大风险变量。</span></div>
+    </div>
+  </div>
+
+  <!-- 🌍 关税与监管 -->
+  <div class="section">
+    <div class="section-title">🌍 关税与监管</div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">监管</span>欧盟 €3 小包裹税7月生效，法国已宣告失败</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">欧盟财长达成共识，对非欧盟低价值包裹征收€3/件统一税，7月生效。法国3月推出的同类税收已证明效果不佳。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">法国€2/类目税执行效果远低于预期。欧盟€3/件统一税适用于所有跨境平台。对€5-€15客单价商品相当于20%-60%的价格涨幅。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">所有从中国发往欧盟的跨境电商包裹。Temu/Shein/AliExpress为主要目标。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">7月生效。需在此之前完成欧盟站点定价调整。欧盟已突击搜查Temu都柏林总部。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">€3税将直接消灭超低价商品的价格优势。法国先行失败说明单一国家政策易被规避，只有欧盟统一行动才有效。卖家需加速布局欧盟海外仓。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">监管</span>特朗普签署药品关税行政令：进口专利药加征100%关税</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">4月2日依据232条款对进口专利药和制药成分加征100%关税，逼迫药企产能回流美国。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">设有缓冲期和豁免条款。税务基金会测算2026年新关税预计给每户美国家庭增加约600美元税负。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">全球制药供应链。跨境电商保健品和非处方药类目合规风险上升。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">缓冲期和豁免细节未来数周公布。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">这是"逼迫式产业政策"。短期对保健品卖家影响有限，但232条款适用范围持续扩大是危险信号。需提前做供应链多元化预案。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">监管</span>美国最高法院裁定IEEPA关税违宪，但"旧税叫停、新税登场"</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">2月20日最高法院以6:3裁定IEEPA关税缺乏法律授权，但政府迅速转向232条款替代。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">6:3投票结果。IEEPA关税停止后，232条款扩展（钢铝铜、药品）成为替代征税路径。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">全球对美国出口企业。关税压力未实质减轻，只是换了法律依据。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">更多关税诉讼将继续审理。需同时关注IEEPA退款和232新规。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">法律胜利但效果打折。关键教训：关税政策不确定性将贯穿2026全年。需按"关税长期化"前提做经营规划。</span></div>
+    </div>
+  </div>
+
+  <!-- 📦 物流与供应链 -->
+  <div class="section">
+    <div class="section-title">📦 物流与供应链</div>
+
+    <div class="card">
+      <h3><span class="badge badge-logistics">物流</span>Tokopedia 与 TikTok Shop 印尼物流服务费 5月1日起收取</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">5月1日起对印尼卖家收取新物流服务费，由卖家承担，不在消费者页面显示。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">按订单运费比例计算。TikTok Shop上限5055印尼盾/单，Tokopedia上限10110印尼盾/单。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">所有Tokopedia和TikTok Shop印尼站卖家。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">5月1日生效。需提前调整定价。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">东南亚平台"隐性涨价"典型——费用直接转嫁卖家。大批量交易中固定成本会形成可观的利润侵蚀。定价模型需提前计入这笔隐性成本。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-logistics">税务</span>中国跨境电商综试区核定征收落地，平台数据与税务系统同步</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">跨境电商综试区核定征收政策落地，Amazon等平台销售数据已与税务系统直连同步。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">平台数据与税务系统直连。核心痛点：1688/小工厂零散采购无合规发票，导致账面利润虚高。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">所有中国注册并通过跨境电商平台销售的企业，特别是中小卖家。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">需立即自查税务合规，探索核定征收路径。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">从"事后稽查"走向"实时数据驱动"的标志性事件。每一笔交易都在监管之下。必须全面合规化，建议尽快咨询专业税务师。</span></div>
+    </div>
+  </div>
+
+  <!-- 🏪 市场动态 -->
+  <div class="section">
+    <div class="section-title">🏪 市场动态</div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">市场</span>Shein 澳洲年销74亿元但利润率仅4%</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">Shein公布澳洲年度销售数据：74亿元销售额，利润率仅4%。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">净利润约2.96亿元。2026年2月网站流量577万，落后于The Iconic（703万）、Myer（1001万）和shop.app（1025万）。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">反映Shein在高增长市场仍面临盈利挑战。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">需提升客单价和复购率改善利润率。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">低价策略可换规模但换不来利润。关税、合规、物流成本都在侵蚀本就不高的利润空间。纯低价竞争在成熟市场不可持续。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">市场</span>TikTok Shop 加速进军欧洲：波兰、荷兰、比利时</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">TikTok Shop计划进入波兰、荷兰、比利时，卖家后台已搭建完成但尚未正式上线。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">已在欧洲6个市场运营（含欧洲最大5个电商市场）。波兰年电商规模约€150亿。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">已在欧洲运营的卖家获得新市场增量。中国卖家可提前准备多语言内容。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">正式开放时间未公布，但后台就绪意味着上线不远。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">从2024年德法意到2026年波兰荷比，欧洲扩张加速。先行者优势明显，现在是提前布局内容生态和店铺权重的好时机。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">市场</span>Shopify 将于5月5日公布Q1财报</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">Shopify宣布5月5日盘前公布截至3月31日的2026年Q1财务结果。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">关注B2B功能下放后的商家增长、GMV增速、关税对跨境商户的影响。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">Shopify商家、投资者和整个电商行业。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">5月5日盘前发布，同日上午投资者电话会议。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">观察2026年Q1跨境电商景气度的重要窗口。B2B全量开放后的adoption rate是关键看点，将验证"中小商家B2B需求爆发"趋势。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-market">市场</span>TikTok Shop 美区3C家电世界杯选品会</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">TikTok Shop美区跨境POP在深圳落地「3C 100」项目线下选品会，聚焦2026年世界杯3C家电消费场景。</span></div>
+      <div class="detail"><span class="detail-label">关键数据</span><span class="detail-text">依托"ACE Your Shop商家经营方法论"（好商品、好内容、好营销）。首场沉浸式线下原生场景选品会。</span></div>
+      <div class="detail"><span class="detail-label">影响范围</span><span class="detail-text">TikTok Shop美区3C家电类目跨境卖家。</span></div>
+      <div class="detail"><span class="detail-label">后续动作</span><span class="detail-text">世界杯开幕前是最佳上架窗口，关注平台后续营销活动和流量扶持。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">从线上平台走向线下选品会，标志对供应链端的深度介入。世界杯是天然流量风口，提前布局内容生态和产品池的卖家将享受红利。</span></div>
+    </div>
+  </div>
+
+  <!-- ⚠️ 单方报道 -->
+  <div class="section">
+    <div class="section-title">⚠️ 单方报道（待验证）</div>
+
+    <div class="card">
+      <h3><span class="badge badge-unverified">待验证</span>魁北克要求 Temu/Shein 缴纳销售税</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">魁北克省媒体呼吁加强对外国电商平台销售税征管。魁北克财政赤字预计86亿加元，销售税率9.975%。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">北美地方政府对跨境电商税收征管收紧。反映全球趋势——各国寻找向外国电商平台征税的有效方式。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-unverified">待验证</span>瑞士政府拒绝效仿欧盟对 Shein/Temu 征税</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">瑞士联邦委员会建议拒绝议会通过的三项针对Shein和Temu的监管议案。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">欧洲各国监管立场不一致。卖家可关注不同市场监管差异，寻找相对宽松环境。</span></div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-unverified">待验证</span>Temu 英国合规海外仓履约率99.5%</h3>
+      <div class="detail"><span class="detail-label">核心事件</span><span class="detail-text">第三方服务商宣传其Temu英国合规海外仓订单履约率达99.5%。</span></div>
+      <div class="detail"><span class="detail-label">解读</span><span class="detail-text">服务商营销信息，数据未经独立验证。但反映Temu对英国市场履约要求提高，本地化仓储成趋势。</span></div>
+    </div>
+  </div>
+
+  <!-- 📈 关键词 -->
+  <div class="section">
+    <div class="section-title">📈 今日关键词</div>
+    <div class="keyword-cloud">
+      <span class="keyword-tag">关税 <span class="keyword-count">8</span></span>
+      <span class="keyword-tag">TikTok Shop <span class="keyword-count">7</span></span>
+      <span class="keyword-tag">Temu/Shein <span class="keyword-count">6</span></span>
+      <span class="keyword-tag">FBA费用 <span class="keyword-count">5</span></span>
+      <span class="keyword-tag">欧洲市场 <span class="keyword-count">5</span></span>
+      <span class="keyword-tag">Shopify B2B <span class="keyword-count">4</span></span>
+    </div>
+  </div>
+
+  <!-- 💡 行动清单 -->
+  <div class="section">
+    <div class="section-title">💡 今日卖家行动清单</div>
+    <ul class="action-list">
+      <li>
+        <span class="action-priority priority-urgent">立即</span>
+        <span>使用Amazon Seller Central Fee Preview逐SKU重算4月17日后的FBA费用</span>
+      </li>
+      <li>
+        <span class="action-priority priority-urgent">本周</span>
+        <span>清理181天以上库存，避免超龄附加费</span>
+      </li>
+      <li>
+        <span class="action-priority priority-urgent">本周</span>
+        <span>自查中国税务合规，探索核定征收路径</span>
+      </li>
+      <li>
+        <span class="action-priority priority-soon">4月下</span>
+        <span>在TikTok Shop测试"一商卖全球"内容分发功能</span>
+      </li>
+      <li>
+        <span class="action-priority priority-soon">5/1前</span>
+        <span>调整印尼站点定价以消化新增物流服务费</span>
+      </li>
+      <li>
+        <span class="action-priority priority-normal">持续</span>
+        <span>关注欧盟€3小包裹税、美国232条款扩展范围</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    报告生成于 2026-04-15 07:18 CST<br>
+    数据来源：Amazon Seller Central、Reuters、Goat Consulting、TT123、AMZ123、出海网、ChannelX、Practical Ecommerce 等多平台
+  </div>
+
+</div>
+</body>
+</html>
