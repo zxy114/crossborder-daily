@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境新闻日报 | 2026-06-15</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --accent: #4f8cff;
+    --accent2: #ff6b4f;
+    --text: #e8e8ec;
+    --muted: #8b8d97;
+    --tag-bg: #2a2d3a;
+    --green: #34d399;
+    --red: #f87171;
+    --yellow: #fbbf24;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    padding: 24px 16px;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  .header {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text);
+  }
+  .header .date {
+    font-size: 15px;
+    color: var(--accent);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .news-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    transition: border-color 0.2s;
+  }
+  .news-item:hover { border-color: var(--accent); }
+  .news-num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    width: 24px; height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .news-title {
+    font-size: 17px;
+    font-weight: 600;
+    display: inline;
+    vertical-align: middle;
+  }
+  .news-date-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--muted);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .news-body { margin-top: 14px; }
+  .dim { color: var(--muted); font-size: 13.5px; }
+  .dim strong { color: var(--text); font-weight: 600; }
+  .data-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .data-badge {
+    background: var(--tag-bg);
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .data-badge .val { color: var(--accent); font-weight: 600; }
+  .analysis {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(79,140,255,0.06);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .analysis em { color: var(--text); font-style: normal; font-weight: 500; }
+  .sources {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .sources a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 12px;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    text-align: center;
+    padding: 28px 0 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .summary-box {
+    background: linear-gradient(135deg, rgba(79,140,255,0.08), rgba(255,107,79,0.06));
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .summary-box h3 {
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .summary-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .summary-box li {
+    padding: 6px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .summary-box li:last-child { border-bottom: none; }
+  .summary-box li::before {
+    content: "▸ ";
+    color: var(--accent2);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>🌐 跨境新闻日报</h1>
+  <div class="date">2026-06-15（周日）</div>
+  <div class="subtitle">聚焦全球贸易 · 关税政策 · 供应链动态</div>
+</div>
+
+<div class="summary-box">
+  <h3>📋 今日精选摘要</h3>
+  <ul>
+    <li>美伊达成和平协议，霍尔木兹海峡将重新开放，布伦特原油暴跌逾10%</li>
+    <li>欧洲议会本周最终投票通过欧盟-美国关税框架立法</li>
+    <li>美国联邦上诉法院维持10%全球关税征收，Section 122争议持续</li>
+    <li>USTR以"强制劳动"为由对60个经济体提议加征10%-12.5%关税</li>
+    <li>SpaceX完成史上最大规模IPO融资750亿美元，首日市值逼近2.2万亿美元</li>
+  </ul>
+</div>
+
+<!-- 1 -->
+<div class="news-item">
+  <span class="news-num">1</span>
+  <span class="news-title">美伊签署谅解备忘录，霍尔木兹海峡恢复通航</span>
+  <span class="news-date-tag">06-14 / 06-15</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>美方确认与伊朗签署和平备忘录，海峡恢复油轮通行，结束了自2月下旬以来对全球能源供应的严重中断。</p>
+    <div class="data-row">
+      <div class="data-badge">布伦特原油 <span class="val">$82–83/桶（跌约10.7%）</span></div>
+      <div class="data-badge">WTI原油 <span class="val">$80.40/桶（跌约10.7%）</span></div>
+      <div class="data-badge">花旗Q3预测 <span class="val">$75/桶</span></div>
+    </div>
+    <div class="data-row">
+      <div class="data-badge">新加坡港口拥堵指数 <span class="val">↑15%</span></div>
+      <div class="data-badge">波斯湾航运战争险保费 <span class="val">船体价值1.2%</span></div>
+      <div class="data-badge">印/阿联酋至欧洲空运费 <span class="val">↑18%</span></div>
+    </div>
+    <p class="dim" style="margin-top:10px"><strong>后续动作：</strong>三大集运商暂停波斯湾港口订舱；Citi下调布伦特Q3/Q4预测至$75/$70；EIA警告多国战略石油储备或降至2003年以来最低。</p>
+    <div class="analysis"><strong>📌 解读：</strong>短期能源价格回落有利于降低跨境物流成本，但供应链恢复需要数月。中东FDI询价转向中欧和墨西哥，部分产业转移趋势仍在延续。</div>
+    <div class="sources">
+      <a href="https://www.reuters.com/business/energy/oil-slips-over-4-after-us-iran-reach-peace-deal-reopen-strait-hormuz-2026-06-14" target="_blank">Reuters</a>
+      <a href="https://www.theguardian.com/business/2026/jun/15/return-pre-crisis-oil-gas-supplies-months-away-iran-strait-of-hormuz" target="_blank">Guardian</a>
+      <a href="https://www.cnbc.com/2026/06/15/us-iran-deal-hormuz-markets.html" target="_blank">CNBC</a>
+    </div>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="news-item">
+  <span class="news-num">2</span>
+  <span class="news-title">欧洲议会最终投票通过欧盟-美国关税框架立法</span>
+  <span class="news-date-tag">06-15</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>欧洲议会对2025年8月《欧盟-美国联合声明》项下的关税承诺进行最终表决，批准消除美国工业品和农产品进入欧盟的大部分关税。</p>
+    <p class="dim" style="margin-top:8px"><strong>关键内容：</strong>包括两项立法——对美商品实施优惠准入；对部分龙虾类商品延续零关税机制。</p>
+    <div class="analysis"><strong>📌 解读：</strong>此举标志着跨大西洋贸易关系的实质性缓和，欧盟制造业出口商将获得更可预期的对美贸易环境。但农业领域的争议条款仍有保留。</div>
+    <div class="sources">
+      <a href="https://www.europarl.europa.eu/news/en/agenda/plenary-news/2026-06-15/0/eu-us-trade-final-vote-in-parliament-on-tariff-legislation" target="_blank">欧洲议会</a>
+    </div>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="news-item">
+  <span class="news-num">3</span>
+  <span class="news-title">联邦上诉法院维持10%全球关税征收权，Section 122争议进入上诉阶段</span>
+  <span class="news-date-tag">06-11</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>联邦巡回上诉法院（CAFC）6月11日批准政府请求，在国际贸易法院（CIT）裁定Section 122关税违法后，暂停禁令执行，维持10%从价关税的征收直至上诉完结。</p>
+    <p class="dim" style="margin-top:8px"><strong>关键数据：</strong>Section 122关税于2026年2月24日生效，援引《1974年贸易法》——此前从未被用于关税征收。该条款将于7月24日到期。</p>
+    <div class="analysis"><strong>📌 解读：</strong>CAFC对CIT的狭义法理分析表示怀疑，倾向于支持政府立场。即使关税在7月底到期，政府已通过Section 301等替代工具重建关税体系，进口商需关注政策替代风险。</div>
+    <div class="sources">
+      <a href="https://www.reuters.com/world/us-appeals-court-extends-block-ruling-against-trumps-10-global-tariff-2026-06-11" target="_blank">Reuters</a>
+      <a href="https://www.internationaltradeinsights.com/2026/06/federal-circuit-stays-section-122-tariff-injunction-signaling-skepticism-of-cits-narrow-statutory-reading" target="_blank">Trade Insights</a>
+      <a href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/june/section-122-tariff-remains-in-place-following-appeals-court-ruling" target="_blank">Sandler Travis</a>
+    </div>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="news-item">
+  <span class="news-num">4</span>
+  <span class="news-title">USTR提议以"强制劳动"为由对60个经济体征收新关税</span>
+  <span class="news-date-tag">06-02 提出，评论截止07-06</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>美国贸易代表办公室依据《1974年贸易法》第301条，提议对未能有效禁止强制劳动产品进口的60个经济体征收10%或12.5%的新关税。公开评论截止7月6日，听证会定于7月7日。</p>
+    <div class="analysis"><strong>📌 解读：</strong>在最高法院推翻IEEPA紧急关税后，这是行政部门利用传统贸易法重建广泛关税覆盖的首次尝试。Section 301的法理基础更稳固，可能比IEEPA关税更难被法院推翻。对涉及多国的跨境供应链构成中长期合规压力。</div>
+    <div class="sources">
+      <a href="https://www.gibsondunn.com/ustr-proposes-new-section-301-forced-labor-tariffs-covering-most-major-us-trading-partners" target="_blank">Gibson Dunn</a>
+      <a href="https://www.aljazeera.com/news/2026/6/15/how-trump-is-relaunching-a-tariff-war-citing-forced-labour-concerns" target="_blank">Al Jazeera</a>
+    </div>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="news-item">
+  <span class="news-num">5</span>
+  <span class="news-title">美国最高法院拒绝受理中国301关税上诉案</span>
+  <span class="news-date-tag">06-15</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>最高法院6月15日未予评论地驳回了HMTX Industries等原告对中国Section 301关税退款案的调卷令申请，维持联邦巡回上诉法院支持301关税的裁决。</p>
+    <div class="analysis"><strong>📌 解读：</strong>这意味着中国Section 301关税的合法性在司法层面得到最终确认，进口商此前预期的关税退款诉讼路径已基本关闭。对中美贸易摩擦下的关税成本具有长期固化效应。</div>
+    <div class="sources">
+      <a href="https://www.thompsonhinesmartrade.com/2026/06/u-s-supreme-court-declines-review-of-china-section-301-tariff-challenge" target="_blank">Thompson Hine</a>
+    </div>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="news-item">
+  <span class="news-num">6</span>
+  <span class="news-title">USTR就"美中贸易委员会"框架征询公众意见</span>
+  <span class="news-date-tag">06-02 发起，评论截止07-10</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>USTR就新设立的美中双边政府间机制——"美中贸易委员会"——公开征询意见。该机制聚焦"非敏感"商品，旨在作为双边贸易的"适配器"，促进互惠、持久和平衡的贸易关系。预期涉及约300亿美元中国进口商品的关税减免。</p>
+    <p class="dim" style="margin-top:8px"><strong>背景：</strong>该委员会系5月中旬中美元首北京会晤后设立的双边机构之一。</p>
+    <div class="analysis"><strong>📌 解读：</strong>这是中美贸易关系从全面对抗转向结构化管理的信号。进口商可借此窗口期提交商品清单争取关税豁免，但也意味着未来贸易摩擦将更频繁通过双边机制而非单边行动处理。</div>
+    <div class="sources">
+      <a href="https://www.skadden.com/insights/publications/2026/06/a-rare-opportunity" target="_blank">Skadden</a>
+      <a href="https://www.internationaltradeinsights.com/2026/06/ustr-opens-comment-period-on-proposed-u-s-china-board-of-trade" target="_blank">Trade Insights</a>
+    </div>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="news-item">
+  <span class="news-num">7</span>
+  <span class="news-title">欧盟与CPTPP成员国加速推进数字贸易协议</span>
+  <span class="news-date-tag">06月中旬</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>欧盟与CPTPP成员国同意加速制定数字贸易协议，覆盖电子商务、跨境数据流动和数据存储规则。该框架将综合欧盟-新加坡DTA、欧盟-日本EPA等现有数字贸易条款，建立跨区域的统一数字贸易治理体系。</p>
+    <div class="analysis"><strong>📌 解读：</strong>欧盟正积极构建独立的数字贸易规则体系，与CPTPP成员国的数字协议可能成为全球数据治理的新标杆。跨境电商企业需关注数据本地化和隐私合规要求的变化。</div>
+    <div class="sources">
+      <a href="https://www.jdsupra.com/legalnews/the-next-digital-trade-framework-what-3086730" target="_blank">JDSupra / Skadden</a>
+    </div>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="news-item">
+  <span class="news-num">8</span>
+  <span class="news-title">SpaceX完成史上最大规模IPO，融资750亿美元</span>
+  <span class="news-date-tag">06-11 定价 / 06-12 上市</span>
+  <div class="news-body">
+    <p class="dim"><strong>核心事件：</strong>SpaceX以每股$135定价，在纳斯达克上市（SPCX），融资750亿美元，远超沙特阿美此前294亿美元的纪录。首日市值约2.2万亿美元，承销商随后行使超额配售权，总融资额升至857亿美元。</p>
+    <div class="data-row">
+      <div class="data-badge">IPO定价 <span class="val">$135/股</span></div>
+      <div class="data-badge">发行规模 <span class="val">750亿美元</span></div>
+      <div class="data-badge">首日市值 <span class="val">~$2.2万亿</span></div>
+      <div class="data-badge">超额配售后融资 <span class="val">$857亿</span></div>
+    </div>
+    <p class="dim" style="margin-top:10px"><strong>后续动作：</strong>SpaceX披露正与Tesla合作开发"Macrohard"AI平台；计划将数据中心部署至太空。</p>
+    <div class="analysis"><strong>📌 解读：</strong>史上最大IPO对全球资本流动和科技投资格局产生深远影响。超大规模融资可能影响新兴市场资金配置，对依赖美元资本的中跨境科技企业融资环境带来间接影响。</div>
+    <div class="sources">
+      <a href="https://www.reuters.com/world/musks-spacex-prices-record-75-billion-ipo-135-share-2026-06-11" target="_blank">Reuters</a>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-12/what-to-know-about-spacex-s-record-breaking-ipo" target="_blank">Bloomberg</a>
+      <a href="https://www.cnbc.com/2026/06/15/spacex-ipo-spcx-greenshoe-overallotment.html" target="_blank">CNBC</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>跨境新闻日报 · 由 AI 自动生成 · 2026-06-15</p>
+  <p style="margin-top:4px">信息来源：Reuters · Bloomberg · CNBC · Guardian · Al Jazeera · 欧洲议会 · 专业律所分析</p>
+</div>
+
+</div>
+</body>
+</html>
