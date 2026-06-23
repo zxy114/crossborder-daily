@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境新闻日报 - ${REPORT_DATE}</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif; margin: 0; padding: 0; background: #f5f7fa; color: #333; }
+  .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+  .header h1 { margin: 0; font-size: 28px; font-weight: 600; }
+  .header .date { color: #a0aec0; margin-top: 8px; font-size: 16px; }
+  .news-item { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .news-item h2 { margin: 0 0 12px 0; font-size: 18px; font-weight: 600; color: #1a202c; }
+  .news-item .tag { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; margin-right: 8px; margin-bottom: 10px; }
+  .tag-policy { background: #e3f2fd; color: #1565c0; }
+  .tag-platform { background: #f3e5f5; color: #6a1b9a; }
+  .tag-logistics { background: #e8f5e9; color: #2e7d32; }
+  .tag-market { background: #fff3e0; color: #e65100; }
+  .tag-trend { background: #fce4ec; color: #c62828; }
+  .news-item p { line-height: 1.7; margin: 0 0 12px 0; color: #4a5568; }
+  .news-item .source { font-size: 13px; color: #718096; margin: 0; }
+  .news-item .source a { color: #4299e1; text-decoration: none; }
+  .news-item .source a:hover { text-decoration: underline; }
+  .highlight { background: linear-gradient(120deg, #e0f2fe 0%, #dbeafe 100%); padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #3182ce; }
+  .highlight h3 { margin: 0 0 8px 0; color: #1a202c; }
+  .footer { text-align: center; padding: 20px; color: #718096; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📦 跨境新闻日报</h1>
+    <div class="date">日期: ${REPORT_DATE}</div>
+  </div>
+
+  <div class="highlight">
+    <h3>🔥 今日焦点</h3>
+    <p>欧盟7月1日取消低值包裹免税进入倒计时，DHL Globalmail明日暂停欧盟商品包裹寄递；中国商务部将10家美国实体列入出口管制清单；TikTok Shop墨西哥大促销售额暴增8倍。</p>
+  </div>
+
+  <div class="news-item">
+    <h2>1. 荷兰放弃征收2欧元跨境电商包裹手续费</h2>
+    <span class="tag tag-policy">政策</span>
+    <span class="tag tag-logistics">物流</span>
+    <p>荷兰财政部国务秘书正式致函议会宣布放弃对中国跨境电商包裹征收每单2欧元手续费计划，决定等待欧盟统一进口税政策出台后再实施。此前荷兰看守内阁担忧单独征税会导致邻国包裹经荷兰绕道涌入加重海关负荷。目前仅法国全国性包裹税已落地，比利时、卢森堡等等待欧盟新规，此次撤回征税对小包直邮跨境卖家属短期利好。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>2. DHL Globalmail 6月24日起暂停欧盟商品包裹寄递</h2>
+    <span class="tag tag-logistics">物流</span>
+    <p>DHL Globalmail宣布自6月24日起临时暂停收寄含商品包裹发往欧盟国家（6月23日为最后收件日），因欧盟将于7月1日取消150欧元以下进口商品免税门槛，邮政渠道包裹关税须由发件人承担（DDP模式），而DHL Globalmail暂未具备DDP能力。DHL Express及文件类寄递不受影响，正加紧开发DDP解决方案。依赖Globalmail直邮欧盟的跨境卖家需最晚今日完成交寄，或切换DHL Express/具备欧盟DDP资质的专线渠道。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/news" target="_blank">出海网</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>3. 亚马逊通知卖家：7月1日起欧盟低值包裹每件征3欧元关税</h2>
+    <span class="tag tag-platform">平台</span>
+    <span class="tag tag-policy">政策</span>
+    <p>亚马逊通知卖家，自2026年7月1日起欧盟正式取消150欧元以下低值进口包裹关税豁免，所有从欧盟境外直发消费者的FBA及FBM订单均需按件征收3欧元关税。FBM卖家须使用亚马逊指定承运商并提供有效IOSS编号，使用泛欧远程配送（EFN/Pan-EU）的FBA商品，亚马逊将在前台售价中自动叠加3欧元关税及相应VAT。跨境卖家需重新核算欧区小包直邮毛利、排查低价SKU是否触及盈亏平衡点，并确认IOSS申报流程合规以避免清关延误。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a> | <a href="https://cross-border-magazine.com/cn/ou-menge3jin-kou-guan-shui" target="_blank">CBM</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>4. 中国商务部将10家美国实体列入出口管制管控名单</h2>
+    <span class="tag tag-policy">政策</span>
+    <p>中国商务部2026年6月22日发布2026年第23号公告，依据《出口管制法》及《两用物项出口管制条例》，将艾维奥克斯（Aveox）、红猫控股（Red Cat Holdings）、蒂尔无人机（Teal Drones）、IMSAR、杰亚机器人（Jaia Robotics）、鲍尔航空航天（Ball Aerospace）、奥什科什防务（Oshkosh Defense）、L3哈里斯海事（L3Harris Maritime）、芒廷帕斯材料（MP Materials）及美国稀土公司（USA Rare Earth）共10家美国实体列入出口管制管控名单，即日起禁止任何国家/地区组织和个人将原产于中国的两用物项转移或提供给上述实体。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>5. Sea与OpenAI达成战略合作，ChatGPT购物接入Shopee</h2>
+    <span class="tag tag-platform">平台</span>
+    <span class="tag tag-trend">趋势</span>
+    <p>新加坡科技集团Sea于6月22日宣布与OpenAI达成战略合作，将ChatGPT购物功能接入Shopee，用户在印尼、马来西亚、菲律宾、新加坡、泰国、越南、台湾及巴西可通过对话式提示在ChatGPT中发现商品并跳转Shopee完成购买。符合条件的Shopee卖家将获ChatGPT for Business试用权限，辅助商品上架、营销文案、客服及运营优化。这是继Lazada推进卖家AI工具后东南亚电商AI化的重要一步。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/news" target="_blank">出海网</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>6. TikTok Shop墨西哥Hot Sale销售额同比暴增8倍</h2>
+    <span class="tag tag-platform">平台</span>
+    <span class="tag tag-market">市场</span>
+    <p>TikTok Shop墨西哥站在2026年Hot Sale大促期间整体销售额同比激增超8倍，直播电商为核心增长引擎——单场直播订单超500单的场次增逾5倍，开播商家及带货达人数量均增约8倍和5倍。本土护肤品牌kieró通过日播合作实现GMV涨260%、家居品牌LOOMBER HOME涨155.7%、小米墨西哥店涨77.9%。目前仅22%墨西哥企业布局社交电商仍有较大空间，作为TikTok Shop拉美唯二运营市场之一墨西哥被视为直播带货模式重要试验场。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>7. 印尼强令Shopee/TikTok Shop/Lazada 对本土货卖家降费至少50%</h2>
+    <span class="tag tag-policy">政策</span>
+    <span class="tag tag-platform">平台</span>
+    <p>印尼中小微企业部依据2026年6月17日生效的部长条例，强制要求Shopee、TikTok Shop（含Tokopedia）、Lazada等大型电商平台对经Sapa UMKM系统认证、且仅销售印尼本土制造商品的微型和小型卖家，减免至少50%的平台服务费（含佣金及手续费）。若卖家混售进口或非本土商品平台有权终止优惠。对印尼本土品牌有供货合作的跨境方需留意平台费率变动及本土竞品成本优势进一步扩大。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>8. Lazada 6.6大促越南GMV暴增276% 客单价涨61%</h2>
+    <span class="tag tag-platform">平台</span>
+    <span class="tag tag-market">市场</span>
+    <p>Lazada 6.6超级大促交出亮眼成绩单，越南站GMV较平日暴涨276%、接近翻四倍，饮料、智能手机、母婴食品、化妆品及电脑配件跻身销量前五。LazMall官方商城贡献超77.5%订单、GMV增330%，客单价同比提升61%领跑东南亚，复购率达42.5%。跨境业务中接入的天猫与Gmarket店铺订单涨179%、GMV增175%，国际卖家增长176%。平台AI助手Lazzie日均促成近万名用户下单、引导GMV近200万美元。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>9. 美国6月自中国货中查扣超3万件世界杯仿牌商品</h2>
+    <span class="tag tag-policy">政策</span>
+    <p>美国海关边境保护局（CBP）于2026年6月中上旬连发三起通报，在专项行动中累计自中国发运货物中查扣超3万件2026世界杯仿牌商品——包括印第安纳波利斯查扣1578件、休斯顿港查扣约2.3万件（估值超600万美元）、迈阿密机场分两批合计查扣逾1.6万件假冒Nike世界杯球衣。CBP明确将针对同一发货/收货网络持续追查，世界杯主办城市港口查验力度已明显升级。</p>
+    <p class="source">来源: <a href="https://m.chwang.com/daily" target="_blank">出海网 · 跨境电商晚报</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>10. 速卖通推出品牌招商"赛亚计划"，加码美国市场</h2>
+    <span class="tag tag-platform">平台</span>
+    <span class="tag tag-market">市场</span>
+    <p>87%的亚马逊卖家已计划将速卖通作为品牌出海的第二增长曲线。速卖通面向美国市场正式推出品牌招商"赛亚计划"：针对年销千万美金级别的品牌卖家，推出定向扶持政策——3天极速开店、限时$1000广告激励金、入仓即预付供货价60%。2025年9月速卖通上线Brand+超级品牌出海计划，核心主张让品牌用亚马逊一半的成本实现全新增量，目前已汇聚超1500个认证品牌。这是速卖通向亚马逊核心腹地美国市场发起的正面攻势。</p>
+    <p class="source">来源: <a href="https://m.amz123.com/kx/Qn8xRGpj" target="_blank">AMZ123跨境导航</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>11. 欧盟7月1日取消低值包裹免税：实际成本可能高于3欧元</h2>
+    <span class="tag tag-policy">政策</span>
+    <span class="tag tag-logistics">物流</span>
+    <p>欧盟理事会指出，将对小包裹中的每个物品类别征收关税，包含不同产品类别的包裹可能会引发不止一次征税。退货基础设施提供商Shopreturns警告卖家不应将新关税视为统一的包裹成本。意大利已对来自非欧盟国家的价值不超过150欧元的包裹征收2欧元的关税。对于零售商来说，低价值订单的总落地成本可能不仅取决于欧盟关税，还取决于目的地市场、商品种类数量、承运流程以及卖家是否将关税整合到结账中。</p>
+    <p class="source">来源: <a href="https://cross-border-magazine.com/cn/ou-menge3jin-kou-guan-shui" target="_blank">CBM</a></p>
+  </div>
+
+  <div class="news-item">
+    <h2>12. 中国低成本电商出口额连续五个月同比下跌</h2>
+    <span class="tag tag-trend">趋势</span>
+    <span class="tag tag-market">市场</span>
+    <p>根据卢森堡咨询机构Trade and Transport Group对中国海关数据的分析，2026年4月，中国低成本电商出口额同比下滑10.9%，降至98.1亿美元，这已是该数据连续第五个月出现同比下跌。五连降的曲线背后，不仅是中国低成本电商出口正面临美欧关税政策收紧、全球物流成本飙升、低端消费需求疲软等多重压力，对于跨境卖家而言，更是行业走到结构性拐点的信号。2026年是跨境电商的战略分水岭，行业已从"货通天下"迈入"智联全球"时代。</p>
+    <p class="source">来源: <a href="https://m.amz123.com/kx/Qn8xRGpj" target="_blank">AMZ123跨境导航</a> | <a href="https://view.inews.qq.com/a/20260616A09L2100" target="_blank">第一财经</a></p>
+  </div>
+
+  <div class="footer">
+    <p>跨境新闻日报 · 生成时间: ${REPORT_DATE} · 由 AI 自动整理发布</p>
+  </div>
+</div>
+</body>
+</html>
