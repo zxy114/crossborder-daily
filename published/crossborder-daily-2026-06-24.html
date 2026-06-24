@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境电商日报 · 2026-06-24</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d29;
+    --accent: #4f9eff;
+    --accent2: #ff6b6b;
+    --text: #e4e6eb;
+    --muted: #8b8fa3;
+    --border: #2a2d3a;
+    --tag-bg: #252836;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", sans-serif;
+    line-height: 1.7;
+    padding: 20px 16px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 36px 20px 28px;
+    background: linear-gradient(135deg, #1a1d29 0%, #0f1117 100%);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+  }
+  .header h1 {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #4f9eff, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header .date {
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  .header .meta {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .header .meta span {
+    background: var(--tag-bg);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    color: var(--accent);
+  }
+  .news-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 22px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+  .news-card:hover {
+    border-color: var(--accent);
+  }
+  .news-card .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--accent);
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .news-card .tag.hot { color: var(--accent2); }
+  .news-card h2 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .news-card p {
+    color: var(--text);
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+  }
+  .news-card .dim {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .news-card .dim strong {
+    color: #c9cbd6;
+  }
+  .news-card .source {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .news-card .source a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .news-card .source a:hover {
+    text-decoration: underline;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 28px;
+  }
+  .toc h3 {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+  }
+  .toc li {
+    counter-increment: toc;
+    padding: 5px 0;
+    font-size: 0.88rem;
+  }
+  .toc li::before {
+    content: counter(toc, decimal-leading-zero);
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 10px;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    color: var(--accent);
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.4rem; }
+    .news-card h2 { font-size: 1rem; }
+    body { padding: 12px 10px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌍 跨境电商日报</h1>
+  <div class="date">2026 年 6 月 24 日（周二）</div>
+  <div class="meta">
+    <span>📦 物流 / 关税</span>
+    <span>🛒 平台动态</span>
+    <span>📊 市场趋势</span>
+    <span>🤖 AI × 电商</span>
+  </div>
+</div>
+
+<div class="toc">
+  <h3>📑 今日目录</h3>
+  <ol>
+    <li><a href="#n1">DHL Globalmail 暂停欧盟商品包裹，6月24日为最后收件日</a></li>
+    <li><a href="#n2">欧盟7月1日取消€150免税，亚马逊每件包裹征€3关税</a></li>
+    <li><a href="#n3">亚马逊Prime Day 2026预计创263亿美元纪录</a></li>
+    <li><a href="#n4">Shopee正式接入ChatGPT，覆盖东南亚及巴西8国市场</a></li>
+    <li><a href="#n5">TikTok Shop东南亚直发订单履约新规：48小时打包+3日到仓</a></li>
+    <li><a href="#n6">美国海关连发通报，查扣超3万件世界杯仿牌</a></li>
+    <li><a href="#n7">Lazada 7月2日起对成功退货订单向商家收退货运费</a></li>
+    <li><a href="#n8">印尼7月起对电商平台实施0.5%代扣代缴所得税</a></li>
+    <li><a href="#n9">Temu"新拼姆"计划曝光：三年投1000亿，转向自营品牌</a></li>
+    <li><a href="#n10">小包裹出海时代终结，速卖通呼吁品牌形态出海</a></li>
+    <li><a href="#n11">美国拟对60国加征最高12.5% Section 301关税</a></li>
+    <li><a href="#n12">Shopify将全面下架电子烟产品，响应美国监管</a></li>
+  </ol>
+</div>
+
+<!-- News 1 -->
+<div class="news-card" id="n1">
+  <span class="tag hot">🔴 突发</span>
+  <h2>DHL Globalmail 暂停收寄发往欧盟的商品包裹</h2>
+  <p><strong>核心事件：</strong>DHL 宣布自 2026 年 6 月 24 日起临时暂停 Globalmail 渠道发往欧盟的含商品包裹，6 月 23 日为最后收件日。此后创建的运单将直接退回发件地。文件及印刷品不受影响，DHL Express 正常承运。</p>
+  <p class="dim"><strong>关键数据：</strong>此次调整源于欧盟 7 月 1 日取消 €150 以下进口商品免税门槛，邮政渠道关税须由发件人承担（DDP 模式），而 Globalmail 暂不具备 DDP 能力。</p>
+  <p class="dim"><strong>影响范围：</strong>依赖 Globalmail 经济型渠道向欧盟发件的大量中小卖家受影响最大，需紧急切换至 DHL Express 或其他支持 DDP 的物流方案。</p>
+  <p class="dim"><strong>后续动作：</strong>DHL 表示正在加紧开发 DDP 解决方案以期尽快恢复服务；同时业内提示欧盟或于 11 月拟对包裹征收约 €2/件处理费。</p>
+  <p class="dim"><strong>解读：</strong>DHL 的紧急暂停标志着欧盟低值免税终结的连锁反应已进入实操阶段。跨境卖家必须在数日内完成物流渠道切换，否则欧盟订单将面临无法履约的风险。</p>
+  <div class="source">
+    来源：AMZ123 / 跨境快讯 — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a> ｜ <a href="https://m.chwang.com/daily" target="_blank">chwang.com/daily</a>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card" id="n2">
+  <span class="tag">📦 关税</span>
+  <h2>欧盟7月1日起取消€150低值包裹免税，亚马逊对每件征€3关税</h2>
+  <p><strong>核心事件：</strong>欧盟新规确认 7 月 1 日起全面取消 €150 以下跨境小包关税豁免。亚马逊已通知卖家，将对此类包裹每件征收 €3 关税费用（过渡期统一税率），全面标准关税预计 2028 年实施。</p>
+  <p class="dim"><strong>关键数据：</strong>过渡期间低值包裹统一征收 €3/件；150 欧元以下包裹此前可免关税进入欧盟 27 国。</p>
+  <p class="dim"><strong>影响范围：</strong>所有面向欧洲市场的跨境电商，尤其是低价直邮模式（Shein、Temu、速卖通卖家）受冲击最直接。</p>
+  <p class="dim"><strong>后续动作：</strong>建议卖家尽快在结账页面向消费者展示含税（DDP）价格，避免包裹到港后被退回或买家拒付。品牌方可考虑欧洲本地仓储以优化成本结构。</p>
+  <p class="dim"><strong>解读：</strong>这是近年欧盟跨境贸易力度最大的税制改革，终结了低价直邮红利，推动行业从"包裹出海"向"品牌出海+本地化运营"转型。</p>
+  <div class="source">
+    来源：ShipperHQ — <a href="https://shipperhq.com/blog/de-minimis-is-ending-in-the-eu-what-ecommerce-brands-need-to-know" target="_blank">shipperhq.com</a> ｜ 跨境晚报 — <a href="https://m.chwang.com/daily" target="_blank">chwang.com/daily</a>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card" id="n3">
+  <span class="tag hot">🔥 热点</span>
+  <h2>亚马逊 Prime Day 2026 预计创下 263 亿美元销售纪录</h2>
+  <p><strong>核心事件：</strong>Adobe Analytics 最新报告预计，2026 年亚马逊美国 Prime Day（6月23日—26日）期间在线销售额将达到 263 亿美元，同比增长 9%，超越去年"黑五+网一"总和，创历史新高。</p>
+  <p class="dim"><strong>关键数据：</strong>折扣幅度 12%–23%（服装/电子最高 23%）；移动端贡献 54.2%（约 142 亿美元）；BNPL 支付规模预计 20.4 亿美元；AI 购物助手引流同比翻番。</p>
+  <p class="dim"><strong>影响范围：</strong>全球跨境卖家——尤其是亚马逊第三方卖家集中的中国商家群体，Prime Day 是全年最大流量节点之一。</p>
+  <p class="dim"><strong>后续动作：</strong>数据显示消费者倾向大促囤购日用品（纸品、生鲜、返校用品），而非冲动购买大件。卖家应关注"实用囤货"趋势调整选品策略。</p>
+  <p class="dim"><strong>解读：</strong>在通胀压力下，消费者对价格敏感度提升，Prime Day 从"发现新品牌"转向"集中采购刚需品"。AI 购物助手翻番预示着 Agentic Commerce 正在改变购物决策链路。</p>
+  <div class="source">
+    来源：AMZ123 / Adobe Analytics — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card" id="n4">
+  <span class="tag">🤖 AI</span>
+  <h2>Shopee 正式接入 ChatGPT，Sea 与 OpenAI 深化战略合作</h2>
+  <p><strong>核心事件：</strong>6 月 22 日，Sea 集团与 OpenAI 宣布深化战略合作，Shopee 正式接入 ChatGPT，覆盖印尼、马来西亚、菲律宾、新加坡、泰国、越南、台湾及巴西 8 大市场。用户可在 ChatGPT 中以自然语言获取 Shopee 商品推荐并跳转购买。</p>
+  <p class="dim"><strong>关键数据：</strong>Shopee 成为首个同时在东南亚与拉美提供 ChatGPT 购物服务的电商平台；卖家可使用 ChatGPT for Business 优化商品页、营销内容及客服。</p>
+  <p class="dim"><strong>影响范围：</strong>东南亚 6 亿消费者市场 + 巴西市场，Shopee 平台 100 万+活跃卖家。</p>
+  <p class="dim"><strong>后续动作：</strong>双方将在越南、印尼举办 Codex 黑客松，推动 AI 在购物发现、商家运营、开发者创新等环节的全链路落地。</p>
+  <p class="dim"><strong>解读：</strong>东南亚电商竞争从"物流+补贴"升级为"AI×电商"。继 Lazada 推出卖家 AI 工具后，Shopee 此次与 OpenAI 的合作标志着区域 AI 化进入加速期。</p>
+  <div class="source">
+    来源：MARKETECH APAC — <a href="https://marketech-apac.com/sea-openai-deepen-partnership-to-bring-ai-powered-shopping-to-shopee-users" target="_blank">marketech-apac.com</a> ｜ Marketing Interactive — <a href="https://www.marketing-interactive.com/shopee-lands-in-chatgpt-as-sea-and-openai-deepen-partnership" target="_blank">marketing-interactive.com</a>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card" id="n5">
+  <span class="tag">⚡ 履约</span>
+  <h2>TikTok Shop 东南亚直发订单新规：48小时打包+3个日历日到仓</h2>
+  <p><strong>核心事件：</strong>TikTok Shop 于 6 月 18 日更新东南亚跨境直发订单履约规则，无论揽收模式还是仓库投递模式，商家均需在买家下单后 48 小时内完成打包，并在 3 个日历日内确保包裹被物流商取走或完成到仓扫描。</p>
+  <p class="dim"><strong>关键数据：</strong>3 个日历日按自然日计算至当日 23:59:59；6 月 22 日—7 月 19 日考核周期内，时效达标门槛临时从 50% 放宽至 60%。</p>
+  <p class="dim"><strong>影响范围：</strong>所有通过 TikTok Shop 东南亚跨境直发模式运营的中国卖家。</p>
+  <p class="dim"><strong>后续动作：</strong>平台建议卖家调整 ERP 自动同步规则及拣货作业节奏，避免因新旧时效计算方式差异导致违规。</p>
+  <p class="dim"><strong>解读：</strong>TikTok Shop 在东南亚 GMV 增速最快（2025 年 YoY +66%），平台正通过收紧履约标准推动卖家从"散兵游勇"向标准化运营转型，利好有仓储能力的规模化卖家。</p>
+  <div class="source">
+    来源：AMZ123 / 跨境快讯 — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card" id="n6">
+  <span class="tag">🚨 合规</span>
+  <h2>美国海关查扣超 3 万件世界杯仿牌，专项执法瞄准中国出口商</h2>
+  <p><strong>核心事件：</strong>美国海关边境保护局（CBP）在 6 月中上旬连续发布三项通报，在"Trade Special Operation World Cup"专项行动中，共计在来自中国的货物中查获超过 3 万件 2026 世界杯仿牌商品。</p>
+  <p class="dim"><strong>关键数据：</strong>休斯顿港查获约 2.3 万件仿牌球衣及足球鞋（涉案货值超 600 万美元）；迈阿密机场分两批查获超 1.6 万件假冒 Nike 球衣；印第安纳波利斯查获 1578 件。</p>
+  <p class="dim"><strong>影响范围：</strong>涉及世界杯周边出口的中国商家，尤其是服装/运动品类卖家。</p>
+  <p class="dim"><strong>后续动作：</strong>CBP 执法力度持续加强，仿牌出口面临货物扣押、罚款乃至刑事追责风险。</p>
+  <p class="dim"><strong>解读：</strong>世界杯等大型赛事节点是美国知识产权执法的高峰期。卖家应严格规避未授权品牌商品出口，及时核查 HS 编码及授权链路。</p>
+  <div class="source">
+    来源：AMZ123 / CBP — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card" id="n7">
+  <span class="tag">💰 平台</span>
+  <h2>Lazada 7月2日起对成功退货订单向商家收取退货运费</h2>
+  <p><strong>核心事件：</strong>Lazada 宣布自 2026 年 7 月 2 日起，对已确认收货后买家发起退货退款且商品实际完成退回流程（RTW/RTM）的订单，将向商家收取对应的买家退货运费。</p>
+  <p class="dim"><strong>关键数据：</strong>费用明细可在卖家后台"订单-退回订单"或"财务-我的收入"中查询；非卖家责任费用经核实后可返还。</p>
+  <p class="dim"><strong>影响范围：</strong>所有 Lazada 跨境站点（东南亚 6 国）商家。</p>
+  <p class="dim"><strong>后续动作：</strong>建议卖家提前优化商品描述准确性及质检标准，完善尺码指南，合理减少非质量原因退货。</p>
+  <p class="dim"><strong>解读：</strong>东南亚平台正在集体收紧逆向物流成本承担规则，将更多退货成本传导至商家端。叠加 Shopee 新增 5% 技术服务费等趋势，卖家需将"退货管理"纳入核心运营指标。</p>
+  <div class="source">
+    来源：AMZ123 — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card" id="n8">
+  <span class="tag">📋 政策</span>
+  <h2>印尼7月起对电商平台实施0.5%代扣代缴所得税</h2>
+  <p><strong>核心事件：</strong>印尼将于 2026 年 7 月起对电商平台实施代扣代缴新规，由 Shopee、Tokopedia 等平台在交易环节直接代扣商家成交额 0.5% 的第 22 条所得税（PPh 22），取代以往卖家自行申报缴纳的模式。</p>
+  <p class="dim"><strong>关键数据：</strong>预扣税款可作为税收抵免，用于抵扣商户后续应缴企业所得税；年营业额不超过 5 亿盾（约 23 万元人民币）的中小微商户适用零税率。</p>
+  <p class="dim"><strong>影响范围：</strong>所有布局印尼市场的跨境卖家及本土商家。</p>
+  <p class="dim"><strong>后续动作：</strong>建议跨境卖家核实本地税代是否已完成税务登记，妥善留存平台扣税凭证用于年度抵免申报。</p>
+  <p class="dim"><strong>解读：</strong>该政策并非新增税种，但平台代扣模式将大幅提升税务合规透明度。印尼是东南亚最大电商市场，此举对跨境电商合规化运营具有示范效应。</p>
+  <div class="source">
+    来源：AMZ123 — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card" id="n9">
+  <span class="tag">📈 战略</span>
+  <h2>Temu"新拼姆"计划曝光：三年投 1000 亿，全力转向自营品牌</h2>
+  <p><strong>核心事件：</strong>据晚点 LatePost 报道，拼多多旗下 Temu 正推进名为"新拼姆"的自营品牌计划，由约百人规模的独立团队负责执行，第一期现金注资 150 亿元，三年计划总投入 1000 亿元。</p>
+  <p class="dim"><strong>关键数据：</strong>Temu 全球独立访客达 3.6 亿（2025.12—2026.02），在跨境电商市场份额已达 24%，与亚马逊并列第一。</p>
+  <p class="dim"><strong>影响范围：</strong>全球跨境电商格局——Temu 从"低价平台"向"自营品牌"转型将直接对标亚马逊自有品牌矩阵。</p>
+  <p class="dim"><strong>后续动作：</strong>"新拼姆"计划意味着 Temu 将深度介入产品设计与供应链管控，而非仅做平台撮合。</p>
+  <p class="dim"><strong>解读：</strong>在美/欧取消低值免税的大背景下，纯低价直邮模式利润空间被大幅挤压。Temu 此举是平台战略升级的关键一步——从"渠道品牌"向"产品品牌"延伸。</p>
+  <div class="source">
+    来源：三言科技（腾讯新闻）— <a href="https://view.inews.qq.com/a/20260513A02GUG00" target="_blank">view.inews.qq.com</a>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card" id="n10">
+  <span class="tag">🏭 产业</span>
+  <h2>小包裹出海时代终结，速卖通呼吁品牌形态出海转型</h2>
+  <p><strong>核心事件：</strong>在 2026 中国（广州）跨境电商交易会上，阿里速卖通品牌出海营销负责人明确表示，小包裹出口的形式已经回不去，卖家必须从"商品包裹出海"调整为"品牌形态出海"。</p>
+  <p class="dim"><strong>关键数据：</strong>继美国取消小包裹免税后，欧盟（7月1日）、英国、日本（2028年4月）相继取消或收紧低值包裹关税豁免。</p>
+  <p class="dim"><strong>影响范围：</strong>所有以低价直邮为核心模式的中国跨境电商出口商。</p>
+  <p class="dim"><strong>后续动作：</strong>速卖通正在推进半托管/海外仓模式，要求商家本地备货、本地发货。头部跨境电商已狂揽大湾区超六成物流新增面积。</p>
+  <p class="dim"><strong>解读：</strong>"小包裹出海"的时代正在全球范围内落下帷幕。从品牌建设、本地化运营到海外仓布局，跨境卖家需要重构底层商业逻辑。</p>
+  <div class="source">
+    来源：第一财经（腾讯新闻）— <a href="https://view.inews.qq.com/a/20260616A09L2100" target="_blank">view.inews.qq.com</a>
+  </div>
+</div>
+
+<!-- News 11 -->
+<div class="news-card" id="n11">
+  <span class="tag hot">⚠️ 关税</span>
+  <h2>美国拟对 60 个经济体加征最高 12.5% Section 301 关税</h2>
+  <p><strong>核心事件：</strong>美国政府拟针对因"强迫劳动"调查涉及的 60 个国家的所有产品征收 10% 或 12.5% 的 Section 301 关税，同时对巴西大多数产品拟征 25% 关税（附件 A 产品豁免）。</p>
+  <p class="dim"><strong>关键数据：</strong>Section 232 调整已于 6 月 8 日生效并持续至 2027 年 12 月 31 日；Section 301 关税不与 Section 232 叠加征收。</p>
+  <p class="dim"><strong>影响范围：</strong>几乎所有对美出口的中国跨境卖家，覆盖纺织服装、电子产品、机械设备等核心品类。</p>
+  <p class="dim"><strong>后续动作：</strong>建议卖家核查产品是否在附件 A 豁免清单中，并评估海外产能布局对冲关税风险。</p>
+  <p class="dim"><strong>解读：</strong>美国关税政策正从"针对性加征"升级为"系统性围堵"。叠加 IEEPA 退款不确定性，跨境卖家需将关税合规纳入长期战略规划，而非临时应对。</p>
+  <div class="source">
+    来源：中菲行国际物流 — <a href="https://cn.dimerco.com/us-tariff-update-2026" target="_blank">cn.dimerco.com</a> ｜ AMZ123 — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<!-- News 12 -->
+<div class="news-card" id="n12">
+  <span class="tag">🚫 合规</span>
+  <h2>Shopify 将全面下架电子烟产品，美国加码打击非法电子烟市场</h2>
+  <p><strong>核心事件：</strong>在美国 25 个州总检察长联合施压下，Shopify 计划最早于本周全面禁止平台上的电子烟销售业务，无论产品是否获得 FDA 授权。</p>
+  <p class="dim"><strong>关键数据：</strong>目前大量未获美国监管许可的电子烟产品在 Shopify 平台销售，其中部分产品来自中国。</p>
+  <p class="dim"><strong>影响范围：</strong>所有通过 Shopify 独立站销售电子烟的商家，尤其是中国电子烟出口商。</p>
+  <p class="dim"><strong>后续动作：</strong>禁令将对依赖线上渠道的非法电子烟商家形成明显冲击；卖家需评估合规资质或转移至其他渠道。</p>
+  <p class="dim"><strong>解读：</strong>这是继 Amazon、eBay 之后又一主流平台对电子烟说"不"。独立站不再是监管避风港，跨境电商的品类合规红线正在全面收紧。</p>
+  <div class="source">
+    来源：AMZ123 — <a href="https://m.amz123.com/kx" target="_blank">m.amz123.com/kx</a>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📡 跨境电商日报 · 2026-06-24 · 多源融合采集</p>
+  <p>数据来源：腾讯新闻 · AMZ123 · ShipperHQ · MARKETECH APAC · Adobe Analytics · Marketing Interactive · 中菲行物流 · 跨境晚报</p>
+  <p>本报告由 AI 自动采编生成，仅供参考。请以原始来源为准。</p>
+</div>
+
+</body>
+</html>
