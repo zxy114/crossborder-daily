@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境新闻日报 — 2026-07-01</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d29;
+    --accent: #e85d2f;
+    --accent-soft: rgba(232,93,47,0.12);
+    --text: #e8e8e8;
+    --text-muted: #9a9a9a;
+    --border: #2a2d3a;
+    --tag-bg: #252836;
+    --tag-text: #b0b3c0;
+    --link: #5b9dff;
+    --danger: #ef4444;
+    --success: #22c55e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 30px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    color: var(--accent);
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .header .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .top-banner {
+    background: linear-gradient(135deg, rgba(232,93,47,0.15), rgba(232,93,47,0.05));
+    border: 1px solid rgba(232,93,47,0.3);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  .top-banner .banner-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .top-banner .banner-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .top-banner .banner-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  .news-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+  .news-card:hover {
+    border-color: var(--accent);
+  }
+  .news-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .news-card .card-index {
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .news-card .card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .tag.hot { background: rgba(239,68,68,0.15); color: #ef9999; border-color: rgba(239,68,68,0.3); }
+  .tag.policy { background: rgba(91,157,255,0.12); color: #8ab4f8; border-color: rgba(91,157,255,0.25); }
+  .tag.market { background: rgba(34,197,94,0.12); color: #6ee7b7; border-color: rgba(34,197,94,0.25); }
+  .tag.platform { background: rgba(168,85,247,0.12); color: #c4b5fd; border-color: rgba(168,85,247,0.25); }
+  .news-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .news-card .summary {
+    color: #d0d0d0;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .dims {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .dim-row {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    align-items: flex-start;
+  }
+  .dim-label {
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+  .dim-value {
+    color: var(--text-muted);
+  }
+  .dim-value strong { color: #d0d0d0; }
+  .source-line {
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+  .source-line a {
+    color: var(--link);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-line a:hover { text-decoration: underline; }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+  .footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .highlight-box {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #d0d0d0;
+  }
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .header h1 { font-size: 22px; }
+    .news-card { padding: 16px; }
+    .news-card h3 { font-size: 16px; }
+    .dim-row { flex-direction: column; gap: 2px; }
+    .dim-label { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌐 跨境新闻日报</h1>
+  <div class="date">2026年7月1日（周二）</div>
+  <div class="subtitle">多源融合 · 全球视野 · 跨境人每日必读</div>
+</div>
+
+<!-- 头条焦点 -->
+<div class="top-banner">
+  <div class="banner-label">⚡ 今日双焦</div>
+  <div class="banner-title">欧盟3欧元小包裹关税今日正式生效 & 美国宣布不续签USMCA</div>
+  <div class="banner-desc">全球跨境电商规则重塑进入实质阶段：欧盟取消150欧元免税、美国启动北美自贸协定重新谈判，两大政策同日落地，跨境卖家面临成本与合规双重挑战。</div>
+</div>
+
+<!-- 新闻 1 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">01</span>
+    <div class="card-tags">
+      <span class="tag hot">头条</span>
+      <span class="tag policy">政策</span>
+      <span class="tag market">欧盟</span>
+    </div>
+  </div>
+  <h3>欧盟3欧元小包裹关税7月1日正式生效，150欧元免税时代终结</h3>
+  <div class="summary">
+    今日起，欧盟正式取消价值低于150欧元的非欧盟进口小包裹关税豁免，按包裹内HS税则子目分类，每类商品征收3欧元固定关税。过渡期至2028年7月1日，届时欧盟海关数据中心将投入运营，全面按实际税率征税。据欧盟数据，2024年欧盟进口150欧元以下电商包裹达46亿件，其中91%来自中国，日均进口量1200万件。Temu、Shein等平台上95%以上商品低于150欧元，新政将直接导致平均成本增加15-20%。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">欧盟取消150欧元小包裹关税豁免，每类商品征收3欧元固定关税</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value"><strong>46亿件</strong>年进口量 / <strong>91%</strong>来自中国 / 每包裹成本增加<strong>15-20%</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有通过直邮/IOSS渠道向欧盟发货的非欧盟卖家，低客单价品类冲击最大（3C配件、日用快消）</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">Temu计划80%欧洲订单本地仓发货；Shein下架客单价15欧元以下SKU；2028年全面按实际税率征税</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">免税时代终结标志跨境电商从"价格竞争"向"价值竞争"转型，海外仓+品牌化成为穿越政策周期的核心策略</span></div>
+  </div>
+  <div class="highlight-box">
+    ⚠️ 实操要点：关税按HS编码前6位计收，同一包裹不同税号商品需分别计费（如丝绸衬衫+羊毛衬衫=6欧元）。物流商已从6月24日起预收关税。DHL建议卖家选择"关税已付"（DDP）模式避免拒收。
+  </div>
+  <div class="source-line">
+    来源：观察者网 · <a href="https://view.inews.qq.com/a/20260701A0208T00?scene=news-skill">腾讯新闻链接</a> ｜ 东方财富网 · <a href="https://finance.eastmoney.com/a/202602273656454372.html">详细政策解读</a> ｜ 大纪元 · <a href="https://www.epochtimes.com/gb/26/6/24/n14795690.htm">DHL合规指引</a> ｜ FedEx · <a href="https://www.fedex.com/zh-cn/service-news/eu-customs-reform/de-minimis.html">FedEx新规指南</a>
+  </div>
+</div>
+
+<!-- 新闻 2 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">02</span>
+    <div class="card-tags">
+      <span class="tag hot">头条</span>
+      <span class="tag policy">政策</span>
+      <span class="tag market">北美</span>
+    </div>
+  </div>
+  <h3>美国宣布不续签USMCA，2万亿美元北美贸易协定进入重新谈判</h3>
+  <div class="summary">
+    7月1日，美国贸易代表Jamieson Greer宣布不续签美墨加协定（USMCA），启动重新谈判。USMCA于2020年7月1日生效，今日是6年续签窗口的最后期限。协定本身不会立即终止——现有条款有效至2036年，但将进入年度审查机制。此举影响涵盖三国间超2万亿美元年贸易额，特朗普政府表示将寻求"解决协定缺陷、减少贸易逆差"的新条款。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">美国不续签USMCA 16年延期，协定维持有效至2036年但启动重新谈判</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">北美三国年贸易额超<strong>2万亿美元</strong>；协定有效至<strong>2036年</strong>；年度审查机制启动</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有依赖北美供应链的跨境电商卖家，尤其是墨西哥近岸外包、加拿大本地仓布局的卖家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">三国将就贸易逆差、原产地规则、劳工条款等展开谈判，谈判结果可能改变近岸外包成本结构</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">USMCA不续签虽不立即改变贸易规则，但不确定性将影响卖家北美中长期布局决策。近岸外包策略可能面临调整</span></div>
+  </div>
+  <div class="source-line">
+    来源：CBC · <a href="https://www.cbc.ca/news/world/cusma-usmca-trump-extension-renewal-9.7255204">CBC报道</a> ｜ Washington Post · <a href="https://www.washingtonpost.com/business/2026/07/01/trump-ignores-deadline-extending-usmca-seeks-improved-deal">WP报道</a> ｜ The Hill · <a href="https://thehill.com/homenews/administration/5949845-trump-administration-usmca-renewal">The Hill报道</a> ｜ NYT · <a href="https://www.nytimes.com/2026/07/01/business/economy/usmca-north-america-trade.html">NYT分析</a>
+  </div>
+</div>
+
+<!-- 新闻 3 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">03</span>
+    <div class="card-tags">
+      <span class="tag platform">平台</span>
+      <span class="tag policy">合规</span>
+    </div>
+  </div>
+  <h3>亚马逊2026开年批量封号：巴西站、加拿大站卖家账户被系统清理</h3>
+  <div class="summary">
+    2026年初，亚马逊突然对巴西站、加拿大站卖家账户进行批量停用，触发重新KYC核验流程。受影响的主要是注册后长期无销售活动的"僵尸账户"——很多是开通北美联合账户时被自动激活的。卖家需提交公司注册信息、法人证件、地址证明等材料才能恢复。亚马逊2025年10月起已按中国税务机关要求报送卖家涉税信息，合规清算信号明确。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">亚马逊批量停用巴西/加拿大站休眠账户，触发KYC重新核验</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">巴西电商市场2025年规模<strong>590.7亿美元</strong>，预计2030年达1472.5亿美元</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有拥有多站点的亚马逊卖家，尤其是"先注册后运营"策略的卖家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">卖家需尽快完成KYC验证或主动注销无运营计划站点，防范"连坐效应"扩散至欧美主站</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">"多站点广撒网"策略已从机会成本转变为系统性风险。合规能力正成为平台间、卖家间的新竞争维度</span></div>
+  </div>
+  <div class="source-line">
+    来源：36氪 · <a href="https://m.36kr.com/p/3637810102039045">36氪原文</a>（授权：骑鲸出海）
+  </div>
+</div>
+
+<!-- 新闻 4 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">04</span>
+    <div class="card-tags">
+      <span class="tag platform">平台</span>
+      <span class="tag market">产业</span>
+    </div>
+  </div>
+  <h3>速卖通宣布"小包裹出海时代结束"，全面转向品牌出海战略</h3>
+  <div class="summary">
+    阿里速卖通品牌出海营销负责人在2026广州跨境电商交易会上明确表示："小包裹出口的形式已经回不去了，必须从商品包裹形态出海调整为品牌形态出海。"速卖通"品牌出海计划（Brand+）"启动一年，平台品牌GMV同比增长40%，年销售额超千万美金品牌数增加64%，超300个品牌增速达200%。速卖通以亚马逊约一半的佣金成本吸引中高端品牌迁移。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">速卖通官方定调：小包裹直邮时代终结，全面转向品牌出海</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">品牌GMV同比增长<strong>40%</strong>；千万美金品牌数增加<strong>64%</strong>；佣金仅<strong>5-10%</strong>（亚马逊15-20%）</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有中国出海品牌卖家，尤其是亚马逊中高端品牌寻找第二增长曲线的卖家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">速卖通继续推进"超级品牌出海计划"，在欧洲与亚马逊正面竞争品牌卖家</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">平台竞争从"流量之争"升维至"供应链效率+品牌力+合规体系"的综合较量，品牌化已成穿越周期的唯一路径</span></div>
+  </div>
+  <div class="source-line">
+    来源：第一财经 · <a href="https://view.inews.qq.com/a/20260616A09L2100?scene=news-skill">腾讯新闻链接</a>
+  </div>
+</div>
+
+<!-- 新闻 5 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">05</span>
+    <div class="card-tags">
+      <span class="tag policy">政策</span>
+      <span class="tag market">物流</span>
+    </div>
+  </div>
+  <h3>物流商全面启动欧盟关税预收机制，CNE/DHL/FedEx发布合规指南</h3>
+  <div class="summary">
+    各大物流商已提前布局欧盟新关税征收机制。CNE物流自6月24日（特货）和6月26日（普货）起按HS编码前6位预收3欧元/类关税；DHL在官网发布《2026欧盟海关改革指南》，强烈建议卖家选择DDP（关税已付）模式；FedEx发布产品识别码（PID）申报指南，建议7月1日起填报SKU、UPC等信息，11月1日后强制要求。多国（意大利2欧元、法国讨论中）正叠加国家层面手续费。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">物流商全面启动欧盟关税预收，发布合规操作指南</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">CNE预收起始：<strong>6月24日</strong>特货 / <strong>6月26日</strong>普货；FedEx PID强制：<strong>11月1日</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有通过物流商发货至欧盟的跨境电商卖家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">欧盟拟2026年11月推出2欧元/件海关处理费；意大利已率先征收2欧元国家手续费</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">物流商成为关税征收的"前线执行者"，卖家需与物流商紧密对接HS编码准确性和IOSS合规流程</span></div>
+  </div>
+  <div class="source-line">
+    来源：CNE物流 · <a href="https://www.cne.com/news/article/XDmBABBpA1Vq">CNE通知</a> ｜ FedEx · <a href="https://www.fedex.com/zh-cn/service-news/eu-customs-reform/de-minimis.html">FedEx指南</a> ｜ 大纪元 · <a href="https://www.epochtimes.com/gb/26/6/24/n14795690.htm">DHL指引报道</a>
+  </div>
+</div>
+
+<!-- 新闻 6 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">06</span>
+    <div class="card-tags">
+      <span class="tag market">报告</span>
+      <span class="tag platform">SaaS</span>
+    </div>
+  </div>
+  <h3>2026中国跨境电商SaaS市场报告：ERP成"经营大脑"，AI Agent驱动自动化运营</h3>
+  <div class="summary">
+    艾瑞咨询发布《2026年中国跨境电商SaaS市场行业报告》。截至2025年上半年，中国跨境电商企业存量达3.2万家，华东（41%）+华南（31%）合计占比超七成。美国出口占比从36.5%降至28.4%，新兴市场从46.1%升至57.8%。ERP系统从流程工具升级为"经营大脑"，领星ERP在跨境电商ERP中市场占有率第一。AI Agent正从Copilot辅助决策向自主运营闭环演进，覆盖营销投放、智能客服、供应链履约、广告优化等核心模块。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">跨境电商SaaS行业报告发布，ERP定位从工具升级为经营决策中枢</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">企业存量<strong>3.2万家</strong>；新兴市场占比<strong>57.8%</strong>；领星ERP市占率第一</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">全行业——SaaS工具选型、数字化运营能力成为卖家核心竞争力</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">AI Agent将驱动营销投放、库存预测、广告优化的自动化闭环；数据合规一体化成为刚需</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">跨境卖家从"执行导向"转向"决策导向"，数字化能力差距将直接转化为市场竞争差距</span></div>
+  </div>
+  <div class="source-line">
+    来源：36氪/艾瑞咨询 · <a href="https://m.36kr.com/p/3835278200272259">36氪报告全文</a>
+  </div>
+</div>
+
+<!-- 新闻 7 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">07</span>
+    <div class="card-tags">
+      <span class="tag market">报告</span>
+      <span class="tag market">韩国</span>
+    </div>
+  </div>
+  <h3>2026韩国跨境电商白皮书：五大优势使其成为卖家多元化首选市场</h3>
+  <div class="summary">
+    艾瑞咨询发布《2026年跨境电商韩国市场机遇洞察白皮书》。韩国电商市场2025年规模达1683亿美元，全球排名第三，预计2027年突破2000亿美元。韩国市场具备五大核心优势：规模大、利润高（综合利润率32%，约为美国2倍）、竞争低（中国卖家占比仅10-15%）、环境稳、匹配强。88.7%用户最常通过本土平台购物，Coupang以33%份额稳居第一。65%用户将当日/次日达视为下单前提。近八成韩国用户网购过中国商品。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">韩国市场白皮书发布，指出五大核心优势使其成为多元化布局首选</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">市场规模<strong>1683亿美元</strong>；综合利润率<strong>32%</strong>；Coupang份额<strong>33%</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">寻求市场多元化的中国跨境卖家，尤其有亚马逊FBA经验的成熟卖家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">卖家需优先布局本土仓实现当/次日达，打通KC认证合规门槛，聚焦家具/3C/服饰/户外/汽摩配五大品类</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">韩国市场处于"运营红利期"，竞争度低且利润空间大，是美国市场之外的最佳降维打击目标</span></div>
+  </div>
+  <div class="source-line">
+    来源：36氪/艾瑞咨询 · <a href="https://m.36kr.com/p/3836694581130633">36氪白皮书全文</a>
+  </div>
+</div>
+
+<!-- 新闻 8 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">08</span>
+    <div class="card-tags">
+      <span class="tag platform">平台</span>
+      <span class="tag market">全球</span>
+    </div>
+  </div>
+  <h3>2026跨境电商格局：Temu月访16亿全球第二，速卖通黑五欧洲下载量首超亚马逊</h3>
+  <div class="summary">
+    据We Are Social数据，2025年12月至2026年2月，Temu.com独立访客数达3.6亿，月访问量16亿，全球排名第二（仅次于亚马逊27亿）；速卖通月访问6.46亿排名第三。2025年"黑五"首日，速卖通在欧洲下载量首次超过亚马逊。TikTok Shop年GMV接近千亿美元，活跃买家4亿，海外排名第五、增速第一。但TikTok Shop直播购物占比从26%回落至18%，短视频贡献三分之二收入。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">中国出海平台流量格局重塑：Temu全球第二、速卖通欧洲下载首超亚马逊</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">Temu月访<strong>16亿</strong>；速卖通<strong>6.46亿</strong>；TikTok Shop GMV近<strong>千亿美元</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">全球跨境电商竞争格局，中国平台与亚马逊/沃尔玛正面竞争加剧</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">各平台加速品牌化、本地化、物流基建投入；速卖通以亚马逊一半成本争夺品牌卖家</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">中国平台从"价格颠覆者"向"生态竞争者"转型，品牌化+本地化+AI能力成为下半场胜负手</span></div>
+  </div>
+  <div class="source-line">
+    来源：腾讯新闻/跨境派 · <a href="https://view.inews.qq.com/a/20260520A05X4E00?scene=news-skill">Temu全球第二</a> ｜ 36氪/霞光社 · <a href="https://m.36kr.com/p/3638997980187780">2025跨境电商回顾</a> ｜ 36氪 · <a href="https://letschuhai.com/c7f7dd95">中国跨境电商走出雨季</a>
+  </div>
+</div>
+
+<!-- 新闻 9 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">09</span>
+    <div class="card-tags">
+      <span class="tag market">产业</span>
+      <span class="tag platform">亚马逊</span>
+    </div>
+  </div>
+  <h3>亚马逊"下一代跨境链"战略落地：深圳全球智能枢纽仓开放，上线即售全球</h3>
+  <div class="summary">
+    亚马逊全球副总裁戴竫斐在卖家峰会上宣布"下一代跨境链"战略全面落地。全球首个亚马逊智能枢纽仓落户深圳，3月面向卖家开放，实现"一个库存池供货全世界"。2025年亚马逊资本投入达1000亿美元，全球超130亿件商品实现当日/次日达（同比+45%）。中国卖家在成熟站点销售额增长超15%，新兴站点增长超30%，千万美元级卖家数量增长近30%。eMarketer预测中国以外全球零售电商2026年将超3.3万亿美元。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">亚马逊"下一代跨境链"落地：深圳枢纽仓开放，实现"上线即售全球"</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">投资<strong>1000亿美元</strong>；130亿件当日/次日达（<strong>+45%</strong>）；千万美元卖家<strong>+30%</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有亚马逊中国卖家，供应链模式从"一国一国拓展"转向"全球同步上线"</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">卖家需从研发阶段融入全球化思维，适应平台掌控"货从哪来"的供应链集权模式</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">平台从"交易撮合者"转向"供应链掌控者"，卖家部分供应链自主权让渡换取全球履约能力</span></div>
+  </div>
+  <div class="source-line">
+    来源：36氪 · <a href="https://m.36kr.com/p/3712517690847624">36氪原文</a>（亚马逊全球副总裁戴竫斐）
+  </div>
+</div>
+
+<!-- 新闻 10 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">10</span>
+    <div class="card-tags">
+      <span class="tag policy">趋势</span>
+      <span class="tag market">全球</span>
+    </div>
+  </div>
+  <h3>2026跨境电商趋势：19国关税禁令协议达成，全球"免税时代"全面终结</h3>
+  <div class="summary">
+    继美国取消de minimis政策后，欧盟3欧元关税生效、英国宣布最迟2029年废除135英镑免税、日本/智利/越南/墨西哥相继取消小额包裹免税。5月，美日韩等19国达成跨境电商关税禁令协议。全球"免税时代"已成定局。2025年中国对美出口同比下降18.9%，但对全球出口同比增长5.4%，贸易顺差首破万亿美元。拉美已跃居中国卖家意向市场第二位（19%），巴西电商市场预计2030年达1472.5亿美元。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">19国达成关税协议，全球小额包裹免税政策全面退潮</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">中国对美出口<strong>-18.9%</strong>；对全球出口<strong>+5.4%</strong>；贸易顺差首破<strong>万亿美元</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">全球跨境电商行业，依赖低价直邮模式的卖家和平台</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">卖家加速布局海外仓、本地化运营、市场多元化；平台推动品牌化和高附加值转型</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">跨境电商从"勇敢者冒险"过渡为"能力型行业"，合规、品牌、供应链韧性成为新标准配置</span></div>
+  </div>
+  <div class="source-line">
+    来源：腾讯新闻/蓝鲨消费 · <a href="https://view.inews.qq.com/a/20260511A03DKG00?scene=news-skill">19国关税协议</a> ｜ 36氪/霞光社 · <a href="https://m.36kr.com/p/3638997980187780">2025跨境电商回顾</a> ｜ 投资界/钛媒体 · <a href="https://news.pedaily.cn/202602/560726.shtml">2026跨境电商何去何从</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-title">📊 今日精选摘要</div>
+
+<div class="news-card" style="background: var(--accent-soft); border-color: rgba(232,93,47,0.3);">
+  <ol style="padding-left: 20px; line-height: 2.2; font-size: 14px;">
+    <li><strong>欧盟3欧元关税今日生效</strong> — 46亿件小包裹不再免税，91%来自中国，Temu/Shein成本激增15-20%。海外仓+品牌化是唯一出路。</li>
+    <li><strong>美国不续签USMCA</strong> — 2万亿美元北美贸易协定进入重新谈判，协定有效至2036年但年度审查启动，近岸外包策略面临不确定性。</li>
+    <li><strong>亚马逊批量封号巴西/加拿大站</strong> — "先注册后运营"策略已成系统性风险，KYC合规能力是卖家新竞争维度。</li>
+    <li><strong>速卖通定调：小包裹出海时代结束</strong> — 品牌GMV增长40%，以亚马逊一半佣金争夺中高端品牌，平台竞争升维至供应链+品牌+合规。</li>
+    <li><strong>韩国市场成多元化首选</strong> — 利润率32%（美国2倍），竞争度低，Coupang占33%份额，65%用户要求当日/次日达。</li>
+  </ol>
+</div>
+
+<div class="footer">
+  <p>📡 数据来源：腾讯新闻 · 36氪 · 观察者网 · 第一财经 · CBC · Washington Post · FedEx · DHL · 艾瑞咨询</p>
+  <p>🤖 本报告由 AI 自动生成，仅供参考。请以原始来源核实关键信息。</p>
+  <p>生成时间：2026-07-01 23:15 UTC</p>
+</div>
+
+</body>
+</html>
