@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境新闻日报 — 2026-07-02</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d29;
+    --accent: #e85d2f;
+    --accent-soft: rgba(232,93,47,0.12);
+    --text: #e8e8e8;
+    --text-muted: #9a9a9a;
+    --border: #2a2d3a;
+    --tag-bg: #252836;
+    --tag-text: #b0b3c0;
+    --link: #5b9dff;
+    --danger: #ef4444;
+    --success: #22c55e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 30px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    color: var(--accent);
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .header .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .top-banner {
+    background: linear-gradient(135deg, rgba(232,93,47,0.15), rgba(232,93,47,0.05));
+    border: 1px solid rgba(232,93,47,0.3);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  .top-banner .banner-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .top-banner .banner-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .top-banner .banner-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  .news-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+  .news-card:hover {
+    border-color: var(--accent);
+  }
+  .news-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .news-card .card-index {
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .news-card .card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .tag.hot { background: rgba(239,68,68,0.15); color: #ef9999; border-color: rgba(239,68,68,0.3); }
+  .tag.policy { background: rgba(91,157,255,0.12); color: #8ab4f8; border-color: rgba(91,157,255,0.25); }
+  .tag.market { background: rgba(34,197,94,0.12); color: #6ee7b7; border-color: rgba(34,197,94,0.25); }
+  .tag.platform { background: rgba(168,85,247,0.12); color: #c4b5fd; border-color: rgba(168,85,247,0.25); }
+  .news-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .news-card .summary {
+    color: #d0d0d0;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .dims {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .dim-row {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    align-items: flex-start;
+  }
+  .dim-label {
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+  .dim-value {
+    color: var(--text-muted);
+  }
+  .dim-value strong { color: #d0d0d0; }
+  .source-line {
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+  .source-line a {
+    color: var(--link);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-line a:hover { text-decoration: underline; }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+  .footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .highlight-box {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #d0d0d0;
+  }
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .header h1 { font-size: 22px; }
+    .news-card { padding: 16px; }
+    .news-card h3 { font-size: 16px; }
+    .dim-row { flex-direction: column; gap: 2px; }
+    .dim-label { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌐 跨境新闻日报</h1>
+  <div class="date">2026年7月2日（周三）</div>
+  <div class="subtitle">多源融合 · 全球视野 · 跨境人每日必读</div>
+</div>
+
+<!-- 头条焦点 -->
+<div class="top-banner">
+  <div class="banner-label">⚡ 今日三焦</div>
+  <div class="banner-title">美国12.5%对华301关税拟议 / 法国反超快时尚法通过 / 亚马逊FBM+标题双重新规</div>
+  <div class="banner-desc">继欧盟3欧元关税首日生效后，跨境圈再迎密集落地：美国USTR拟加征中国12.5%全额叠加301关税、USTR 7月7日召开听证会；法国6月29日通过全球首部反超快时尚法，瞄准Shein/Temu/AliExpress；亚马逊美英站FBM新政与产品标题75字符限令全面落地。直邮红利加速退场，海外仓与品牌化成为穿越周期的核心策略。</div>
+</div>
+
+<!-- 新闻 1 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">01</span>
+    <div class="card-tags">
+      <span class="tag hot">头条</span>
+      <span class="tag policy">政策</span>
+      <span class="tag market">北美</span>
+    </div>
+  </div>
+  <h3>美国USTR拟对华加征12.5% 301关税，全额叠加计征3C/家居/玩具综合税率破40%</h3>
+  <div class="summary">
+    美国贸易代表办公室依据301调查结果发布公告，拟以"未禁止进口强迫劳动产品"为由，对包括中国在内的60个经济体加征10%或12.5%的额外关税，中国被列入12.5%顶格清单。该方案仍处于拟议阶段，7月7日USTR将举行调查听证会。叠加现有25%基础301关税，主流品类综合税率直接拉到37.5%，叠加基础进口关税后单件货物综合税负轻松突破40%。同期，依据《1974年贸易法》第122条加征的10%全球临时进口附加税将于7月24日到期。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">美国USTR拟对中国加征12.5% 301关税，10%全球临时附加税7月24日到期</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">综合税率突破<strong>40%</strong> / 涉及<strong>60个经济体</strong> / 听证会<strong>7月7日</strong> / 临时税到期<strong>7月24日</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">对美出口3C、家居、玩具等主流品类全面承压；行业美线平均净利10%-18%，单12.5%附加税即可吞掉大半利润</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">受关税政策切换窗口影响，海外采购商加快提前下单，中美航线运价已升至近两年高位</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">美国关税组合拳呈"组合式+临时性"特征，单纯依靠第三国转口规避策略也被60国清单围堵。多市场分散+品牌化是中长期对冲方向</span></div>
+  </div>
+  <div class="highlight-box">
+    ⚠️ 案例测算：以深圳爆款家居收纳盒为例，出厂成本12美元，原有综合关税3美元，新政后单箱关税直接多出1.5美元，低价白牌货直接进入亏损区间。
+  </div>
+  <div class="source-line">
+    来源：亿邦动力 · <a href="https://www.ebrun.com/20260702/685593.shtml">电商晚报</a> ｜ 邦阅网 · <a href="https://www.52by.com/article/224766">跨境简报</a> ｜ 易仓科技 · <a href="https://www.eccang.com/news/4859">政策深度解读</a>
+  </div>
+</div>
+
+<!-- 新闻 2 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">02</span>
+    <div class="card-tags">
+      <span class="tag hot">头条</span>
+      <span class="tag policy">立法</span>
+      <span class="tag market">欧洲</span>
+    </div>
+  </div>
+  <h3>法国正式通过全球首部反超快时尚法，Shein/Temu/AliExpress每件最高罚6欧元</h3>
+  <div class="summary">
+    法国国民议会与参议院于2026年6月29日最终通过全球首部针对"超快时尚"（ultra-fast-fashion）的专项立法，锁定Shein、Temu、AliExpress等高频上新、极低单价的线上服装平台。法案规定2026年起被认定属超快时尚范畴的商品每件征收0.25至6欧元环保罚款（2030年升至最高10欧元/件，不超过税前价50%），同时全面禁止相关企业进行广告投放及网红/KOL推广营销。平台还需在页面展示鼓励节制消费与旧衣修补提示信息。该法仍需总统颁布生效，Shein已表态部分条款与欧盟电商框架存在不一致。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">法国通过反超快时尚法，全球首部针对电商服装平台环境影响的专门立法</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">每件罚款<strong>0.25-6欧元</strong>（2030年升至10欧元） / 广告与KOL推广全面禁止</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">面向法国市场的服装纺织出口卖家、低价时尚跨境平台；同步形成欧盟其他国家效仿预期</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">需总统颁布生效；欧盟层面相关立法讨论预计加速；平台需调整商品分类与营销策略</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">欧盟成员国立法路径正在从"税收工具"扩展至"环境治理+广告限制"。单一市场政策风险已从成本面延伸至商业模式本身</span></div>
+  </div>
+  <div class="source-line">
+    来源：蓝洞新消费 · <a href="https://view.inews.qq.com/a/20260701A02P7Z00?scene=news-skill">腾讯新闻</a> ｜ 出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 3 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">03</span>
+    <div class="card-tags">
+      <span class="tag platform">平台</span>
+      <span class="tag policy">合规</span>
+    </div>
+  </div>
+  <h3>亚马逊美英站FBM政策双重收紧：BHDR考核≥90%、英国处理时间砍至1天</h3>
+  <div class="summary">
+    亚马逊调整美国站及英国站卖家自发货（FBM）政策——美国站自2026年9月30日起新增"营业时间送达率（BHDR）"考核，滚动14天内对企业客户营业时间内完成配送的自发货订单占比须≥90%，10月30日仍未达标将暂停Amazon Business展示自发货商品（FBA不受影响）；英国站7月15日起账户级默认订单处理时间仅保留0天和1天（原设2天自动调为1天），9月1日起连续30天实际处理快于设定值超1天将自动启用自动处理时间。同步明确7月1日起欧盟境外发往欧盟订单货值低于150欧元须走IOSS并向合规承运商提供IOSS编号及ASIN信息。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">亚马逊美英FBM双站合规升级，企业订单时效与处理时间双重收紧</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">BHDR考核<strong>≥90%</strong> / 英国处理时间<strong>1天</strong> / IOSS强制<strong>7月1日</strong>起</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有依赖FBM的亚马逊美英站卖家、面向企业的B2B卖家、欧盟境外发货FBM商家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">建议FBM卖家核对物流商时效、校准处理时间设置、跟踪账户健康页面的BHDR指标；企业卖家须9月前完成配送服务配置</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">FBM低成本红利窗口正在关闭，亚马逊正系统性地将履约合规压力前移至卖家端，FBA集中度将进一步提升</span></div>
+  </div>
+  <div class="source-line">
+    来源：邦阅网 · <a href="https://www.52by.com/article/224766">跨境简报</a> ｜ 出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 4 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">04</span>
+    <div class="card-tags">
+      <span class="tag policy">合规</span>
+      <span class="tag market">东南亚</span>
+    </div>
+  </div>
+  <h3>印尼指定Shopee/Tokopedia/Lazada/Blibli代征卖家0.5%所得税，8月1日起执行</h3>
+  <div class="summary">
+    印度尼西亚财政部税务总局于2026年7月1日宣布，正式指定Shopee、Tokopedia、Lazada及Blibli四大电商平台自同年8月1日起担任个人所得税（PPh）第22条代征机构。依据《2025年第37号财政部长条例》，平台须对通过其开展交易的境内商家按总营业额或毛收入的0.5%代扣代缴该所得税（不含增值税及奢侈品税），所扣税款可在年度汇算清缴时作为税收抵免抵扣。年营业额不超过5亿印尼盾的个人纳税人卖家，经按规提交豁免声明书后可免予平台代征。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">印尼税务总局指定四大电商平台代征卖家所得税</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">税率<strong>0.5%</strong> / 生效日<strong>8月1日</strong> / 5亿印尼盾以下小微企业可申请豁免</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">印尼本土注册商家、年营业额超5亿盾（约2.3万元人民币）的中型以上卖家</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">建议印尼站卖家核对企业年营业额、按要求上传豁免声明以规避不必要扣税</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">东南亚税务监管从VAT向所得税全面延伸，平台作为代征方承担更重合规责任，"灰色免税"空间被持续压缩</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 5 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">05</span>
+    <div class="card-tags">
+      <span class="tag platform">平台</span>
+      <span class="tag market">东南亚</span>
+    </div>
+  </div>
+  <h3>TikTok Shop马来站扩0%佣金覆盖至56子类目，1.8亿令吉扶持中小微</h3>
+  <div class="summary">
+    TikTok Shop与马来西亚国内贸易及生活成本部（KPDN）联合推出生活成本纾困计划，宣布累计投入超1.8亿令吉支持本地中小微企业，并将生活必需品0%平台佣金覆盖子类目扩至56个——新增牛奶、奶粉、酸奶及发酵乳制品等5个类目，另下调39个生活必需品子类目卖家佣金0.5至9.1个百分点，同时向全站订单提供每笔2令吉运费补贴。平台还与KPDN合作开展线上Jualan Ihsan Rahmah促销活动，消费者购买米面糖等刚需品可领最高30%优惠券，使用TikTok Pay结算享额外优惠。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">TikTok Shop马来站扩展0%佣金品类，联合政府推生活成本纾困计划</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">投入<strong>1.8亿令吉</strong> / 0%佣金覆盖<strong>56子类目</strong> / 全站每单<strong>2令吉</strong>运费补贴</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">马来西亚站生活必需品卖家、快消品商家、跨境品牌方</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">建议马来站相关品类卖家核对类目资质并适时参与平台促销活动</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">TikTok Shop正通过"政府背书+平台补贴"模式抢占新兴市场份额，与Shopee/Lazada的本土化防御战进入新阶段</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 6 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">06</span>
+    <div class="card-tags">
+      <span class="tag market">数据</span>
+      <span class="tag platform">亚马逊</span>
+    </div>
+  </div>
+  <h3>亚马逊Prime Day四天揽金264亿美元，Z世代三成使用AI购物工具</h3>
+  <div class="summary">
+    2026年亚马逊Prime Day收官后数据显示，美国市场线上总交易额264亿美元，同比+9.3%；平台自营+第三方卖家GMV占比61%；平均客单价同比下滑8.3%，呈现量涨价跌特征。Numerator数据显示本届Prime Day热销品类已从消费电子转向服装家居及快消囤货，超半数买家跨平台比价，Z世代中三成使用AI购物工具辅助决策。大量卖家反映单量较日常腰斩，资深运营分析这并非单纯"大促后回落"而是活动期间靠广告硬推与集中转化虚高堆出的关键词排名随流量退潮出现结构性塌方。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">亚马逊Prime Day 2026收官，264亿美元成交但卖家普遍面临单量回落</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">GMV <strong>264亿美元</strong> / 同比<strong>+9.3%</strong> / 客单价<strong>-8.3%</strong> / Z世代AI购物<strong>30%</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有亚马逊第三方卖家、依赖大促冲量的腰部品牌、广告重度依赖型店铺</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">建议把握结束后七天黄金窗口期——前两日主词广告不降预算，第3-5天修复长尾流量，第6-7天测新长尾</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">黑五网一大促头部链接仍可能3-5倍增长但中腰部难爆单，AI购物工具崛起重塑流量分发逻辑，跨境卖家需重新评估大促投入产出比</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 7 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">07</span>
+    <div class="card-tags">
+      <span class="tag market">市场</span>
+      <span class="tag platform">亚马逊</span>
+    </div>
+  </div>
+  <h3>亚马逊产品标题7月27日起强制≤75字符，超长标题历史最大改版</h3>
+  <div class="summary">
+    亚马逊宣布自2026年7月27日起，所有非媒体类（含空格）产品标题必须≤75字符。这被业内称为"亚马逊史上最大标题改动"。背景是当前标题过度堆砌关键词、复制竞品描述等问题严重影响买家购物体验。新规生效后，标题优化需回归"精准+易读"原则：核心词前置、属性词精简、品牌词固化。同时，亚马逊美站后台已批量预警违规上架优惠券店铺，违规直接取消全年大促、秒杀报名资格；DD+7自动全额赔付政策于7月2日正式生效，FBA商品尺寸认证倒计时15天（7月17日截止）。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">亚马逊产品标题强制≤75字符新规7月27日生效</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">标题上限<strong>75字符</strong> / FBA尺寸认证截止<strong>7月17日</strong> / DD+7政策<strong>7月2日</strong>生效</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">所有亚马逊全球站点非媒体类商品卖家；标题堆词型运营模式将被彻底淘汰</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">立即着手精简核心词、强化品牌名与功能词的优先级；同步完成FBA尺寸认证避免入库拒收</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">亚马逊正在通过"商品信息标准化"反向倒逼卖家精细化运营，关键词堆砌时代的终结将利好品牌型卖家</span></div>
+  </div>
+  <div class="source-line">
+    来源：邦阅网 · <a href="https://www.52by.com/article/224766">跨境简报</a> ｜ 出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 8 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">08</span>
+    <div class="card-tags">
+      <span class="tag market">趋势</span>
+      <span class="tag platform">欧洲</span>
+    </div>
+  </div>
+  <h3>欧洲极端高温拉动中国避暑产品暴涨：空调出口增43%，移动空调增70%</h3>
+  <div class="summary">
+    2026年欧洲极端高温使中国避暑产品热销，前5月对欧空调出口同比增长43.2%，移动空调增幅超过70%；美的PortaSplit免打孔款多国断货。便携风扇在TikTok英德法站霸榜（瑞典站订单涨375%），带加湿多功能款及宠物凉垫、车载扇、凉感被同步走俏，制冰机在英国站销量上涨10倍。行业建议卖家前置海外仓、按气象节点排产、完备ERP能效认证，借短视频场景演示激需求，产品须契合欧洲建筑限制与消费习惯。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">欧洲极端高温拉动中国家电与避暑产品出口数据暴涨</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">空调出口<strong>+43.2%</strong> / 移动空调<strong>+70%</strong> / 瑞典风扇订单<strong>+375%</strong> / 英国制冰机<strong>+10倍</strong></span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">中国家电出口商、TikTok Shop欧洲卖家、能效认证服务商</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">前置海外仓、按气象节点排产、完备ERP能效认证；产品须契合欧建筑限制与消费习惯</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">气候变化催生的"季节性爆款"成为跨境电商重要增长极，但需结合能源政策与碳关税做长期布局</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 9 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">09</span>
+    <div class="card-tags">
+      <span class="tag market">数据</span>
+      <span class="tag platform">TikTok</span>
+    </div>
+  </div>
+  <h3>TikTok Shop第26周美英墨三国热销榜：护肤霸榜，巴西保暖裤反季爆卖</h3>
+  <div class="summary">
+    第26周美国、英国、墨西哥三地TikTok Shop热门商品周榜出炉。美国市场medicube美妆护肤系列包揽榜单多个席位，PDRN胶原蛋白眼膜拿下本周最高预估GMV，零食连帽衫、双头液体口红、压铸汽车模型、居家清洗设备、便携运动相机分列其后。英国榜单整体成交额体量远低于美国，受夏季高温带动各类风扇、降温电器占据榜单前排（LED风扇吊灯、桌面便携风扇、户外喷雾制冷设备）。墨西哥市场热销品类集中在女性服饰、高性价比智能手机、夏季便携降温工具与日常保健产品。同期正值南半球隆冬且巴西遭遇强厄尔尼诺，国产羊毛混纺加厚收腹保暖裤在TikTok Shop巴西站周销达2.02万单、累计GMV约13.41万美元。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">TikTok Shop三地榜单差异显著，巴西冬季保暖裤反季爆款验证全球化弹性</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">巴西保暖裤周销<strong>2.02万单</strong> / 累计GMV<strong>13.41万美元</strong> / 美国美妆护肤霸榜</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">TikTok Shop美区/英区/墨区/巴区卖家、季节性选品操盘手、内容电商运营</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">美妆护肤具备跨区域热销潜力；季节性家电服饰贴合不同地域场景；南美冬季消费窗口可关注世界杯关联选品</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">半球季节差+气候异常叠加社交内容驱动，TikTok Shop正在成为季节性反季爆款的孵化平台</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 10 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">10</span>
+    <div class="card-tags">
+      <span class="tag platform">合规</span>
+      <span class="tag market">澳新</span>
+    </div>
+  </div>
+  <h3>Temu签署澳大利亚《产品安全承诺》，按年提交合规报告接受监管审查</h3>
+  <div class="summary">
+    拼多多旗下跨境平台Temu签署澳大利亚《产品安全承诺》，将按年度提交合规报告并接受澳大利亚竞争与消费者委员会（ACCC）监管审查。承诺涵盖产品安全标准、退换货机制、消费投诉响应时效等核心条款。此次签约是Temu继欧盟、美国市场之后又一次主动向监管靠拢的合规举措。Pattern发布的《2026年电商平台消费者报告》显示，Temu目前已服务约470万澳大利亚用户，平台用户群以每年24%的速度增长。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">Temu签署澳大利亚产品安全承诺，主动接受ACCC年度合规审查</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">澳用户<strong>470万</strong> / 年增速<strong>24%</strong> / 年度合规报告</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">Temu澳洲站卖家、面向澳洲市场的跨境电商品牌方</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">卖家需配合平台完成产品资质备案、标签合规、消费者权益保障体系搭建</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">Temu正从"快速扩张"转向"合规先行"，与半托管模式+欧美本土卖家引入战略形成合力，应对全球监管趋紧</span></div>
+  </div>
+  <div class="source-line">
+    来源：亿邦动力 · <a href="https://www.ebrun.com/20260702/685593.shtml">电商晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 11 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">11</span>
+    <div class="card-tags">
+      <span class="tag policy">合规</span>
+      <span class="tag market">东南亚</span>
+    </div>
+  </div>
+  <h3>Shopee越南站配合新《电商法》7月8日起核验银行账户及税务身份</h3>
+  <div class="summary">
+    配合越南2026年7月1日正式实施的新版《电子商务法》，Shopee越南本土店将对卖家信息管理、商品发布及违规处理等模块进行合规升级——平台自7月8日起分批次上线银行账户核验功能，要求卖家仅可绑定本人名下合法支付账户，信息不实引发的法律风险由卖家自行承担；所有卖家上架经营前须完成身份与税务信息双重认证，销售特定品类需提前备齐行业经营资质文件待平台开通上传入口提交；店铺将自动展示营业执照登记地址（填于税务信息栏），该公示不视为站外引流违规。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">Shopee越南站落实新《电商法》，启动卖家银行账户与税务信息核验</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">核验启动<strong>7月8日</strong> / 身份+税务双重认证 / 行业资质按品类核验</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">Shopee越南本土店所有卖家、跨境品牌方在越运营主体</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">建议越南站卖家尽快核对收款账户归属、补全税务及执照地址信息，避免因认证未过影响商品正常销售</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">越南《电商法》实施标志东南亚国家进入"实质性合规执法期"，跨境卖家在新兴市场的"野蛮生长"窗口收窄</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<!-- 新闻 12 -->
+<div class="news-card">
+  <div class="card-header">
+    <span class="card-index">12</span>
+    <div class="card-tags">
+      <span class="tag market">数据</span>
+      <span class="tag platform">物流</span>
+    </div>
+  </div>
+  <h3>Wildberries承诺45天变更通知期，统一国内外佣金标准禁强制打折</h3>
+  <div class="summary">
+    俄罗斯三大电商平台Wildberries、Ozon及分类信息平台Avito于2026年圣彼得堡国际经济论坛上共同签署《数字平台诚信实践备忘录》补充协议，明确若平台调整佣金费率、物流成本、结算周期及退货政策等重要合作条款，须至少提前45天书面通知卖家，一般规则变更提前15天，仅对卖家有利的变更可缩短通知期；同时承诺对国内外卖家实行统一佣金标准、取消跨境卖家隐性加费，卖家有权拒绝参与平台补贴型强制促销活动且不受降权或下架处罚，平台还将引入AI反欺诈系统打击假货与虚假评论。该自律文件被视为提前落实将于2026年10月1日生效的俄《平台经济法》。
+  </div>
+  <div class="dims">
+    <div class="dim-row"><span class="dim-label">核心事件</span><span class="dim-value">俄罗斯三大电商平台签署诚信备忘录，承诺45天变更通知期</span></div>
+    <div class="dim-row"><span class="dim-label">关键数据</span><span class="dim-value">重要条款<strong>45天</strong>预告期 / 一般规则<strong>15天</strong> / 国内外佣金统一</span></div>
+    <div class="dim-row"><span class="dim-label">影响范围</span><span class="dim-value">Wildberries/Ozon/Avito平台卖家、涉俄跨境品牌方</span></div>
+    <div class="dim-row"><span class="dim-label">后续动作</span><span class="dim-value">建议涉俄业务卖家关注后台公告、利用45天窗口期重新核算毛利并完善EAC认证等合规准备</span></div>
+    <div class="dim-row"><span class="dim-label">解读分析</span><span class="dim-value">俄罗斯通过"行业自律+立法兜底"双轨模式约束平台权力，为跨境卖家提供相对清晰的合规预期</span></div>
+  </div>
+  <div class="source-line">
+    来源：出海网 · <a href="https://m.chwang.com/daily">出海网晚报</a>
+  </div>
+</div>
+
+<div class="footer">
+  📅 跨境新闻日报 · 2026年7月2日 · 数据截至北京时间当日 23:15 · 下次更新：明日 23:00<br>
+  来源：腾讯新闻（界面/经济观察报/21财经/第一财经/南方都市报/钛媒体/财联社等）、亿邦动力、出海网、邦阅网、FreightWaves 等
+</div>
+
+</body>
+</html>
