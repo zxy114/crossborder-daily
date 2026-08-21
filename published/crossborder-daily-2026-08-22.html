@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境新闻日报 - 2026-08-22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #e0e0e0;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 24px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(30, 60, 114, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .header h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .header .subtitle {
+    color: #a8c0ff;
+    font-size: 0.95em;
+  }
+  .header .meta {
+    margin-top: 12px;
+    color: #7a9cc6;
+    font-size: 0.85em;
+  }
+  .summary-box {
+    background: linear-gradient(135deg, rgba(42, 82, 152, 0.3), rgba(30, 60, 114, 0.3));
+    border-left: 4px solid #4a9eff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .summary-box h2 {
+    color: #4a9eff;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .summary-box p {
+    line-height: 1.8;
+    color: #c0d0e0;
+    font-size: 0.95em;
+  }
+  .news-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  .news-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(74, 158, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(74, 158, 255, 0.15);
+  }
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .news-title {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .news-tag {
+    background: linear-gradient(135deg, #4a9eff, #2a5298);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .news-tag.policy { background: linear-gradient(135deg, #f39c12, #e67e22); }
+  .news-tag.platform { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+  .news-tag.trade { background: linear-gradient(135deg, #27ae60, #229954); }
+  .news-tag.data { background: linear-gradient(135deg, #3498db, #2980b9); }
+  .news-tag.ipo { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+  .news-content {
+    line-height: 1.8;
+    color: #b0c4de;
+    font-size: 0.92em;
+  }
+  .news-content p {
+    margin-bottom: 8px;
+  }
+  .highlight {
+    background: rgba(74, 158, 255, 0.15);
+    border-left: 3px solid #4a9eff;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: #d0e0ff;
+    font-size: 0.9em;
+  }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 12px 0;
+  }
+  .data-card {
+    background: rgba(74, 158, 255, 0.1);
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .data-value {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #4a9eff;
+    display: block;
+  }
+  .data-label {
+    font-size: 0.8em;
+    color: #8aa8c8;
+    margin-top: 4px;
+  }
+  .source-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 0.85em;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .source-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #6a7a9a;
+    font-size: 0.85em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(231, 76, 60, 0.2);
+    color: #ff6b6b;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-left: 8px;
+  }
+  .insight-box {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.15), rgba(142, 68, 173, 0.15));
+    border-left: 4px solid #9b59b6;
+    padding: 14px 18px;
+    margin-top: 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #d0c0e0;
+  }
+  .insight-box strong {
+    color: #bb8fce;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.5em; }
+    .news-header { flex-direction: column; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🌐 跨境新闻日报</h1>
+    <div class="subtitle">Cross-Border Daily Briefing</div>
+    <div class="meta">报告日期：2026-08-22 (Beijing) | 覆盖窗口：2026-08-19 ~ 2026-08-22</div>
+  </div>
+
+  <div class="summary-box">
+    <h2>📋 今日速览</h2>
+    <p>
+      本期跨境日报共收录 <strong>8 条</strong>高质量要闻。核心看点：<strong>SHEIN</strong> 推迟香港 IPO 至 9 月，估值从峰值缩水约七成；
+      <strong>TikTok Shop</strong> 上半年 GMV 突破 500 亿美元，全年有望冲击 1235 亿美元；
+      <strong>WTO 电子商务关税 moratorium 于 3 月正式失效</strong>，数字贸易规则走向碎片化；
+      美国对无人机加征 <strong>15%-100% 关税</strong>，9 月 3 日生效，跨境物流成本结构面临重塑。
+    </p>
+  </div>
+
+  <!-- 新闻 1 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">🛍️ SHEIN 推迟香港 IPO 至 9 月，目标估值回落至 260-270 亿美元</div>
+      <span class="news-tag ipo">IPO / 融资</span>
+    </div>
+    <div class="news-content">
+      <p>据 Reuters/Quartz 报道，快时尚平台 SHEIN 将香港上市目标日期从 8 月 28 日延后至 9 月 1 日前后，估值区间从月初预期的 300-400 亿美元进一步下调至 260-270 亿美元，较 2022 年私有市场 1000 亿美元峰值已蒸发约七成。2026 年 Q1 公司录得 9900 万美元净亏损，扭转了去年同期 3.95 亿美元盈利，主因美国关税及欧洲监管成本上升。</p>
+      <div class="highlight">
+        💡 核心数据：2025 年收入 418 亿美元（同比 +8%），美国区收入同比 -14%，欧洲占比 35%；
+        上市由高盛、摩根士丹利、摩根大通联合保荐，UBS 资管首次作为基石投资者参与。
+      </div>
+      <div class="data-grid">
+        <div class="data-card">
+          <span class="data-value">$26-27B</span>
+          <span class="data-label">目标估值</span>
+        </div>
+        <div class="data-card">
+          <span class="data-value">+8%</span>
+          <span class="data-label">2025 收入增速</span>
+        </div>
+        <div class="data-card">
+          <span class="data-value">-14%</span>
+          <span class="data-label">美国区 Q1 收入降幅</span>
+        </div>
+      </div>
+      <a class="source-link" href="https://qz.com/shein-hong-kong-ipo-delay-september-082026" target="_blank">来源：Quartz / Reuters ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 2 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">📱 TikTok Shop 上半年 GMV 突破 503 亿美元，全年预计达 1235 亿</div>
+      <span class="news-tag platform">平台动态</span>
+    </div>
+    <div class="news-content">
+      <p>Momentum Works 与 Tabcut 联合发布的数据显示，TikTok Shop 2026 年上半年全球 GMV 达 503 亿美元，同比增长 92%；美国市场以 118 亿美元（+103%）超越印尼成为最大单一市场。平台预计全年 GMV 可达 1235 亿美元，相当于亚马逊用 25 年才积累的量级。</p>
+      <div class="highlight">
+        💡 渠道结构变化：美国 Shop 入口贡献约 51.4% GMV，视频导购约 40%，直播约 8%；
+        美国店铺数从 47.5 万增至 135 万，GMV 超百万美元的店铺达 5700 家。
+      </div>
+      <div class="data-grid">
+        <div class="data-card">
+          <span class="data-value">$50.3B</span>
+          <span class="data-label">H1 2026 全球 GMV</span>
+        </div>
+        <div class="data-card">
+          <span class="data-value">+92%</span>
+          <span class="data-label">同比增长</span>
+        </div>
+        <div class="data-card">
+          <span class="data-value">135 万</span>
+          <span class="data-label">美国店铺数</span>
+        </div>
+      </div>
+      <a class="source-link" href="https://mashable.com/tech/tiktok-shop-50-billion-six-months" target="_blank">来源：Mashable / Momentum Works ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 3 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">📜 WTO 电子商务关税 moratorium 失效，数字贸易规则进入碎片化时代</div>
+      <span class="news-tag policy">政策 / 监管</span>
+    </div>
+    <div class="news-content">
+      <p>WTO 第十四届部长级会议（MC14）于 2026 年 3 月未能就电子商务关税 moratorium 延期达成共识，该持续近 30 年的多边承诺正式失效。IISD 报告指出，虽然各国不太可能立即对电子传输征收关税，但多边框架的缺失将推动区域及双边数字贸易规则的碎片化，对发展中经济体的数字工业化空间产生不确定性。</p>
+      <div class="insight-box">
+        <strong>对跨境卖家的影响：</strong>跨境电商企业需关注各国是否借机对 SaaS、流媒体、数字服务等跨境数据传输征收关税；
+        欧盟-CPTPP 数字贸易协定谈判、非洲大陆自贸区（AfCFTA）数字贸易议定书等区域框架可能成为新规则锚点。
+      </div>
+      <a class="source-link" href="https://www.iisd.org/publications/report/turning-point-digital-trade-policy" target="_blank">来源：IISD 报告 ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 4 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">🚁 美国对无人机及零部件加征 15%-100% 关税，9 月 3 日生效</div>
+      <span class="news-tag trade">关税 / 贸易</span>
+    </div>
+    <div class="news-content">
+      <p>特朗普政府于 8 月 13 日签署公告，依据 1962 年贸易扩展法第 232 条，对进口无人机及零部件征收惩罚性关税。超过 25 公斤或配备热成像的无人机及停靠站适用 100% 税率；25 公斤及以下小型无人机适用 25%；符合原产地条件的盟国产品适用 10%-15% 优惠税率。第二批零部件关税将于 2027 年 2 月 9 日加征 25%。</p>
+      <div class="highlight">
+        ⚠️ 直接影响：跨境卖家若通过直邮或海外仓销售无人机及相关电子产品，需重新核算 landed cost；
+        物流服务商 Flexport 已更新关税模拟器，建议卖家在 9 月 3 日前完成供应链调整。
+      </div>
+      <a class="source-link" href="https://www.craneww.com/knowledge-center/trade-advisory-notices/united-states-imposes-new-section-232-tariffs-on-drones-and-uas-components" target="_blank">来源：Crane Worldwide Logistics ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 5 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">📦 美国海关 upheld 取消 $800 小包免税，低值包裹正式进入 formal entry 时代</div>
+      <span class="news-tag policy">政策 / 监管</span>
+    </div>
+    <div class="news-content">
+      <p>美国国际贸易法院（CIT）于 8 月中旬作出裁决，维持特朗普政府取消 de minimis 免税待遇的决定。自该政策生效以来，价值 800 美元以下的小包不再享受免税快速清关，必须提交 formal entry 并缴纳相应关税。欧洲同步收窄低值包裹免税通道，中国包裹量已出现约 20% 下降。</p>
+      <div class="insight-box">
+        <strong>实操影响：</strong>使用 USPS 及商业快递直邮的跨境卖家清关时间将从数小时延长至 1-3 个工作日；
+        DDP（Delivered Duty Paid）模式及第三方清关服务商价值凸显；建议卖家在 10 月旺季前完成物流方案升级。
+      </div>
+      <a class="source-link" href="https://purchaser.ai/procurement-brief/2026-08-17-weekly-roundup" target="_blank">来源：Purchaser.ai / Crane WW ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 6 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">🛒 亚马逊欧洲四站 FBA 大件尺寸认证 10 月 15 日截止，可退 90 天差价</div>
+      <span class="news-tag platform">平台规则</span>
+    </div>
+    <div class="news-content">
+      <p>亚马逊欧洲站自 8 月 3 日起要求英国、法国、意大利、西班牙站点的大件商品卖家主动提交长宽高尺寸认证，认证将作为后续 FBA 配送费计费依据。若认证后尺寸使配送费档位下调，系统将自动退还过去 90 天内多收取的差额。不认可校验结果的卖家可申请重新测量，德国站已完成认证的同源 ASIN 无需重复操作。</p>
+      <div class="highlight">
+        ⚡ 卖家动作：10 月 15 日前通过卖家平台或 Excel 批量提交；建议优先核查高周转大件商品的尺寸精度，
+        避免因尺寸偏差导致持续多收运费或入库拒收。
+      </div>
+      <a class="source-link" href="https://m.ebrun.com/695531.html" target="_blank">来源：亿邦动力 ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 7 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">📊 亚马逊印度 FY26 营收突破 3.5 万亿卢比，同比增长 15.5%</div>
+      <span class="news-tag data">数据 / 市场</span>
+    </div>
+    <div class="news-content">
+      <p>亚马逊印度市场运营主体 Amazon Seller Services 公布 2026 财年财务数据，总收入达 35574 亿卢比（约 420 亿美元），同比增长 15.5%，高于上一财年 30805 亿卢比的规模。印度作为亚马逊在东南亚的重要市场，其持续扩张印证了新兴市场电商渗透率提升的长期趋势，也为跨境卖家提供了印度站的增量参考。</p>
+      <div class="data-grid">
+        <div class="data-card">
+          <span class="data-value">35574 Cr</span>
+          <span class="data-label">FY26 总收入（卢比）</span>
+        </div>
+        <div class="data-card">
+          <span class="data-value">+15.5%</span>
+          <span class="data-label">同比增速</span>
+        </div>
+      </div>
+      <a class="source-link" href="https://www.amz123.com/t/Lknst1bG" target="_blank">来源：AMZ123 跨境导航 ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 8 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">🎒 TikTok Shop 美区返校季大促今日开启，持续至 8 月 31 日</div>
+      <span class="news-tag platform">平台动态</span>
+    </div>
+    <div class="news-content">
+      <p>TikTok Shop 美区 2026 年返校季大促于北京时间 8 月 21 日 08:00 正式开启，至 8 月 31 日 11:59 结束。平台围绕"开学形象焕新、宿舍生活焕新、学习效率升级"三大场景推出权益，包括核心直播间 GMV 分档激励（最高 600 美元预算扶持）、广告金激励及动态佣金广告增量消耗减免（总减免至高 3%）。</p>
+      <div class="highlight">
+        📌 对卖家的意义：这是 Q3 美区最后一个大型促销节点，美妆、服饰、3C 配件、家居小件是历史高转化品类；
+        建议提前完成商品标签注册及短视频/直播素材储备，抢占开学消费窗口期。
+      </div>
+      <a class="source-link" href="https://m.ebrun.com/695531.html" target="_blank">来源：亿邦动力 ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 9 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">🛒 eBay 澳洲站上线 AI 商品刊登工具，二手交易门槛持续降低</div>
+      <span class="news-tag platform">平台动态</span>
+    </div>
+    <div class="news-content">
+      <p>eBay 澳大利亚站推出 AI 商品刊登功能，卖家只需拍摄几张商品照片，AI 即可自动生成标题、定价及配送信息，同时提供智能拍照引导、背景移除和画质优化。配合年销售额低于 2.5 万美元免佣政策，该工具进一步降低了普通用户参与二手交易的门槛，回应了当地 74% 消费者认为"商品上架耗时过长"的痛点。</p>
+      <div class="insight-box">
+        <strong>趋势观察：</strong>AI 工具在平台端的快速落地，正在压缩传统listing优化服务商的生存空间；
+        跨境卖家应关注主流平台 AI 能力的演进，及时调整运营工具栈。
+      </div>
+      <a class="source-link" href="https://m.ebrun.com/695531.html" target="_blank">来源：亿邦动力 / eBay 官方 ↗</a>
+    </div>
+  </div>
+
+  <!-- 新闻 10 -->
+  <div class="news-item">
+    <div class="news-header">
+      <div class="news-title">🚢 中越边境货运量同比增长 22.4%，供应链联动深化</div>
+      <span class="news-tag trade">供应链</span>
+    </div>
+    <div class="news-content">
+      <p>在美国加征关税背景下，中国制造商持续赴越南设厂，推动中越供应链联动加深。2025 年中越双边贸易额达 1981 亿美元，同比增长 22.4%，较 2019 年翻倍。与此同时，Sea Legend 开通北极航道中欧定期货运服务，航程较苏伊士航线缩短约一半，为中欧跨境电商物流提供了新的时效选择。</p>
+      <div class="highlight">
+        💡 供应链重构信号：中国+东南亚的"中国+N"供应链布局正在加速成型；
+        北极航道商业运营常态化可能在未来 2-3 年内改变中欧物流成本结构。
+      </div>
+      <a class="source-link" href="https://m.ebrun.com/695531.html" target="_blank">来源：亿邦动力 / 外媒报道 ↗</a>
+    </div>
+  </div>
+
+  <div class="summary-box" style="margin-top: 24px; background: linear-gradient(135deg, rgba(231, 76, 60, 0.15), rgba(192, 57, 43, 0.15)); border-left-color: #e74c3c;">
+    <h2 style="color: #ff6b6b;">⚠️ 本周重点关注</h2>
+    <p style="color: #ffcccc;">
+      1. <strong>9 月 3 日</strong>：美国无人机 Section 232 关税正式生效，涉及跨境电商 3C 类目需提前评估成本<br>
+      2. <strong>9 月 1 日前后</strong>：SHEIN 香港 IPO 挂牌，关注上市后平台政策及供应链动态变化<br>
+      3. <strong>10 月 15 日</strong>：亚马逊欧洲 FBA 大件尺寸认证截止，大件类目卖家需尽快完成提交<br>
+      4. <strong>持续关注</strong>：WTO 电子商务 moratorium 失效后的各国数字关税政策动向
+    </p>
+  </div>
+
+  <div class="footer">
+    <p>📧 跨境新闻日报 | 由 OpenClaw 自动生成</p>
+    <p style="margin-top: 6px;">数据来源：Reuters / Quartz / Mashable / Momentum Works / IISD / 亿邦动力 / AMZ123 等公开报道</p>
+    <p style="margin-top: 6px;">© 2026 Cross-Border Daily Briefing · Powered by OpenClaw</p>
+  </div>
+</div>
+</body>
+</html>
